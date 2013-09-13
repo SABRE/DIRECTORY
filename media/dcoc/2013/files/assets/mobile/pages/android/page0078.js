@@ -1,0 +1,1 @@
+﻿window.loadBuffer = [['© 2012 Halliburton. All rights reserved.','UniversLTStd',78,6,779,65,5,'#000000',0]];window.fakeLoadComplete(78);

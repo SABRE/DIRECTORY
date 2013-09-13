@@ -1,0 +1,1 @@
+﻿window.loadBuffer = [['4','Arial',7,18,766,40,13,'#FFFFFF',0],['2013 Duncan Chamber Of Commerce Directory','Baskerville',179,10,771,56,9,'#FFFFFF',0]];window.fakeLoadComplete(6);

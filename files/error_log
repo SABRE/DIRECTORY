@@ -1,0 +1,2 @@
+[24-Apr-2013 14:41:22] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/shadmin/public_html/directories/files/lib/base.php on line 610
+[24-Apr-2013 14:41:22] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home/shadmin/public_html/directories/files/lib/base.php on line 610

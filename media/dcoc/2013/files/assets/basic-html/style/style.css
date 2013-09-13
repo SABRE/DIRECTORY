@@ -1,0 +1,733 @@
+﻿
+
+/**************Reset block*****************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+:focus {
+	outline: 0;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+.divCenter{
+    margin: 0 auto;
+    padding: 10px;
+    text-align: left; 
+}
+.page{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.box{
+  width: 100%;
+  height: 30px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+.boxVersion{
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  padding: 6px 0;
+  text-align: left;  
+  white-space:nowrap;
+  z-index: -1;
+}
+.fontMenuPadding{
+  padding: 0px 4px;
+}
+.tool{
+  width: 52px;
+  position: absolute;
+  top: 50%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.leftTool{
+  text-align: center;
+  left: 10%; 
+}
+.rightTool{
+  text-align: center;
+  right: 10%;  
+}
+.pointerFloatLeft{
+  float: left;
+}
+.pointerFloatLeft p{
+   position: absolute; 
+   right: 10px; 
+   text-align: right;
+}
+.pointerFloatRight{
+  float: right;
+}
+.pointerFloatRight p{
+   position: absolute; 
+   left: 10px; 
+   text-align: left;
+}
+.divPage{
+  background: #ffffff; 
+  -webkit-box-shadow: 0px 3px 10px rgba(0,0,0,.8);
+  -moz-box-shadow: 0px 3px 10px rgba(0,0,0,.8);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.8);
+}
+
+.div_items      {margin: 0px; padding: 0px; position: absolute; overflow: hidden;   border : 0px solid green;}
+
+    
+body{
+	font: normal normal normal 12px/18px Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+	padding: 0px; 
+  margin: 0px; 
+  background:#7D858A;	
+  position: relative;  
+}
+h1 {
+	font-size:25px;
+	font-family: Helvetica, sans-serif, Arial, Lucida Sans;;
+	color:#000000;
+  width: 100%;
+	padding: 30px 0 10px 0;
+	line-height: 22px;
+	text-align: left;
+}
+
+h1 a{
+	color:#000000;
+	text-decoration: none;
+}
+.copy{
+  font-size: 10px;
+	font-family: Helvetica, sans-serif, Arial, Lucida Sans;
+  width: 100%;
+	line-height: 22px;
+	text-align: center;
+}
+.copy a{
+	color:#000000;
+	text-decoration: none;
+}
+.copy a:hover{
+	color:#000000;
+	text-decoration: underline;
+}
+.fontVersion {
+  font-size:10px; 
+  font-family: Helvetica, sans-serif, Arial, Lucida Sans;
+  color:#000000;
+}
+.menu{
+  padding: 6px 16px;
+  height: 34px;
+  position: absolute; 
+  text-align: center;  
+  white-space:nowrap;
+  top: 0px; 
+  right: 0px; 
+  border-radius: 3px;
+  background: rgba(200, 200, 200, 0.3); 
+}
+
+.fontMenu {
+  float: right;
+  font-size:10px; 
+  font-family:Helvetica, sans-serif, Arial, Lucida Sans;
+  color:#000000;
+}
+.fontMenu a{
+  color:#000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.pointerSymbol{
+  padding: 10px 0;
+  width: 32px;
+  height: 69px;
+  text-decoration: none;
+  position: relative;
+  overflow: visible;
+}
+
+.pointerText{
+  width: 55px;
+  font-size:10px; 
+  font-family:Helvetica, sans-serif, Arial, Lucida Sans;
+  color:#000000; 
+  position: relative;
+  text-decoration: none;
+}
+
+.pointerText:hover{
+  color:#000000; 
+  text-decoration: underline;
+}
+
+
+.addNavigationRight{
+	color:#000000;
+    font-size: 10px;
+	font-family: Helvetica, sans-serif, Arial, Lucida Sans;
+	line-height: 22px;
+	text-align: right;
+	float: right;
+}
+.addNavigationRight a{
+	color:#000000;
+	text-decoration: none;
+}
+.addNavigationRight a:hover{
+	color:#000000;
+	text-decoration: underline;
+}
+
+.addNavigationLeft{
+	color:#000000;
+    font-size: 10px;
+	font-family: Helvetica, sans-serif, Arial, Lucida Sans;
+	text-align: left;
+	float: left;
+}
+.addNavigationLeft a{
+	color:#000000;
+	text-decoration: none;
+}
+.addNavigationLeft a:hover{
+	color:#000000;
+	text-decoration: underline;
+}
+
+.fontPosition { white-space: nowrap;border : 0px solid blue; position: absolute ; top: 0px; left:0px; overflow: visible;} 
+.areaLink{
+  background: #3FC7FF;
+  opacity: 0;
+}
+.areaLink:hover {
+  opacity:  0.5;
+}
+.font1 { font-size:154.6px; font-family:SnellRoundhand; color:#FFFFFF; opacity:1; }
+.font1  a { text-decoration: none; color:#FFFFFF;}
+.font1  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font1  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font2 { font-size:113.7px; font-family:SnellRoundhand; color:#FFFFFF; opacity:1; }
+.font2  a { text-decoration: none; color:#FFFFFF;}
+.font2  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font2  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font3 { font-size:19.8px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font3  a { text-decoration: none; color:#FFFFFF;}
+.font3  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font3  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font4 { font-size:18px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font4  a { text-decoration: none; color:#FFFFFF;}
+.font4  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font4  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font5 { font-size:18.6px; font-family:Arial; color:#000000; opacity:1; }
+.font5  a { text-decoration: none; color:#000000;}
+.font5  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font5  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font6 { font-size:47.9px; font-family:Copperplate; color:#000000; opacity:1; }
+.font6  a { text-decoration: none; color:#000000;}
+.font6  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font6  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font7 { font-size:24px; font-family:Copperplate; color:#000000; opacity:1; }
+.font7  a { text-decoration: none; color:#000000;}
+.font7  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font7  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font8 { font-size:10px; font-family:Arial; color:#000000; opacity:1; }
+.font8  a { text-decoration: none; color:#000000;}
+.font8  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font8  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font9 { font-size:38px; font-family:CentaurMTStd; color:#E5206C; opacity:1; }
+.font9  a { text-decoration: none; color:#E5206C;}
+.font9  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font9  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font10 { font-size:11px; font-family:ArialMT; color:#000000; opacity:1; }
+.font10  a { text-decoration: none; color:#000000;}
+.font10  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font10  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font11 { font-size:11px; font-family:Arial; color:#000000; opacity:1; }
+.font11  a { text-decoration: none; color:#000000;}
+.font11  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font11  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font12 { font-size:9px; font-family:Arial; color:#000000; opacity:1; }
+.font12  a { text-decoration: none; color:#000000;}
+.font12  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font12  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font13 { font-size:27.5px; font-family:SnellRoundhand; color:#FFFFFF; opacity:1; }
+.font13  a { text-decoration: none; color:#FFFFFF;}
+.font13  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font13  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font14 { font-size:20.2px; font-family:SnellRoundhand; color:#FFFFFF; opacity:1; }
+.font14  a { text-decoration: none; color:#FFFFFF;}
+.font14  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font14  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font15 { font-size:3.5px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font15  a { text-decoration: none; color:#FFFFFF;}
+.font15  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font15  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font16 { font-size:3.2px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font16  a { text-decoration: none; color:#FFFFFF;}
+.font16  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font16  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font17 { font-size:9px; font-family:Baskerville; color:#000000; opacity:1; }
+.font17  a { text-decoration: none; color:#000000;}
+.font17  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font17  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font18 { font-size:13px; font-family:Arial; color:#000000; opacity:1; }
+.font18  a { text-decoration: none; color:#000000;}
+.font18  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font18  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font19 { font-size:13px; font-family:Arial; color:#FFFFFF; opacity:1; }
+.font19  a { text-decoration: none; color:#FFFFFF;}
+.font19  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font19  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font20 { font-size:9px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font20  a { text-decoration: none; color:#FFFFFF;}
+.font20  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font20  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font21 { font-size:32.8px; font-family:CentaurMTStd; color:#E5206C; opacity:1; }
+.font21  a { text-decoration: none; color:#E5206C;}
+.font21  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font21  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font22 { font-size:14px; font-family:Arial; color:#FFFFFF; opacity:1; }
+.font22  a { text-decoration: none; color:#FFFFFF;}
+.font22  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font22  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font23 { font-size:16px; font-family:AGaramondPro; color:#000000; opacity:1; }
+.font23  a { text-decoration: none; color:#000000;}
+.font23  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font23  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font24 { font-size:16px; font-family:AGaramondPro; color:#FFFFFF; opacity:1; }
+.font24  a { text-decoration: none; color:#FFFFFF;}
+.font24  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font24  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font25 { font-size:15px; font-family:AGaramondPro; color:#FFFFFF; opacity:1; }
+.font25  a { text-decoration: none; color:#FFFFFF;}
+.font25  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font25  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font26 { font-size:11px; font-family:Arial; color:#E5206C; opacity:1; }
+.font26  a { text-decoration: none; color:#E5206C;}
+.font26  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font26  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font27 { font-size:25px; font-family:CentaurMTStd; color:#E5206C; opacity:1; }
+.font27  a { text-decoration: none; color:#E5206C;}
+.font27  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font27  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font28 { font-size:13.0px; font-family:Helvetica; color:#000B5A; opacity:1; }
+.font28  a { text-decoration: none; color:#000B5A;}
+.font28  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font28  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font29 { font-size:8.4px; font-family:Helvetica; color:#000B5A; opacity:1; }
+.font29  a { text-decoration: none; color:#000B5A;}
+.font29  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font29  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font30 { font-size:10.0px; font-family:Helvetica; color:#000B5A; opacity:1; }
+.font30  a { text-decoration: none; color:#000B5A;}
+.font30  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font30  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font31 { font-size:24px; font-family:SavoyeLetPlain; color:#FDE515; opacity:1; }
+.font31  a { text-decoration: none; color:#FDE515;}
+.font31  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font31  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font32 { font-size:15px; font-family:ACaslonPro; color:#FDE515; opacity:1; }
+.font32  a { text-decoration: none; color:#FDE515;}
+.font32  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font32  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font33 { font-size:11.7px; font-family:ACaslonPro; color:#FFFFFF; opacity:1; }
+.font33  a { text-decoration: none; color:#FFFFFF;}
+.font33  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font33  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font34 { font-size:12px; font-family:Helvetica; color:#FFFFFF; opacity:1; }
+.font34  a { text-decoration: none; color:#FFFFFF;}
+.font34  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font34  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font35 { font-size:15px; font-family:Arial; color:#E5206C; opacity:1; }
+.font35  a { text-decoration: none; color:#E5206C;}
+.font35  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font35  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font36 { font-size:145.7px; font-family:BankScrD; color:#00001B; opacity:1; }
+.font36  a { text-decoration: none; color:#00001B;}
+.font36  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font36  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font37 { font-size:105.7px; font-family:BankScrD; color:#00001B; opacity:1; }
+.font37  a { text-decoration: none; color:#00001B;}
+.font37  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font37  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font38 { font-size:22.1px; font-family:BankGothicBT; color:#00001B; opacity:1; }
+.font38  a { text-decoration: none; color:#00001B;}
+.font38  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font38  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font39 { font-size:12.4px; font-family:BankGothicBT; color:#00001B; opacity:1; }
+.font39  a { text-decoration: none; color:#00001B;}
+.font39  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font39  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font40 { font-size:11.2px; font-family:FuturaBT; color:#00001B; opacity:1; }
+.font40  a { text-decoration: none; color:#00001B;}
+.font40  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font40  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font41 { font-size:10px; font-family:ArialMT; color:#000000; opacity:1; }
+.font41  a { text-decoration: none; color:#000000;}
+.font41  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font41  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font42 { font-size:30px; font-family:CentaurMTStd; color:#E5206C; opacity:1; }
+.font42  a { text-decoration: none; color:#E5206C;}
+.font42  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font42  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font43 { font-size:22.5px; font-family:Imperator; color:#7CCDE2; opacity:1; }
+.font43  a { text-decoration: none; color:#7CCDE2;}
+.font43  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font43  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font44 { font-size:9.3px; font-family:Imperator; color:#FFFFFF; opacity:1; }
+.font44  a { text-decoration: none; color:#FFFFFF;}
+.font44  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font44  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font45 { font-size:5.1px; font-family:Imperator; color:#FFFFFF; opacity:1; }
+.font45  a { text-decoration: none; color:#FFFFFF;}
+.font45  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font45  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font46 { font-size:6.8px; font-family:Imperator; color:#7CCDE2; opacity:1; }
+.font46  a { text-decoration: none; color:#7CCDE2;}
+.font46  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font46  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font47 { font-size:32.8px; font-family:CentaurMTStd; color:#00007C; opacity:1; }
+.font47  a { text-decoration: none; color:#00007C;}
+.font47  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font47  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font48 { font-size:15px; font-family:Arial; color:#00007C; opacity:1; }
+.font48  a { text-decoration: none; color:#00007C;}
+.font48  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font48  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font49 { font-size:29.7px; font-family:SnellRoundhand; color:#E5206C; opacity:1; }
+.font49  a { text-decoration: none; color:#E5206C;}
+.font49  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font49  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font50 { font-size:7.1px; font-family:Arial; color:#000000; opacity:1; }
+.font50  a { text-decoration: none; color:#000000;}
+.font50  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font50  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font51 { font-size:15.4px; font-family:ACaslonPro; color:#000F6C; opacity:1; }
+.font51  a { text-decoration: none; color:#000F6C;}
+.font51  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font51  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font52 { font-size:15.4px; font-family:ACaslonPro; color:#FA001B; opacity:1; }
+.font52  a { text-decoration: none; color:#FA001B;}
+.font52  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font52  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font53 { font-size:12px; font-family:ACaslonPro; color:#000F6C; opacity:1; }
+.font53  a { text-decoration: none; color:#000F6C;}
+.font53  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font53  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font54 { font-size:9px; font-family:ACaslonPro; color:#000000; opacity:1; }
+.font54  a { text-decoration: none; color:#000000;}
+.font54  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font54  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font55 { font-size:18px; font-family:ACaslonPro; color:#FA001B; opacity:1; }
+.font55  a { text-decoration: none; color:#FA001B;}
+.font55  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font55  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font56 { font-size:10px; font-family:ACaslonPro; color:#000000; opacity:1; }
+.font56  a { text-decoration: none; color:#000000;}
+.font56  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font56  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font57 { font-size:9px; font-family:ACaslonPro; color:#FA001B; opacity:1; }
+.font57  a { text-decoration: none; color:#FA001B;}
+.font57  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font57  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font58 { font-size:7px; font-family:ACaslonPro; color:#000000; opacity:1; }
+.font58  a { text-decoration: none; color:#000000;}
+.font58  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font58  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font59 { font-size:16.7px; font-family:Futura; color:#FFFFFF; opacity:1; }
+.font59  a { text-decoration: none; color:#FFFFFF;}
+.font59  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font59  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font60 { font-size:9.8px; font-family:Futura; color:#FFFFFF; opacity:1; }
+.font60  a { text-decoration: none; color:#FFFFFF;}
+.font60  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font60  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font61 { font-size:4.9px; font-family:Futura; color:#FFFFFF; opacity:1; }
+.font61  a { text-decoration: none; color:#FFFFFF;}
+.font61  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font61  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font62 { font-size:17.6px; font-family:Futura; color:#FFFFFF; opacity:1; }
+.font62  a { text-decoration: none; color:#FFFFFF;}
+.font62  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font62  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font63 { font-size:12.4px; font-family:Futura; color:#FFFFFF; opacity:1; }
+.font63  a { text-decoration: none; color:#FFFFFF;}
+.font63  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font63  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font64 { font-size:43px; font-family:LucidaCalligraphy; color:#E3020F; opacity:1; }
+.font64  a { text-decoration: none; color:#E3020F;}
+.font64  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font64  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font65 { font-size:14px; font-family:Arial; color:#E3020F; opacity:1; }
+.font65  a { text-decoration: none; color:#E3020F;}
+.font65  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font65  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font66 { font-size:14px; font-family:Arial; color:#000000; opacity:1; }
+.font66  a { text-decoration: none; color:#000000;}
+.font66  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font66  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font67 { font-size:9.5px; font-family:Arial; color:#000000; opacity:1; }
+.font67  a { text-decoration: none; color:#000000;}
+.font67  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font67  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font68 { font-size:26.8px; font-family:ArialMT; color:#D60032; opacity:1; }
+.font68  a { text-decoration: none; color:#D60032;}
+.font68  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font68  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font69 { font-size:12px; font-family:Arial; color:#D60032; opacity:1; }
+.font69  a { text-decoration: none; color:#D60032;}
+.font69  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font69  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font70 { font-size:37px; font-family:Impact; color:#9F4F0E; opacity:1; }
+.font70  a { text-decoration: none; color:#9F4F0E;}
+.font70  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font70  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font71 { font-size:8.6px; font-family:TrajanPro; color:#9F4F0E; opacity:1; }
+.font71  a { text-decoration: none; color:#9F4F0E;}
+.font71  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font71  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font72 { font-size:16px; font-family:AGaramondPro; color:#9F4F0E; opacity:1; }
+.font72  a { text-decoration: none; color:#9F4F0E;}
+.font72  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font72  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font73 { font-size:12px; font-family:AGaramondPro; color:#9F4F0E; opacity:1; }
+.font73  a { text-decoration: none; color:#9F4F0E;}
+.font73  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font73  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font74 { font-size:10px; font-family:AGaramondPro; color:#000000; opacity:1; }
+.font74  a { text-decoration: none; color:#000000;}
+.font74  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font74  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font75 { font-size:26.6px; font-family:AGaramondPro; color:#9F4F0E; opacity:1; }
+.font75  a { text-decoration: none; color:#9F4F0E;}
+.font75  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font75  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font76 { font-size:57px; font-family:CentaurMTStd; color:#FDD823; opacity:1; }
+.font76  a { text-decoration: none; color:#FDD823;}
+.font76  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font76  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font77 { font-size:10px; font-family:Arial; color:#FFFFFF; opacity:1; }
+.font77  a { text-decoration: none; color:#FFFFFF;}
+.font77  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font77  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font78 { font-size:11px; font-family:Arial; color:#FFFFFF; opacity:1; }
+.font78  a { text-decoration: none; color:#FFFFFF;}
+.font78  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font78  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font79 { font-size:9px; font-family:Arial; color:#00327A; opacity:1; }
+.font79  a { text-decoration: none; color:#00327A;}
+.font79  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font79  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font80 { font-size:9px; font-family:Baskerville; color:#00327A; opacity:1; }
+.font80  a { text-decoration: none; color:#00327A;}
+.font80  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font80  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font81 { font-size:7.5px; font-family:Baskerville; color:#00327A; opacity:1; }
+.font81  a { text-decoration: none; color:#00327A;}
+.font81  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font81  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font82 { font-size:9px; font-family:Arial; color:#710007; opacity:1; }
+.font82  a { text-decoration: none; color:#710007;}
+.font82  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font82  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font83 { font-size:7.5px; font-family:Baskerville; color:#000000; opacity:1; }
+.font83  a { text-decoration: none; color:#000000;}
+.font83  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font83  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font84 { font-size:18px; font-family:AGaramondPro; color:#FFFFFF; opacity:1; }
+.font84  a { text-decoration: none; color:#FFFFFF;}
+.font84  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font84  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font85 { font-size:14px; font-family:AGaramondPro; color:#000000; opacity:1; }
+.font85  a { text-decoration: none; color:#000000;}
+.font85  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font85  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font86 { font-size:57px; font-family:CentaurMTStd; color:#FFFFFF; opacity:1; }
+.font86  a { text-decoration: none; color:#FFFFFF;}
+.font86  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font86  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font87 { font-size:12.6px; font-family:Arial; color:#000000; opacity:1; }
+.font87  a { text-decoration: none; color:#000000;}
+.font87  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font87  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font88 { font-size:12.8px; font-family:Arial; color:#000000; opacity:1; }
+.font88  a { text-decoration: none; color:#000000;}
+.font88  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font88  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font89 { font-size:168.9px; font-family:Knockout; color:#FFFFFF; opacity:1; }
+.font89  a { text-decoration: none; color:#FFFFFF;}
+.font89  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font89  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font90 { font-size:53.7px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font90  a { text-decoration: none; color:#FFFFFF;}
+.font90  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font90  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font91 { font-size:19.5px; font-family:Knockout; color:#FFFFFF; opacity:1; }
+.font91  a { text-decoration: none; color:#FFFFFF;}
+.font91  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font91  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font92 { font-size:31.0px; font-family:Baskerville; color:#FFFFFF; opacity:1; }
+.font92  a { text-decoration: none; color:#FFFFFF;}
+.font92  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font92  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font93 { font-size:33.8px; font-family:Knockout; color:#FFFFFF; opacity:1; }
+.font93  a { text-decoration: none; color:#FFFFFF;}
+.font93  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font93  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+.font94 { font-size:5px; font-family:UniversLTStd; color:#000000; opacity:1; }
+.font94  a { text-decoration: none; color:#000000;}
+.font94  a:hover { text-decoration: underline; color:#3FC7FF;}
+.font94  a:visited{ text-decoration: none; color:#3FC7FF; opacity: 0.8;}
+
+/* TOC */
+h2 { 
+  font-size:17px; 
+  font-family:Helvetica, sans-serif, Arial, Lucida Sans;
+  color:#000000; 
+  text-align: left;
+  padding: 30px 40px 0px 40px;
+}
+
+
+.bold{
+  font-weight: bold;
+}
+
+.fontPageName{ 
+    padding: 0 15px 0px 0;
+    font-size:12px; 
+    font-family:Helvetica, sans-serif, Arial, Lucida Sans;
+    color:#3780c1; 
+    background: #ffffff; 
+    word-wrap: break-word;
+    border: 0px solid red;
+}
+            
+.fontPageName:hover {text-decoration: underline;}
+
+.fontPageNum { 
+    padding: 5px 0 0 0;
+    font-size:12px; 
+    font-family:Helvetica, sans-serif, Arial, Lucida Sans;
+    color:#5e6166; 
+    background: #ffffff; 
+    height: 100%;
+    vertical-align: bottom;
+    display: table-cell;
+    float: right;
+    border: 0px solid green;
+
+
+} 
+.fontPageNum:hover {text-decoration: underline;}
+
+table {
+   width: 100%; 
+   position: relative; 
+   top: 10px; 
+   left: 0px;
+}  
+        
+.tdName{
+   word-wrap: break-word;
+   text-align: left;
+   vertical-align: bottom;
+   overflow: hidden;
+   table-layout: fixed;
+}          
+
+.tdNum{
+   vertical-align: bottom;
+   width: 40px;
+   text-align: right;
+   background: #ffffff;
+} 
+        
+        
+ul{
+  padding: 10px 40px 20px 40px;
+  display: block;
+}
+
+ul.children{
+  padding: 10px 0px 0px 0px;
+  display: block;
+}
+
+li { 
+  margin: 3px 0 0 0;
+  list-style-type: none; 
+  border-bottom: 1px dotted silver; 
+  list-style-position: outside;
+}
+
+li a {
+  color:#3780c1; 
+	text-decoration: none; 
+} 
+        
+li a:hover{
+	text-decoration: underline; 
+} 
+           
+li.children { 
+  margin: 3px 0 0 0;
+  list-style-type: none; 
+  border-bottom: 0px dotted silver; 
+  list-style-position: outside;
+}    
+
+   
+ul li ul {}
+ul li ul li {
+  margin: 3px 0 0 20px;
+}
+     
+ul li ul li ul {}
+ul li ul li ul li{
+  margin: 3px 0 0 40px;
+}
+             
+ul li ul li ul li ul {}
+ul li ul li ul li ul li{
+  margin: 3px 0 0 60px;
+}
+    

@@ -1,0 +1,58 @@
+# BEGIN Compress text files
+<ifModule mod_deflate.c>
+  <filesMatch "\.(css|js|x?html?|php)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+# END Compress text files
+
+######## eDirectory without subfolder #########################################
+#ErrorDocument 400 /errorpage.php
+#ErrorDocument 401 /errorpage.php
+#ErrorDocument 403 /errorpage.php
+#ErrorDocument 404 /errorpage.php
+#ErrorDocument 500 /errorpage.php
+
+######## eDirectory with subfolder. Change "edirectory" for your folder name ##
+######## Do not forget to remove the lines above ##############################
+ErrorDocument 400 /edirectory/errorpage.php
+ErrorDocument 401 /edirectory/errorpage.php
+ErrorDocument 403 /edirectory/errorpage.php
+ErrorDocument 404 /edirectory/errorpage.php
+ErrorDocument 500 /edirectory/errorpage.php
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*/sugar|sugar)/(.*)?$ ./sugarCRM.php?url_full=%{REQUEST_URI} [L]
+
+######## eDirectory with subfolder. Change "edirectory" for your folder name ##
+######## Do not forget to remove the line above ###############################
+RewriteRule ^(.*/sugar|sugar)/(.*)?$ ./edirectory/sugarCRM.php?url_full=%{REQUEST_URI} [L]
+
+RewriteCond %{REQUEST_URI} ^(.*/sitemap|sitemap)\.xml$ [NC]
+#RewriteRule ^(.*/sitemap|sitemap)\.xml$ ./sitemap_generate.php [L]
+
+######## eDirectory with subfolder. Change "edirectory" for your folder name ##
+######## Do not forget to remove the line above ###############################
+RewriteRule ^(.*/sitemap|sitemap)\.xml$ ./edirectory/sitemap_generate.php [L]
+
+RewriteCond %{REQUEST_URI} ^(.*/sitemapnews|sitemapnews)\.xml$ [NC]
+#RewriteRule ^(.*/sitemapnews|sitemapnews)\.xml$ ./sitemap_generate.php?news [L]
+
+######## eDirectory with subfolder. Change "edirectory" for your folder name ##
+######## Do not forget to remove the line above ###############################
+RewriteRule ^(.*/sitemapnews|sitemapnews)\.xml$ ./edirectory/sitemap_generate.php?news [L]
+
+######## Allow all URL to open ################################################
+RewriteBase /edirectory/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+
+######## eDirectory with subfolder. Change "edirectory" for your folder name ##
+######## Do not forget to remove the line above ###############################
+RewriteRule . /edirectory/index.php [L]
+
+###############################################################################

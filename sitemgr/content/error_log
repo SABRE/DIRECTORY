@@ -1,0 +1,1 @@
+[09-Apr-2013 21:11:28] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/shadmin/public_html/directories/classes/class_Mysql.php:304) in /home/shadmin/public_html/directories/includes/code/slider.php on line 160

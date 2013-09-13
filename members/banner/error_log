@@ -1,0 +1,7 @@
+[31-Jan-2013 22:37:53] PHP Warning:  Invalid argument supplied for foreach() in /home/shadmin/public_html/directories/9700/members/banner/add.php on line 112
+[31-Jan-2013 22:45:04] PHP Warning:  Invalid argument supplied for foreach() in /home/shadmin/public_html/directories/9700/members/banner/add.php on line 112
+[31-Jan-2013 22:45:57] PHP Warning:  Invalid argument supplied for foreach() in /home/shadmin/public_html/directories/9700/members/banner/add.php on line 112
+[31-Jan-2013 22:48:51] PHP Warning:  Invalid argument supplied for foreach() in /home/shadmin/public_html/directories/9700/members/banner/edit.php on line 139
+[11-Feb-2013 13:16:28] PHP Warning:  include(../layout/detectbackground.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/shadmin/public_html/directories/9700/members/layout/footer.php on line 79
+[11-Feb-2013 13:16:28] PHP Warning:  include(../layout/detectbackground.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/shadmin/public_html/directories/9700/members/layout/footer.php on line 79
+[11-Feb-2013 13:16:28] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../layout/detectbackground.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/shadmin/public_html/directories/9700/members/layout/footer.php on line 79

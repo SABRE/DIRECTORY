@@ -1,0 +1,7 @@
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)?$ ./index.php?url_full=%{REQUEST_URI} [E=edir_language:%{ENV:REDIRECT_edir_language},L]
+
+RedirectMatch (.*)\.inc$ /index.php

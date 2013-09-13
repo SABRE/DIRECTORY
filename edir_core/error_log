@@ -1,0 +1,2 @@
+[17-Apr-2013 04:35:07] PHP Fatal error:  Call to undefined function system_showText() in /home/shadmin/public_html/directories/edir_core/advertise.php on line 57
+[13-May-2013 23:05:40] PHP Fatal error:  Call to undefined function system_showText() in /home/shadmin/public_html/directories/edir_core/advertise.php on line 57

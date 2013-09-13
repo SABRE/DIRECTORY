@@ -1,0 +1,1 @@
+[26-Mar-2013 12:47:06] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/shadmin/public_html/directories/9700/classes/class_Mysql.php:304) in /home/shadmin/public_html/directories/9700/includes/code/blog.php on line 105

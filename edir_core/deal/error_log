@@ -1,0 +1,8 @@
+[18-Apr-2013 17:30:49] PHP Warning:  include(EDIRECTORY_ROOT/includes/code/featured_promotion.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/shadmin/public_html/directories/edir_core/deal/featured.php on line 29
+[18-Apr-2013 17:30:49] PHP Warning:  include(EDIRECTORY_ROOT/includes/code/featured_promotion.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/shadmin/public_html/directories/edir_core/deal/featured.php on line 29
+[18-Apr-2013 17:30:49] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'EDIRECTORY_ROOT/includes/code/featured_promotion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/shadmin/public_html/directories/edir_core/deal/featured.php on line 29
+[18-Apr-2013 18:35:03] PHP Fatal error:  Call to undefined function system_showText() in /home/shadmin/public_html/directories/edir_core/deal/detail_info.php on line 23
+[19-Apr-2013 02:32:50] PHP Fatal error:  Call to undefined function search_frontPromotionsearch() in /home/shadmin/public_html/directories/edir_core/deal/special_deal.php on line 27
+[19-Apr-2013 03:34:48] PHP Fatal error:  Call to undefined function sess_validateSessionItens() in /home/shadmin/public_html/directories/edir_core/deal/searchresults.php on line 28
+[19-Apr-2013 04:30:27] PHP Fatal error:  Call to a member function getNumber() on a non-object in /home/shadmin/public_html/directories/edir_core/deal/detail_listing.php on line 21
+[19-Apr-2013 05:33:11] PHP Fatal error:  Call to undefined function sess_validateSessionItens() in /home/shadmin/public_html/directories/edir_core/deal/searchresults280113.php on line 28
