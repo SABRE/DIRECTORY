@@ -1,0 +1,235 @@
+/**
+* eDirectory - Detail Page ( Modules )
+*
+* @package			layout
+* @filesource		detail.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 14, 2011
+*			
+*/
+
+.detail a:link,
+.detail a:visited,
+.detail a:active
+{color:#005F91; font-weight:bold;}
+
+.detail .button-send
+{margin:3px 0 0 -6px;}
+
+
+.detail .button-contact {background:none; border:none; margin:0 auto;}
+
+.detail .button-contact h2 {margin:0 auto; border: none !important; height:60px;}
+
+.detail .button-contact h2 a:link, .detail .button-contact h2 a:visited, .detail .button-contact h2 a:active  {color:white; background: url(images/iconography/contactbutton.png) 0px 0px; border:none; background-repeat:no-repeat; width:192px; height:43px; margin:0 auto; padding:17px 0 0 8px; text-align:left; font-size:14px;}			
+
+.detail .button-contact h2 a:hover {background:url(images/iconography/contactbutton.png) 0 -60px;}			
+
+.contact-form .button-contact {background:none; border:none; margin:0 auto;}
+
+.contact-form  .button-contact h2 {margin:0 auto; border: none !important; height:60px;width: 200px;}
+
+.contact-form .button-contact h2 a:link, .detail .button-contact h2 a:visited, .detail .button-contact h2 a:active  {color:white; background:url(images/iconography/contactbutton.png) 0 0; border:none; background-repeat:no-repeat; width:192px; height:41px; margin:0 auto; padding: 19px 0 0 8px; text-align:left;font-size: 16px;font-weight: bold;}			
+
+.contact-form  .button-contact h2 a:hover {background:url(images/iconography/contactbutton.png) 0 -60px;}
+
+
+/** Detail > share bar */
+
+.share
+{ background:#D5DDE4; border-bottom: 1px solid black !important; border-top: 1px solid black !important; height: 25px; padding: 7px 5px 0 5px; position: relative; width: 698px;}
+	
+	.share ul li
+	{ color:#818D97; display:block; float:left; font-size: 12px; line-height:20px; padding: 0 4px; text-transform:uppercase; font-weight: bold;}
+
+		.share ul li img
+		{width:20px;}
+
+	.share .share-social
+	{float:left; margin:-3px 0 0 0;}
+	
+		.share .share-social li
+		{padding:3px 0 0 10px;}
+
+
+/** Detail > pricing */
+.detail .category-price
+{font-size:25px; font-weight:bold;}
+
+.detail .category-price strong
+{font-weight:normal;}
+
+.detail .content-box p
+{font-size:16px; line-height:1.24;}
+
+
+.detail .event-when
+{font-size:18px; font-weight:bold; line-height:20px;}
+.detail .event-when strong
+{font-weight:normal;}
+
+.detail .event-time
+{font-size:18px; font-weight:bold; line-height:20px;}
+.detail .event-time strong
+{font-weight:normal;}
+
+/** Detail > Gallery */
+
+.detail .gallery .caption
+{text-align:center;}
+
+.detail .gallery .caption a:link, .detail .gallery .caption a:visited, .detail .gallery .caption a:active
+{font-weight:bold;}
+
+		
+/** Detail > items > titles */
+
+.detail h1
+{ color:#061826; }
+
+.detail h2
+{ font-size: 14px; margin-bottom:6px; margin-top:0; padding:10px 0 0 0;}
+
+/* Content misc > Category List */
+
+.list-category
+{ padding:0 15px 10px 0; }
+
+	.list-category li, .list-category-blog li
+	{ background-image:url(images/iconography/bullet-category.gif); background-repeat:no-repeat; }
+	
+	.list-category-blog li
+	{ background-position:0 center; line-height:20px; padding:4px 4px 4px 10px; }
+	
+		.list-category li.level-1, .list-category-blog li.level-1
+		{ background-position: 2px center; padding: 0 0 0 12px; margin:3px 0 0 0;}
+		
+		.list-category li.level-2, .list-category-blog li.level-2
+		{ background-position: 17px center; padding: 0 0 0 27px; }
+		
+		.list-category li.level-3, .list-category-blog li.level-3
+		{ background-position: 27px center; padding: 0 0 0 37px;}
+		
+		.list-category li.level-4, .list-category-blog li.level-4
+		{ background-position:37px center; padding:0 0 0 47px; }
+		
+		.list-category li.level-5, .list-category-blog li.level-5
+		{ background-position:47px center; padding:0 0 0 57px; }
+
+
+
+.detail .list-category
+{font-weight:bold;}
+
+.list-category li a:link,
+.list-category li a:visited,
+.list-category li a:active
+{ color:#004276; font-size:13px !important}
+
+/** Detail > items > info */
+
+
+
+
+
+.detail address
+{ color:#62707B; }
+	
+.detail strong
+{ color:#061826; }
+
+		.claim a:link, .claim a:visited, .claim a:active
+	{background-repeat:no-repeat; padding: 23px 0 0 12px; color:white !important; font-weight:bold; font-size:20px; width:188px; height: 37px; background: url(images/iconography/claimbutton.png) 0 0px; display:block; margin:0 auto;}
+
+	.claim a:hover
+	{background-repeat:no-repeat; padding: 23px 0 0 12px; color:white !important; font-weight:bold; font-size:20px; width:188px; height: 37px; background: url(images/iconography/claimbutton.png) 0 -60px; display:block; margin:0 auto;}
+
+/** Detail > Detail Deal differences > deal tag */
+	
+	.detail .deal .deal-tag
+	{ background:url(images/iconography/icon-tag-detail-deal.png) no-repeat 0 0; }
+		
+		.detail .deal .deal-tag .discount
+		{ color:#081C2A; }
+		
+	.detail .deal .deal-tag-sold-out
+	{ background:url(images/iconography/icon-tag-detail-deal-sold-out.png) no-repeat 0 0; }
+		
+/** Detail > Detail Deal differences > image */
+	
+	.detail .deal .image .no-link
+	{ border-color:#83939F !important; }
+	
+/** Detail > Detail Deal differences > info */
+
+	.detail .deal .info
+	{ background:#E7E8E8; }
+	
+/** Detail > Detail Deal differences > info > counter */
+
+	.detail .deal .counter
+	{ background:#D3D7D9; border-bottom:1px solid #B9BABA; }
+			
+		.detail .deal .counter .countdown_section span
+		{ color:#061826; }
+		
+		.detail .deal .counter .countdown_section strong
+		{ color:#62707B; }
+			
+/** Detail > Detail Deal differences > info > actions */
+
+	.detail .deal .action
+	{ border-top:1px solid #F5F6F6; }
+	
+	.detail .deal .action p
+	{ font-size:14px;}
+		
+/** Detail > Detail Deal differences > info > actions > buttons */
+
+	.detail .deal .button
+	{ background:none; }
+		
+/* Content misc > Buttons > Button redeem */
+
+	.detail .deal .button-redeem h2
+	{ border:1px solid #273F53 !important; }
+	
+		.detail .deal .button-redeem h2 a:link, .detail .deal .button-redeem h2 a:visited, .detail .deal .button-redeem h2 a:active
+		{ background:url(images/structure/bg-button-action-contact.gif) repeat-x 0 0; border:1px solid #8CA0B2; }
+		
+			.detail .deal .button-redeem h2 a:hover
+			{ border-color:#C6CED4; }
+
+/** Detail > Content > Video */
+
+.detail .videocontainer
+{float:right; margin:0 0 15px 15px;}
+		
+			
+/** Sidebar > google map definitions */
+
+.sidebar .map
+{ border:1px solid #CCC; }
+
+.sidebar .map-info-view img
+{ border:3px solid #D0D5D8; }
+
+/** Featured > featured listing */
+		
+	.sidebar .featured-listing .featured-item address
+	{ color:#62707B; }
+	
+	.sidebar .featured-listing .featured-item strong
+	{ color:#061826; }
+
+/** Sidebar > featured reviews */
+
+.sidebar h2 .rate-it
+{ color:#FF510C; }
+
+.sidebar .rate-it-first:link, .sidebar .rate-it-first:visited, .sidebar .rate-it-first:active
+{ background: url(images/iconography/firstreviewbutton.png) 0 0; border: none; width: 185px; height: 38px; display: block; color: white !important; padding: 22px 0 0 15px; font-weight: bold; font-size: large; background-repeat: no-repeat; margin: 0 0 0 0; text-align:left;}
+.sidebar .rate-it-first:hover
+{ background: url(images/iconography/firstreviewbutton.png) 0 -60px;}

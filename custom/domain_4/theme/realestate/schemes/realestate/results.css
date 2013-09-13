@@ -1,0 +1,135 @@
+/**
+* eDirectory - Result Pages ( Modules )
+*
+* @package			layout
+* @filesource		results.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			April, 17, 2012
+*			
+*/
+		
+/** Browse by Category */
+
+.browse-category
+{ background:#EAEAEB; border-top:1px solid #B6BEC5; }
+	
+	.browse-category li span
+	{ color:#636363; }
+		
+		.browse-category li ul li a:link, .browse-category li ul li a:visited, .browse-category li ul li a:active
+		{ color:#111; }
+		
+			.browse-category li ul li span
+			{ color:#636363; }
+				
+/** Results Info */	
+
+.search-info,
+.content h2.search-info
+{ background:none !important; border: none; color:#636363; padding: 0; }
+
+	.search-info strong
+	{ color:#111; }
+	
+/** Summary > share */
+
+	.summary .share
+	{ background:#DBDBDB; border-bottom:1px solid #FFF; }
+		
+		.summary .share ul li, .summary .share-social li
+		{ color:#898989; }
+		
+			.summary .share ul li a, .summary .share ul li a:visited, .summary .share-social li a, .summary .share-social li a:visited
+			{ color:#636363; }
+				
+/** Summary > structure */
+	
+	.summary .full
+	{ border-bottom:1px solid #D6D6D6; }
+	
+/** Summary > items > title */
+	
+	.summary .title h3
+	{ color:#0072BC; }
+		
+		.summary .title h3 a.map-link:link, .summary .title h3 a.map-link:visited, .summary .title h3 a.map-link:active
+		{ color:#0072BC; }
+	
+/** Summary > items > rate */
+		
+	.summary .rate a, .summary .rate span
+	{ color:#FFF; }
+	
+		.summary .rate p a
+		{ color:#EC008C; }
+				
+	.summary .review
+	{ background:url(images/structure/bg-results-review.png) repeat-x 0 0; }
+	
+	.summary-modules .review
+	{ background:none; }
+		
+		.summary-modules .rate a, .summary-modules .rate span
+		{ color:#636363; }
+
+/** Summary > items > info */
+		
+	.summary .info
+	{ background:url(images/structure/bg-split-summary.gif) repeat-y 0 0; }
+	
+		.summary .full .info
+		{ background:none; }
+		
+		.summary .info address
+		{ color:#636363; }
+		
+		.summary .info strong
+		{ color:#636363;}
+		
+			.summary .info .claim a:link, .summary .info .claim a:visited, .summary .info .claim a:active
+			{ color:#EC008C; }
+	
+	.summary p
+	{ color:#898989; }
+	
+/** Summary > Summary Deal differences */
+
+.summary-deal
+{ background:none; border-bottom:1px solid #D6D6D6; }
+	
+	.summary-deal .tag
+	{ background:url(images/iconography/icon-tag-results.png) no-repeat 0 0; }
+	
+		.summary-deal .tag .deal-tag
+		{ color:#FFF; }
+		
+		.summary-deal .deal-tag-sold-out
+		{ background:url(images/iconography/icon-tag-special-sold-out.png) no-repeat 0 0 !important; }
+		
+		.summary-deal .tag .deal-discount
+		{ color:#FFF; }
+	
+/** Summary Backlink */
+
+	.summary-backlink .backlink-content
+	{ background:#FFF; }
+	
+		.summary-backlink .title h3 a:link, .summary-backlink .title h3 a:visited, .summary-backlink .title h3 a:active,
+		.summary-backlink .title h3 a.map-link:link, .summary-backlink .title h3 a.map-link:visited, .summary-backlink .title h3 a.map-link:active
+		{ color:#EC008C; }
+		
+/** Sidebar > google map definitions */
+
+.sidebar .map
+{ border:1px solid #CCC; }
+
+/** Summary Shadow */
+
+.summary-shadow
+{ background:url(images/structure/bg-image-border-results-shadow.png) no-repeat 0 bottom; }
+
+	.summary-shadow div.image
+	{ background:url(images/structure/bg-image-border-results.png) no-repeat 0 0; }
+	

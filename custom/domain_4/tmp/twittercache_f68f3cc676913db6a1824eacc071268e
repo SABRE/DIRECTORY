@@ -1,0 +1,1196 @@
+s:58832:"<?xml version="1.0" encoding="UTF-8"?>
+<statuses type="array">
+  <status>
+    <created_at>Wed Mar 27 19:51:00 +0000 2013</created_at>
+    <id>317000823446065152</id>
+    <text>http://t.co/UGQnNLWBfv</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Wed Mar 27 19:50:24 +0000 2013</created_at>
+    <id>317000673667461120</id>
+    <text>http://t.co/fmSTSTNjge</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Wed Mar 27 19:06:19 +0000 2013</created_at>
+    <id>316989579943112705</id>
+    <text>Have A Look at The March 22, 2013 Advertisers! 
+The current issue will be on the website soon.... http://t.co/nkB0yboEAE</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Wed Mar 27 15:17:36 +0000 2013</created_at>
+    <id>316932019923873793</id>
+    <text>WEDNESDAY PHOTO TRIVIA!
+Who is the fella from the 1940's? http://t.co/ViBtdSTSa6</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 25 17:42:17 +0000 2013</created_at>
+    <id>316243653397983232</id>
+    <text>GAME TIME! GAME TIME! GAME TIME!
+Grab your pencils and take a break with this Speedhorse Crossword Puzzle...... http://t.co/k0kbHQSHFm</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 25 14:51:35 +0000 2013</created_at>
+    <id>316200695462252545</id>
+    <text>MONDAY MORNING TRIVIA TIME!!!!
+Who is this stallion form the late 60's? http://t.co/tWTDdmeCfC</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Thu Mar 21 19:53:41 +0000 2013</created_at>
+    <id>314827170491019264</id>
+    <text>http://t.co/VeNYIvSrrx</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Thu Mar 21 19:30:52 +0000 2013</created_at>
+    <id>314821430346924032</id>
+    <text>http://t.co/CQ9tqEZQl9</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Thu Mar 21 17:03:19 +0000 2013</created_at>
+    <id>314784297657724929</id>
+    <text>It's Auction Time!  Get Those Bids In Folks!
+http://t.co/PjmLWk8vBs http://t.co/xfoLHhtXAx</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Tue Mar 19 18:39:26 +0000 2013</created_at>
+    <id>314083708581867520</id>
+    <text>http://t.co/CbggUkYE7T</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 18 18:23:46 +0000 2013</created_at>
+    <id>313717379991478272</id>
+    <text>The April 12th Million Dollar Sires Issue is coming up!
+The advertising deadline is April 1st! Don't miss out... http://t.co/azJPfOc3U2</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 18 15:15:45 +0000 2013</created_at>
+    <id>313670064727531520</id>
+    <text>MONDAY TRIVIA TIME!!!!
+Name this Multi-Stakes Winner from the 80's and for Bonus Points, name the jockey,... http://t.co/VKeMnDOQN7</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>1</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Fri Mar 15 19:01:56 +0000 2013</created_at>
+    <id>312639819455029248</id>
+    <text>cool picture of a Jumonville stallion http://t.co/YLtlLHW3CH</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>1</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Fri Mar 15 18:08:51 +0000 2013</created_at>
+    <id>312626459846008833</id>
+    <text>Something's cooking in the kitchen.... who is gonna share?! http://t.co/ZSA4fDbYJ8</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Fri Mar 15 15:47:00 +0000 2013</created_at>
+    <id>312590765761126401</id>
+    <text>FRIDAY TRIVIA TIME
+Who is this fella? http://t.co/knJDpXgoEN</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Fri Mar 15 15:45:44 +0000 2013</created_at>
+    <id>312590444158676993</id>
+    <text>Friday Trivia Time!
+Who is this fella? http://t.co/XSWXRe22kd</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 11 21:20:44 +0000 2013</created_at>
+    <id>311225201549516800</id>
+    <text>Only ONE WEEK LEFT to reserve your space in the March Barrel Issue!  We wouldn't want you to miss this... http://t.co/syDCzSJGMw</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 11 19:31:11 +0000 2013</created_at>
+    <id>311197630296358913</id>
+    <text>Leann, Nancy and Mark hard at work on the next issue of Speedhorse! http://t.co/NfrrAxBx3v</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>1</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 11 16:36:54 +0000 2013</created_at>
+    <id>311153771994558465</id>
+    <text>The March 8, 2013 issue of Speedhorse is ready to view at 
+ http://t.co/2KyuWVCt0C
+
+Enjoy :-) http://t.co/zm0UamlGUI</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+  <status>
+    <created_at>Mon Mar 11 15:47:47 +0000 2013</created_at>
+    <id>311141409623248896</id>
+    <text>Thought you might enjoy this racing legend! http://t.co/5kUUKF2Itq</text>
+    <source>&lt;a href=&quot;http://www.facebook.com/twitter&quot; rel=&quot;nofollow&quot;&gt;Facebook&lt;/a&gt;</source>
+    <truncated>false</truncated>
+    <in_reply_to_status_id></in_reply_to_status_id>
+    <in_reply_to_user_id></in_reply_to_user_id>
+    <in_reply_to_screen_name></in_reply_to_screen_name>
+    <possibly_sensitive>false</possibly_sensitive>
+    <user>
+      <id>175142715</id>
+      <name>SPEEDHORSE</name>
+      <screen_name>speedhorsemag</screen_name>
+      <location>Norman, Oklahoma</location>
+      <profile_image_url>http://a0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url>
+      <profile_image_url_https>https://si0.twimg.com/profile_images/2151037001/speedhorse_weblink_art_normal.JPG</profile_image_url_https>
+      <url>http://speedhorse.com</url>
+      <description>SPEEDHORSE is the winning connection around the globe in the Quarter Horse Racing Industry
+ 
+</description>
+      <protected>false</protected>
+      <followers_count>64</followers_count>
+      <profile_background_color>022330</profile_background_color>
+      <profile_text_color>333333</profile_text_color>
+      <profile_link_color>0084B4</profile_link_color>
+      <profile_sidebar_fill_color>C0DFEC</profile_sidebar_fill_color>
+      <profile_sidebar_border_color>A8C7F7</profile_sidebar_border_color>
+      <friends_count>19</friends_count>
+      <created_at>Thu Aug 05 19:06:44 +0000 2010</created_at>
+      <favourites_count>0</favourites_count>
+      <utc_offset>-21600</utc_offset>
+      <time_zone>Central Time (US &amp; Canada)</time_zone>
+      <profile_background_image_url>http://a0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url>
+      <profile_background_image_url_https>https://si0.twimg.com/profile_background_images/531202618/twitter.jpg</profile_background_image_url_https>
+      <profile_background_tile>false</profile_background_tile>
+      <profile_use_background_image>true</profile_use_background_image>
+      <geo_enabled>true</geo_enabled>
+      <verified>false</verified>
+      <statuses_count>467</statuses_count>
+      <lang>en</lang>
+      <contributors_enabled>false</contributors_enabled>
+      <is_translator>false</is_translator>
+      <listed_count>0</listed_count>
+      <default_profile>false</default_profile>
+      <default_profile_image>false</default_profile_image>
+      <following></following>
+      <follow_request_sent></follow_request_sent>
+      <notifications></notifications>
+    </user>
+    <geo/>
+    <coordinates/>
+    <place/>
+    <contributors/>
+    <retweet_count>0</retweet_count>
+    <favorite_count>0</favorite_count>
+    <favorited>false</favorited>
+    <retweeted>false</retweeted>
+  </status>
+</statuses>
+";

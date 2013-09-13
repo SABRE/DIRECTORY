@@ -1,0 +1,15 @@
+<?
+	header("Content-Type: text/csv; charset=UTF-8", TRUE);
+
+	echo "Account Username,Account Password,Account Contact First Name,Account Contact Last Name,Account Contact Company,Account Contact Address,Account Contact Address2,Account Contact Country,Account Contact State,Account Contact City,Account Contact Postal Code,Account Contact Phone,Account Contact Fax,Account Contact Email,Account Contact URL,Legacy ID,Event ID,Event Title,Event Email,Event URL,Event Address,Event Location Name,Event Contact Name,Event Start Date,Event End Date,Event Start Time,Start Time Mode,Event End Time,End Time Mode,Event Country,Event Country Abbreviation,Event Region,Event Region Abbreviation,Event State,Event State Abbreviation,Event City,Event City Abbreviation,Event Neighborhood,Event Neighborhood Abbreviation,Event Postal Code,Event Phone,Event Short Description,Event Long Description,Event Keywords,Updated Date,Event Renewal Date,Event Status,Event Level,Event Category 1,Event Category 2,Event Category 3,Event Category 4,Event Category 5\n";
+	echo ",,,,,,,,,,,,,,,,,Mile High Futurity,,,,Arapahoe Park,,8/19/2012,8/19/2012,,,,,United States,USA,,,,CO,,,,,,,400,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Cherry Creek Futurity,,,,Arapahoe Park,,6/17/2012,6/17/2012,,,,,United States,USA,,,,CO,,,,,,,330,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Firecracker Futurity,,,,Delta Downs,,7/7/2012,7/7/2012,,,,,United States,USA,,,,LA,,,,,,,350,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Delta Championship Challenge,,,,Delta Downs,,,,,,,,United States,USA,,,,LA,,,,,,,440,3U,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Develop A Plan Stakes,,,,Delta Downs,,,,,,,,United States,USA,,,,LA,,,,,,,350,3U,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Lee Berwick Memorial Louisiana Bred Futurity,,,,Delta Downs,,7/14/2012,7/14/2012,,,,,United States,USA,,,,LA,,,,,,,350,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Delta Downs Louisiana Breeders' Derby,,,,Delta Downs,,,,,,,,United States,USA,,,,LA,,,,,,,400,3yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Louisiana Breeders' Laddie Futurity,,,,Delta Downs,,5/26/2012,5/26/2012,,,,,United States,USA,,,,LA,,,,,,,330,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Louisiana Breeders' Lassie Futurity,,,,Delta Downs,,5/26/2012,5/26/2012,,,,,United States,USA,,,,LA,,,,,,,330,2yo,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+	echo ",,,,,,,,,,,,,,,,,Louisiana Classic ,,,,Delta Downs,,7/14/2012,7/14/2012,,,,,United States,USA,,,,LA,,,,,,,440,3U,Races || Futurity ,7/3/2012,1/1/2014,active,diamond,Quarter Horse Races,,,,\n";
+?>

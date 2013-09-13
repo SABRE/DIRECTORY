@@ -1,0 +1,71 @@
+/**
+* eDirectory - Home Page ( Modules )
+*
+* @package			layout
+* @filesource		front.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			April, 17, 2012
+*			
+*/
+
+/** Front Misc > Structure */
+
+.content h2
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; border: none; }
+
+/** Featured > General Featured style */
+
+.featured .featured-item
+{ border-bottom:1px solid #EEE; min-height: 10px;}
+		
+/** Featured > featured reviews */
+
+.featured-review .featured-item
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; }
+	
+/** Featured > featured article */
+
+.featured-article .featured-item-special
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; min-height: 10px; }
+	
+/** Featured > featured deals */
+	
+	.featured-deal .featured-item-special .no-image
+	{ border:10px solid #FFF; }			
+				
+/** Special Deal */
+			
+.special-deal
+{ border:1px solid #CCC; }
+
+.special-deal-border
+{ border:10px solid #FFF; }
+
+	.special-deal .right
+	{ background:#FFF; border-left:1px solid #EDEDED; }
+
+	.special-deal h2
+	{ color:#EC008C; }
+	
+		.special-deal h2 a:link, .special-deal h2 a:visited, .special-deal h2 a:active
+		{ color:#EC008C; }
+			
+			.special-deal .right .button-featured a, .special-deal .right .button-featured a:visited, .special-deal .right .button-featured a:active 
+			{ color:#EC008C !important; }
+	
+		.special-deal .left .deal-tag
+		{ background:url(images/iconography/icon-tag-special-deal.png) no-repeat 0 0; }
+		
+		.special-deal .left .deal-tag-sold-out
+		{ background:url(images/iconography/icon-tag-special-deal-sold-out.png) no-repeat 0 0 !important; }
+		
+			.special-deal .left .price
+			{ color:#FFF; }
+			
+			.special-deal .left .discount
+			{ color:#FFF; }		
+			
+.special-deal-shadow
+{ background:url(images/structure/bg-deal-big-shadow.png) no-repeat 0 bottom; }

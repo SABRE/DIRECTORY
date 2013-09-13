@@ -1,0 +1,15 @@
+<?
+	header("Content-Type: text/csv; charset=UTF-8", TRUE);
+
+	echo "Listing Title,Listing Address,Listing City,Listing State Abbreviation,Listing Country,Listing Country Abbreviation,Listing Phone,Listing URL,Listing Postal Code,Listing Renewal Date,Listing Status,Listing Category 1,Listing Category 2,Listing Category 3,Listing Category 4,Listing Category 5,Listing Keywords\n";
+	echo "Silks Restaurant,1 Remington Pl,Oklahoma City,OK,United States,USA,(405) 425-3280,http://remingtonpark.com/dining/silks_restaurant,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Sonic Drive-In,2801 NE 50th St,Oklahoma City,OK,United States,USA,(405) 424-5266,http://www.sonicdrivein.com/,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "SUBWAY,5745 N Martin Luther King Ave,Oklahoma City,OK,United States,USA,(405) 604-9890,http://www.subway.com/,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Pizza Factory,5745 N Martin Luther King Ave,Oklahoma City,OK,United States,USA,(405) 424-0736,http://www.pizzafactoryinc.com,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "McDonald's,5815 N Martin Luther King Ave,Oklahoma City,OK,United States,USA,(405) 424-1141,http://www.mcdonalds.com,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Sonic Drive-In,6101 N Martin Luther King Ave,Oklahoma City,OK,United States,USA,(405) 427-5700,http://www.sonicdrivein.com/,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Adairs Inc,6205 N Bryant Ave,Oklahoma City,OK,United States,USA,(405) 478-2515,http://henryhudsonspub.com,73121,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "National Cowboy & Western Heritage Museum,1700 NE 63rd St,Oklahoma City,OK,United States,USA,(405) 478-2250,http://www.nationalcowboymuseum.org,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Dining On Persimmon Hill,1700 NE 63rd St,Oklahoma City,OK,United States,USA,(405) 478-2250,http://www.yellowpages.com/oklahoma-city-ok/mip/dining-on-persimmon-hill-451331599?lid=451331599,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+	echo "Haunted House Restaurant,7101 Miramar Blvd,Oklahoma City,OK,United States,USA,(405) 478-1417,http://www.hauntedhouserestaurant.com,73111,4/1/2013,active,OK->TRAVEL->Restaurants,OK->Remmington Park->Restaurants,,,,Oklahoma || Remmington Park || Restaurants || Food\n";
+?>
