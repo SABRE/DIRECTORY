@@ -1,0 +1,40 @@
+/**
+* eDirectory - Content Custom ( Dynamic content )
+*
+* @package			layout
+* @filesource		content_custom.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 06, 2011
+*			
+*/
+
+/** Typography */
+
+.content-custom h1, 
+.content-custom h2, 
+.content-custom h3, 
+.content-custom h4, 
+.content-custom h5, 
+.content-custom h6
+{ color:#FFF; }
+
+.content-custom p
+{ color:#FFF; }
+
+.modal-content .content-custom p,  
+.modal-content .content-custom h1, 
+.modal-content .content-custom h2, 
+.modal-content .content-custom h3, 
+.modal-content .content-custom h4, 
+.modal-content .content-custom h5, 
+.modal-content .content-custom h6
+{ color:#A06724; }
+
+/** List */
+
+.content-custom ul, 
+.content-custom ol, 
+.content-custom
+{ color:#000; }

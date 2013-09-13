@@ -1,0 +1,231 @@
+/**
+* eDirectory - Detail Page ( Modules )
+*
+* @package			layout
+* @filesource		detail.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			April, 17, 2012
+*			
+*/
+
+/** Detail > share bar */
+
+.share
+{ background:url(images/structure/bg-content-share.gif) repeat-x 0 0; }
+	
+	.share ul li
+	{ color:#636363; }
+	
+		.share ul li a, .share ul li a:visited, .share ul li a:active
+		{ color:#636363; }
+	
+/** Detail > items > titles */
+
+.detail h1
+{ color:#0072BC; }
+
+p.long
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; }
+
+/** Detail > items > info */
+
+	.detail address
+	{ color:#636363; }
+		
+	.detail strong
+	{ color:#636363; }
+	
+		.detail .claim a:link, .detail .claim a:visited, .detail .claim a:active
+		{ color:#EC008C; }
+					
+/** Detail > items > image */
+
+.detail .image-shadow
+{ background:url(images/structure/bg-detail-shadow.png) no-repeat 0 bottom; }
+
+	.detail .image-shadow p.image-caption
+	{ background:url(images/structure/bg-black-opacity-65.png) repeat 0 0; color:#898989; }
+
+.detail .image, .detail .video
+{ background:url(images/structure/bg-image-border.png) no-repeat 0 0 #E7E8E8; }
+	
+/** Detail > items > gallery */
+	
+	.detail .gallery ul li
+	{ background:url(images/structure/bg-detail-small-shadow.png) no-repeat 0 bottom; }
+	
+	.detail .gallery ul li a img
+	{ border:5px solid #FFF; }
+	
+	.detail .detail-tabs li
+	{ background:#FFF; bottom:-1px; border:1px solid #E5E5E5; } 
+	
+	.detail .detail-tabs a, .detail .detail-tabs a:visited, .detail .detail-tabs a:active
+	{ color:#636363; }
+	
+	.detail .detail-tabs .tab_media_active a, .detail .detail-tabs .tab_media_active a:visited, .detail .detail-tabs .tab_media_active a:active
+	{ color:#0072BC; }
+		
+/** Detail > Detail Deal differences > deal tag */
+	
+	.detail .deal .deal-tag
+	{ background:url(images/iconography/icon-tag-detail-deal.png) no-repeat 0 0; }
+		
+		.detail .deal .deal-tag .price
+		{ color:#FFF; }
+		
+		.detail .deal .deal-tag .discount
+		{ color:#FFF; }
+		
+	.detail .deal .deal-tag-sold-out
+	{ background:url(images/iconography/icon-tag-detail-deal-sold-out.png) no-repeat 0 0; }
+		
+/** Detail > Detail Deal differences > image */
+	
+	.detail .deal .image .no-link
+	{ border-color:#83939F !important; }
+	
+/** Detail > Detail Deal differences > info */
+
+	.detail .deal .info
+	{ background:#E7E8E8; }
+	
+/** Detail > Detail Deal differences > info > counter */
+
+	.detail .deal .counter
+	{ background:#D3D7D9; border-bottom:1px solid #B9BABA; }
+			
+			.detail .deal .counter .countdown_section span
+			{ color:#111; }
+			
+			.detail .deal .counter .countdown_section strong
+			{ color:#636363; }
+			
+	.detail .deal .deal-tag-sold-out
+	{ background:url(images/iconography/icon-tag-detail-deal-sold-out.png) no-repeat 0 0 !important; }
+	
+		.detail .deal .deal-tag-sold-out .price
+		{ color:#FFF; }
+			
+/** Detail > Detail Deal differences > info > actions */
+
+	.detail .deal .action
+	{ border-top:1px solid #F5F6F6; }
+		
+/** Detail > Detail Deal differences > info > actions > buttons */
+
+	.detail .deal .button
+	{ background:none; }
+		
+/* Content misc > Buttons > Button redeem */
+
+	.detail .deal .button-redeem h2
+	{ border:1px solid #273F53 !important; }
+	
+		.detail .deal .button-redeem h2 a:link, .detail .deal .button-redeem h2 a:visited, .detail .deal .button-redeem h2 a:active
+		{ background:url(images/structure/bg-button-action-contact.gif) repeat-x 0 0; border:1px solid #8CA0B2; }
+		
+			.detail .deal .button-redeem h2 a:hover
+			{ border-color:#C6CED4; }
+		
+/** Detail > items > gallery > no-image */
+		
+	.detail .gallery .no-image
+	{ border:5px solid #FFF; }
+		
+/** Detail > items > extra fields */
+
+	.detail .extra-fields p
+	{ background:url(images/iconography/bullet-location.gif) no-repeat 10px 10px; }
+		
+/* Content misc > Buttons > Button redeem */
+
+	.detail .deal .button-redeem h2
+	{ border:1px solid #273F53 !important; }
+	
+		.detail .deal .button-redeem h2 a:link, .detail .deal .button-redeem h2 a:visited, .detail .deal .button-redeem h2 a:active
+		{ background:url(images/structure/bg-button-action-contact.gif) repeat-x 0 0; border:1px solid #8CA0B2; }
+		
+			.detail .deal .button-redeem h2 a:hover
+			{ border-color:#C6CED4; }
+
+/** Sidebar > google map definitions */
+
+.sidebar .map-info-view img
+{ border:3px solid #D0D5D8; }
+
+/** Featured > featured listing */
+		
+	.sidebar .featured-listing .featured-item address
+	{ color:#636363; }
+	
+	.sidebar .featured-listing .featured-item strong
+	{ color:#636363; }
+	
+.featured-deal .no-image
+{ border:10px solid #FFF; }
+
+/** Sidebar > featured reviews */
+
+.sidebar h2
+{ color:#EC008C; }
+
+.sidebar h2 .view-more:link, .sidebar h2 .view-more:visited, .sidebar h2 .view-more:active
+{ background:none; color:#EC008C; }
+
+.sidebar h2 .rate-it
+{ color:#EC008C; }
+
+.sidebar .rate-it-first:link, .sidebar .rate-it-first:visited, .sidebar .rate-it-first:active
+{ background:#F4E4C4; color:#EC008C; }
+
+/** Detail Sidebar Info */
+
+.detail-info-shadow
+{ background:url(images/structure/bg-detail-info-shadow.png) no-repeat 0 bottom; }
+
+	.detail-border
+	{ background:#EEE; border:1px solid #E5E5E5; }
+	
+		.detail-info
+		{ background:url(images/structure/bg-detail-info.gif) repeat-y 0 0; }
+		
+			.detail-info p
+			{ color:#636363; }
+			
+			.detail-info .action p
+			{ color:#636363; }
+				
+			.detail-info .counter
+			{ background:url(images/structure/bg-detail-split.gif) repeat-x 0 bottom; }
+			
+			.detail-info .counter-title
+			{ color:#0072BC; }
+				
+				.detail-info .counter li.countdown_section span
+				{ color:#636363; }
+				
+				.detail-info .counter li.countdown_section strong
+				{ color:#636363; }
+			
+/** Deal Detail */
+
+.detail-deal h2 
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; border: none; color:#0072BC; }
+
+.sidebar .featured-listing .featured-item .title p a
+{ color:#111; }
+
+.sidebar .featured-listing .featured-item p a, .sidebar .featured-listing .featured-item p a:active, .sidebar .featured-listing .featured-item a:visited
+{ color:#0072BC; }
+
+.sidebar .featured-deal .left
+{ background:url(images/iconography/icon-tag-results.png) repeat-x 0 top; }
+
+	.sidebar .featured-deal .image
+	{ border:1px solid #CCC; }
+
+	.sidebar .featured-deal .image img
+	{ border:10px solid #FFF; }

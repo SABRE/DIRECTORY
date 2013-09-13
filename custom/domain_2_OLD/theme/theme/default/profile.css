@@ -1,0 +1,165 @@
+/**
+* eDirectory - Profile Pages
+*
+* @package			layout
+* @filesource		profile.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 17, 2011
+*			
+*/
+
+/** Detail Misc > Structure */
+
+.sidebar
+{ float:left; padding:30px 28px 30px 0; }
+
+.content
+{ padding:30px 0 !important; width:710px; }
+
+.content-profile
+{ padding:0 0 15px 0; }
+
+	.content .content-profile h2.standardSubTitle
+	{ font-size: 12px; line-height: 30px; padding: 0 0 5px; }
+
+.content-main .no-image
+{ background:#FFF url(images/iconography/icon-user-thumb.gif) no-repeat 0 0; height:50px; width:50px; }
+
+.filter .left
+{ width:190px; }
+
+/** Items Summary */
+
+.item-summary
+{ }
+
+	.item-summary h3
+	{ font-size:12px; font-weight:bold; }
+	
+	.item-summary .delete
+	{ background: none repeat scroll 0 0 #000000; color: #FFFFFF; display: block; float: right; font-size: 9px; line-height: 25px; padding: 0 10px; text-transform: uppercase;}
+	
+		.item-summary .delete
+		{ -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; }
+		
+		.item-summary .delete:hover
+		{ color: #597F9B; text-decoration: none; }
+
+
+/** Featured Items */
+
+/** Featured > featured reviews */
+
+.featured-review .featured-item
+{ clear:left; float:none; margin: 0 0 15px; padding: 0 0 15px; width:auto; }
+
+	.featured-review .featured-item h3
+	{ padding: 4px 0 2px; text-transform: capitalize }
+
+/** Tab navigation */
+
+.profile-tabs
+{ height:30px; overflow:hidden; padding:5px 0 0 15px; }
+
+	.profile-tabs li
+	{ background:#D7DBDF; border-top:2px solid #F1F1F1; display:block; float:left; height:28px; margin:0 1px 0 0; padding:0 20px; }
+	
+		.profile-tabs li a:link,
+		.profile-tabs li a:visited,
+		.profile-tabs li a:active
+		{ color:#081C2A; display:block; font-size:11px; line-height:28px; text-align:center; }
+		
+		.profile-tabs li.active
+		{ background:#081C2A; border-top:2px solid #FF4800; }
+		
+			.profile-tabs li.active a:link,
+			.profile-tabs li.active a:visited,
+			.profile-tabs li.active a:active
+			{ color:#FFF; }
+			
+/** Members Table */
+
+table.standard-table
+{ width:100%; }
+
+table.standard-table th,
+table.standard-table td
+{ color:#62707B; }
+
+table.standard-table .httpInput
+{ width:388px !important; }
+
+p.standardButton
+{ float:left; margin:0 10px 0 0; }
+
+.btAdd
+{ height:auto; margin-bottom:30px; overflow:hidden; padding:15px 0 0 257px; }
+			
+/** Sidebar */
+
+/* User info > misc */
+
+.user-info p
+{ margin:0 0 6px 0; }
+
+.user-info img
+{ border:3px solid #D0D5D8; float:left; margin:0 10px 10px 0; }
+
+.user-info .edit
+{ font-style:italic; }
+
+.user-info p span
+{ color:#666; display:block; font-style:italic; }
+
+/* User info > No image */
+
+.user-info .no-image
+{ background:#E7E8E8 url(images/iconography/icon-user.gif) no-repeat center; float:left; height:100px; margin:0 10px 10px 0; width:100px; }
+
+/* User info > Twitter differences */ 
+
+.user-info .last-tweets .loading
+{ background:url(images/iconography/icon-loading-content.gif) no-repeat center; }
+
+.user-info .last-tweets ul li a
+{ color:#999; }
+
+.user-info .last-tweets ul li span a
+{ color:#004276; }
+
+
+/* Members Structure > Table Top Blue */
+
+table.standard-tableTOPBLUE 
+{ background:#FBFBFB; clear:left; color:#6A6A6A; font-size:11px; font-weight:normal; margin:10px 0 0 0; width:100%; }
+
+	table.standard-tableTOPBLUE th 
+	{ background-color:#5C6B77; color:#FFF; font-size:12px; font-weight:bold; line-height:30px; padding:0 5px 0 5px; text-align:left; white-space:nowrap; }
+
+	table.standard-tableTOPBLUE td 
+	{ border:1px solid #E4E4E7; border-left:none !important; color:#4D4D4D; font-size:11px; padding:4px; text-align:left; }
+	
+		table.standard-tableTOPBLUE td table 
+		{ margin:0 auto 0 auto; }
+	
+		table.standard-tableTOPBLUE td table td,
+		table.standard-tableTOPBLUE td table th 
+		{ border:0; }
+		
+		table.standard-tableTOPBLUE td a img
+		{ border: none; }
+	
+	table.standard-tableTOPBLUE td.tableTOPBLUECheck 
+	{ background:#FFF; border:0; padding:0; text-align:left; }
+	
+		table.standard-tableTOPBLUE td.tableTOPBLUECheck table 
+		{ margin:0; }
+	
+		table.standard-tableTOPBLUE td.tableTOPBLUECheck * 
+		{ background:#FFF; border:0; text-align:left; width:auto; }
+		
+		table.standard-tableTOPBLUE td.tableTOPBLUECheck a,
+		table.standard-tableTOPBLUE td.tableTOPBLUECheck a:visited 
+		{ cursor:pointer; }

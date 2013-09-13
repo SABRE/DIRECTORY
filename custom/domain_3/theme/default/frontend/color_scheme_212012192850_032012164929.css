@@ -1,0 +1,664 @@
+
+/**
+* eDirectory - Color Scheme
+*
+* @package			design
+* @filesource		colorscheme.php
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2011, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 1, 2011
+*			
+*/
+
+/* STRUCTURE
+
+/**
+* Global Classes
+*/
+	
+/** Global classes > No Link */
+.no-link
+{ border-color:#E6E8E9 !important; }
+
+/**
+* Global Definitions
+*/
+a:link,
+a:visited,
+a:active
+{ color:#004276; }
+
+.list li a:link, .list li a:visited, .list li a:active { color:#004276; font-size:11px; }
+	
+a img, .no-image
+{ border-color:#E6E8E9; }
+
+	a:hover img, .no-image:hover
+	{ border-color:#004276 !important; }
+    
+/**
+* Typography
+*/
+*
+{ font-family:Arial, Helvetica, Sans-serif; }
+
+h1, h2, h3, h4, h5
+{ color:#5C6B77 !important; border-bottom-color:#E6E8E9; }
+
+.detail h2, .level-detail .sidebar h2
+{ color:#5C6B77 !important; border-bottom-color:#E6E8E9; }
+
+
+
+/** Typography > Paragraph */
+p, 
+.label-field-account, 
+.browse-category li span,
+.standardForm td.TimageFile,
+.standardForm td.TaddImagetxt,
+.standardForm th.wrapcaption,
+.level .preview-desc
+{ color:#5C6B77; }
+
+/*Marker Spa Exception*/
+
+/** Typography > H2 */
+h2 .view-more:link,
+h2 .view-more:visited,
+h2 .view-more:active
+{ color:#004276; }
+
+/*Marker Spa Exception*/
+
+/*Marker Spa Exception4*/
+
+#slider h2,
+#slider h2 a:link,
+#slider h2 a:visited,
+#slider h2 a:active
+{ color:#5C6B77; }
+
+/*Marker Spa Exception4*/
+	
+/**************************************************************************************************\
+* Forms > Contact form
+* 
+* Form style for contact informations
+*/
+
+.contact-form
+{ background:#E7E7E7; border-top-color:#E6E8E9; }
+
+	.contact-form h2
+	{ border-bottom:none; }
+
+/** Contact form > form > form tags */
+.contact-form .form div label
+{ color:#5C6B77; }
+
+/**
+* Body
+*/
+/*Marker Background*/
+
+body { background-color:#F1F1F1; }
+
+/*Marker Background*/
+
+body { background-image: ; }
+
+body { background-repeat: ; }
+
+body { background-position:   }
+
+/**************************************************************************************************\
+* User Navbar
+* 
+* User navbar located at the top, fixed.
+*/
+
+/*Marker UserNavbar*/
+
+#user-navbar { background:#83939F; box-shadow:-1px 0 1px #000; border-bottom:none; border-top:none; }
+
+/*Marker UserNavbar*/
+
+
+
+/**************************************************************************************************\
+* Header
+* 
+* Header contents, search, advanced search, banner and other elements.
+*/
+
+
+
+
+	#navbar li a:link,
+	#navbar li a:visited,
+	#navbar li a:active
+	{ color:#FFFFFF; }
+			
+		#navbar li a:hover,
+		#navbar .menuActived a:link,
+		#navbar .menuActived a:visited,
+		#navbar .menuActived a:active
+		{ color:#597F9B; }
+
+/**************************************************************************************************\
+* Button
+* 
+* Button properties
+*/
+
+#search input
+{ border-color:#E7E7E7; color:#888; }
+
+#search input:focus
+{ border-color:#004276; }
+
+/*Marker HappyTimes Exception*/
+
+.standardButton button, .content-faq .search button, .treeView .tableCategoriesBUTTONS button,
+button.input-button-form, .input-button-form button, .modal-content button
+{ background: #5C6B77 !important; }
+
+/*Marker HappyTimes Exception*/
+
+#search button:focus, #search button:hover, p.standardButton button:focus, 
+p.standardButton button:hover, .input-button-form button:focus, .input-button-form button:hover,
+input.input-button-form:hover, button.input-button-form:hover, .addImageForm:hover,
+.content-faq .search button:focus, .content-faq .search button:hover,
+table.standard-table td.treeView table.tableCategoriesADDED button:hover, .modal-content button:hover,
+.treeView .tableCategoriesBUTTONS button:hover
+{ color:#004276; }
+
+/**************************************************************************************************\
+* Advanced Search
+* 
+* Advanced Search properties
+*/
+#advanced-search
+{ background:url(images/structure/bg-black-opacity-70.png) repeat; }
+
+	#advanced-search,
+	#advanced-search h4,
+	#advanced-search p,
+	#advanced-search label,
+	#advanced-search div
+	{ color:#FFFFFF !important; }
+	
+
+/**************************************************************************************************\
+* Content Structure
+* 
+* Content structure elements
+*/
+
+
+.content-main
+{ background:#FFFFFF; }
+
+.content-main
+{ border-color:#E6E8E9; }
+
+/**************************************************************************************************\
+* Featured Items
+* 
+* Featured items style, structure and differences
+*/
+
+.featured-event .featured-item .date
+{ background:#E7E7E7; }
+
+	.featured-event .featured-item .date .calendar
+	{ background:#E6E8E9; }
+	
+	.featured-event .featured-item .date .calendar .month
+	{ background:#004276; }
+	
+	.featured-event .featured-item .date .calendar .day
+	{ color:#5C6B77; }
+
+.featured-item
+{ border-bottom-color:#E6E8E9 !important;}
+		
+/**************************************************************************************************\
+* Content Miscelaneous
+* 
+* Misc items with special style on the content
+*/		
+
+/* Content misc > share box */
+
+.share-box
+{ background:#E7E7E7; }
+
+.share-box ul li.close a:link,
+.share-box ul li.close a:visited,
+.share-box ul li.close a:active
+{ color:#004276; }
+
+/* Content misc > Buttons */
+
+.button
+{ background:#E7E7E7; }
+
+/*Marker Buttons*/
+
+/* Content misc > Buttons > Button profile */
+.button-profile h2
+{ border-color:#5C6B77; }
+
+	.button-profile h2 a:link,
+	.button-profile h2 a:visited,
+	.button-profile h2 a:active
+	{ background-color:#004276; background-image:none; border-color:#FFFFFF; }
+	
+		.button-profile h2 a:hover
+		{ background:#5C6B77; }
+		
+/* Content misc > Buttons > Button contact */
+.button-contact h2
+{ border-color:#5C6B77; }
+
+	.button-contact h2 a:link,
+	.button-contact h2 a:visited,
+	.button-contact h2 a:active
+	{ background-color:#5C6B77; background-image:none; border-color:#FFFFFF; }
+	
+		.button-contact h2 a:hover
+		{ background:#004276; }
+		
+/*Marker Buttons*/
+
+/** Content Misc > Default List */		
+.list li span
+{ color:inherit; }
+		
+/* Content misc > Browse by category */
+.browse-category li span,
+.browse-category li ul li span
+{ color:#5C6B77; }
+
+.browse-category li ul li a:link,
+.browse-category li ul li a:visited,
+.browse-category li ul li a:active
+{ color:#004276; }
+
+/* Content misc > Category List */
+.list-category li a:link,
+.list-category li a:visited,
+.list-category li a:active
+{ color:#004276; }
+
+/* Content misc > Pagination */
+
+.pagination
+{ background:#E7E7E7; border-top-color:#E6E8E9; }
+
+	.pagination li
+	{ color:inherit; }
+
+/* Content misc > Filter */
+.filter
+{ color:inherit; }
+
+.resultsMessage, .resultsMessage h1, .content .resultsMessage h2
+{ color:#5C6B77 !important; }
+
+/**************************************************************************************************\
+* Footer
+* 
+* Footer content, classes, styles.
+*/
+
+
+
+	#footer-wrapper p, #footer-wrapper li, #footer-wrapper h3, #footer-wrapper h5 { color:#62707B !important; }
+
+
+	
+	#footer-wrapper a:link,	#footer-wrapper a:visited, #footer-wrapper a:active	{ color:#597F9B !important; }
+	
+/**************************************************************************************************\
+* Advertisement
+* 
+* Advertisement classes for banners on Header, Content and Sidebar.
+*/
+	
+/** Advertisement > Header */
+#header .advertisement .info
+{ background:url(images/structure/bg-black-opacity-70.png) repeat; }
+
+	#header .advertisement .info *
+	{ color:#FFFFFF !important; }
+	
+/** Advertisement > Sponsored */
+.sponsored:hover
+{ border-color:#004276; }
+
+	.sponsored .url
+	{ color:#004276; }
+		
+/**************************************************************************************************\
+* Slider
+* 
+* Slider style ( check the structure on the .css file in the scripts folder )
+*/
+
+#slider .right
+{ background:#E7E7E7; }
+
+	#slider .right h2
+	{ border:none; }
+	
+
+/**************************************************************************************************\
+* Sidebar Differences
+* 
+* Differences for the items with special style on the sidebar
+*/
+.sidebar h2
+{ border-color:#E6E8E9; }
+
+/**************************************************************************************************\
+* Accordion
+* 
+* Accordion style for the Triggers, links and Titles
+*/
+
+#accordion li h3,
+#accordion li.active h3
+{ background-color:#E7E7E7; border-top-color:#E6E8E9; }
+
+/*Marker Spa Exception2*/
+
+	#accordion li h3 a:link,
+	#accordion li h3 a:visited,
+	#accordion li h3 a:active
+	{ color:#5C6B77; }
+	
+/*Marker Spa Exception2*/
+	
+/**************************************************************************************************\
+* Calendar
+* 
+* Calendar style
+*/
+.table-calendar
+{ background:#E7E7E7; }
+
+	.table-calendar .calendar-header 
+	{ background:#E7E7E7 url(images/structure/bg-black-opacity-15.png) repeat; border-bottom:none; }
+	
+/** FRONT **/
+	
+/**************************************************************************************************\
+* Special Deal
+* 
+* Special Deal items style and structure
+*/
+
+.special-deal .right
+{ background:#E7E7E7; }
+
+.special-deal h2
+{ border-bottom:none; }
+
+.special-deal .info
+{ background:none; display:block; float:none; padding:0 0 5px 0; }
+
+/** RESULTS **/
+
+/**************************************************************************************************\
+* Summary
+* 
+* Summary items style, structure and differences
+*/	
+
+
+
+.summary { border-color:#E6E8E9; }
+
+/** Summary > share */
+
+.summary .share
+{ background:#E7E7E7; border-bottom-color:#E6E8E9; }
+
+/** Summary > items > title */		
+.summary .title h3 a.map-link:link,
+.summary .title h3 a.map-link:visited,
+.summary .title h3 a.map-link:active
+{ color:#004276; }
+
+/** Summary > items > info */	
+.summary .info address
+{ color:#5C6B77; }
+
+/** Summary > items > deal */		
+
+.summary .deal h4
+{ background:#E7E7E7; }
+
+	.summary .deal h4 a:link,
+	.summary .deal h4 a:visited,
+	.summary .deal h4 a:active
+	{ color:#004276; }
+
+/**************************************************************************************************\
+* Summary Backlink
+* 
+* Summary item special style for Backlink
+*/
+
+.summary-backlink
+{ border-color:#5C6B77; }
+
+	.summary-backlink .share
+	{ background:#5C6B77; border-bottom-color:#5C6B77; border-top-color:#004276; }
+
+/** DETAIL **/
+
+/** Detail > Share Bar */
+
+.share
+{ background:#E7E7E7; border-bottom-color:#E6E8E9; border-top-color:#E6E8E9;  }
+
+/** Detail > Items > Info */
+.detail address
+{ color:#5C6B77; }
+
+/** Detail > Info **/
+
+.detail .deal .info
+{ background:#E7E7E7; }
+
+/** Detail > Info > Counter **/
+
+.detail .deal .counter
+{ background:#E7E7E7 url(images/structure/bg-black-opacity-15.png) repeat; border-bottom-color:#E6E8E9; }
+		
+	.detail .deal .counter .countdown_section span
+	{ color:#5C6B77; }
+	
+	.detail .deal .counter .countdown_section strong
+	{ color:#5C6B77; }
+
+/** DETAIL > DETAIL DEAL DIFFERENCES > IMAGE **/
+
+.detail .deal .image .no-link
+{ border-color:#E7E7E7 !important; }
+
+/**************************************************************************************************\
+* Sidebar
+* 
+* Sidebar structure and elements
+*/
+
+/** Featured Listing **/
+
+.sidebar .featured-listing .featured-item address
+{ clear:both; color:#5C6B77; }
+	
+/** BLOG **/	
+
+.summary { color:#5C6B77; }
+
+.summary .actions
+{ background:#E7E7E7; border-bottom-color:#004276; color:#5C6B77; }
+
+/**************************************************************************************************\
+* ADVERTISE **/
+
+/*Marker Tabs Advertise*/
+
+/* Tab navigation */
+
+.tabs li
+{ background:#E6E8E9; border-top-color:#E7E7E7; }
+
+	.tabs li a:link, .tabs li a:visited, .tabs li a:active
+	{ color:#004276; }
+
+.tabs li.active
+{ background:#5C6B77; border-top-color:#004276; }
+
+	.tabs li.active a:link, .tabs li.active a:visited, .tabs li.active a:active
+	{ color:#FFFFFF; }
+
+/*Marker Tabs Advertise*/
+
+/** Level > misc */
+.level .price
+{ color:#5C6B77; }
+
+/**************************************************************************************************\
+** Members **/
+
+.standard-tabletitle
+{ color:#5C6B77 !important; border-bottom-color:#E6E8E9; }
+
+.memberMenu ul li a, .memberMenu ul li a:visited
+{ color:#5C6B77 !important; }
+
+div.formFieldsLogin
+{ background:#E7E7E7 !important; }
+
+.content-faq .search input
+{ border-color:#E7E7E7 !important; }
+
+.content-faq .search input:focus
+{ border-color:#004276 !important;}
+
+.general-item a.sublink-front-navbar, 
+.general-item a.sublink-front-navbar:visited,
+.general-item a.sublink-front-navbar:active
+{ color:#004276 !important; }
+
+.tabs li.tabActived a, .tabs li.tabActived a:visited
+{ color:#5C6B77 !important; }
+
+table.levelTable th.levelTitle, table.levelTable td.levelTopdetail
+{ border-color:#5C6B77; }
+
+table.levelTable th.levelTitle, table.standard-tableTOPBLUE th
+{ background:#5C6B77; }
+
+table.levelTable td.levelTopdetail, table.levelTopdetail th
+{ background:#004276;}
+
+/**************************************************************************************************\
+** Profile **/
+
+/*Marker Tabs Profile*/
+
+.profile-tabs li
+{ background:#E6E8E9; border-top-color:#E7E7E7; }
+
+	.profile-tabs li a:link, .profile-tabs li a:visited, .profile-tabs li a:active
+	{ color:#004276; }
+
+.profile-tabs li.active
+{ background:#5C6B77; border-top-color:#004276; }
+
+	.profile-tabs li.active a:link, .profile-tabs li.active a:visited, .profile-tabs li.active a:active
+	{ color:#FFFFFF; }
+
+/*Marker Tabs Profile*/
+
+.standardSubTitle
+{ color:#5C6B77 !important; border-bottom-color:#E6E8E9; }
+
+/**************************************************************************************************\
+*** Members Sitemap **/
+
+.sitemapList li.standardSubTitle 
+{ border-bottom-color:#E6E8E9; }
+
+.sitemapList li.standardSubTitle a, .sitemapList li.standardSubTitle a:visited, .sitemapList li.standardSubTitle a:active
+{ color:#004276; }
+
+/**************************************************************************************************\
+** Member Menu **/
+
+.memberMenu h2
+{ border-color:#E6E8E9; }
+
+/*Marker Deal Tags*/
+.deal-tag
+{ background-image:url(http://testversion/custom/domain_1/theme_images/default_icon-tag.png) !important; }
+
+.featured-deal .featured-item-special .deal-tag
+{ background-image:url(http://testversion/custom/domain_1/theme_images/default_icon-tag.png) !important; }
+
+.special-deal .left .deal-tag
+{ background-image:url(http://testversion/custom/domain_1/theme_images/default_icon-tag-special-deal.png) !important; }
+
+.detail .deal .deal-tag
+{ background-image:url(http://testversion/custom/domain_1/theme_images/default_icon-tag-detail.png) !important; }
+
+.deal-discount
+{ background:url(http://testversion/custom/domain_1/theme_images/default_icon-tag-sub.png) !important; }
+
+/*Marker Deal Tags*/
+
+
+
+
+
+.featured-event .featured-item .date, .loginOptions, table.standard-table th, table.standard-table td,
+	div.formFieldsLogin label, div.formFieldsLogin span.automaticLogin, .summary
+	{ color:#5C6B77; }
+	
+/*Marker TB Exception*/	
+	
+#TB_window, .modal-content
+	{ color:#F1F1F1; } 
+	
+/*Marker TB Exception*/
+
+
+
+
+
+.button-call a, .button-call a:visited, .button-send a, .button-send a:visited
+	{ background-color:transparent; }
+    
+.categoryTreeview .categorySuccessMessage, .categoryTreeview .categoryErrorMessage,
+.treeView .categoryAdd, .treeView .categoryAdd:visited
+{ background:#<?=SCHEME_COLORCONTENTBACKGROUND?> !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+

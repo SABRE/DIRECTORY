@@ -1,0 +1,3 @@
+<?
+$edir_theme="default";
+?>

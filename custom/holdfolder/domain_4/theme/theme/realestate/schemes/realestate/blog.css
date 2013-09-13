@@ -1,0 +1,147 @@
+/**
+* eDirectory - Blog Module
+*
+* @package			layout
+* @filesource		blog.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			April, 17, 2012
+*			
+*/
+
+/** Blog Post Summary */
+
+.summary
+{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; color:#636363; }
+
+	.summary h2
+	{ background:none; }
+	
+		.summary h2 a:link, .summary h2 a:visited, .summary h2 a:active
+		{ color:#0072BC; } 
+		
+	.summary .image
+	{ background:url(images/structure/bg-deal-featured-shadow.png) no-repeat 0 bottom; }
+	
+		.summary .image a
+		{ border:1px solid #CCC; }
+	
+		.summary .image a img, .summary .no-image
+		{ border:10px solid #FFF !important; }
+		
+	.summary .actions
+	{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; color:#636363; }
+	
+		.summary .actions a:link, .summary .actions a:visited, .summary .actions a:active
+		{ color:#636363; }
+		
+		.summary .actions .right
+		{ color:#111; }
+	
+	.summary p, .summary li, .summary span
+	{ color:#636363; }
+	
+/** Blog Post Summary > Results info */
+
+.search-info
+{ background:none; }
+
+	.content h2.search-info
+	{ background:none; border: none; color:#636363; line-height: normal; }
+
+	.search-info strong
+	{ color:#111; }
+
+/** Detail > items > misc */
+	
+	.detail h1
+	{ color:#0072BC; }
+	
+	.detail h2
+	{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; border: none; color: #EC008C; }
+
+/** Detail > comments */
+
+	.detail .comment
+	{ border-top:1px solid #E6E8E9; }
+	
+		.detail .comment .image
+		{ background:none; }
+		
+		.detail .comment .no-image
+		{ background:#FFF url(images/iconography/icon-user-thumb.gif) no-repeat 0 0; }
+		
+			.detail .comment p a, .detail .comment p a:visited, .detail .comment p a:active
+			{ color:#0072BC; }
+		
+		.detail .comment .reply-comment:link, .detail .comment .reply-comment:visited, .detail .comment .reply-comment:active
+		{ color:#EC008C; }
+		
+		.detail .comment .reply
+		{ background:url(images/structure/bg-reply.gif) no-repeat left bottom; border-left:1px solid #C8CED2; }
+
+			.detail .comment .reply p
+			{ color:#898989; }
+	
+/** Detail > share bar */
+			
+.share
+{ background:url(images/structure/bg-content-share.gif) repeat-x 0 0; }
+	
+	.share ul li
+	{ color:#636363; }
+	
+		.share ul li a, .share ul li a:visited, .share ul li a:active
+		{ color:#636363; }
+
+/** Blog Post Detail / Contact Form */	
+
+.contact-form
+{ background:none; border-top:1px solid #E3E3E3; }
+
+	.contact-form h2
+	{ background:url(images/structure/bg-detail-desc.png) repeat-x 0 bottom; border: none;color:#EC008C;}
+
+/** Contact form > form > form tags */
+
+	.contact-form .form div .text, .contact-form .form div .textarea
+	{ border:1px solid #83919C; border-bottom-color:#B7C0C7; border-right-color:#B7C0C7; }
+	
+	.contact-form .form div label
+	{ color:#636363; }
+
+/** Contact form > form > captcha */
+			
+	.contact-form .form .captcha img
+	{ border:1px solid #B7C0C7; }
+		
+/** Sidebar > List Blog */
+
+.sidebar .list-blog .year
+{ background:url(images/iconography/bullet-location.gif) no-repeat 10px 50%; }
+	
+/** Sidebar > Blog Item */
+		
+	.sidebar .blog-item .item h3 a, .sidebar .blog-item .item h3 a:visited, .sidebar .blog-item .item h3 a:active
+	{ color:#111; }
+		
+		.sidebar .blog-item-members .no-image
+		{ background:#FFF url(images/iconography/icon-user-thumb.gif) no-repeat center center; }
+		
+		.sidebar .blog-item .item a, .sidebar .blog-item .item a:visited, .sidebar .blog-item .item a:active
+		{ color:#0072BC; }
+		
+/** Blog Detail Image */
+
+.detail .image-shadow
+{ background:url(images/structure/bg-detail-shadow.png) no-repeat 0 bottom; }
+
+	.detail .image-shadow p.image-caption
+	{ background:url(images/structure/bg-opacity-white.png) repeat 0 0; color:#111; }
+	
+		.detail .image-shadow p.image-caption strong
+		{ color:#636363; }
+
+.detail .image, .detail .video
+{ background:url(images/structure/bg-image-border.png) no-repeat 0 0; }

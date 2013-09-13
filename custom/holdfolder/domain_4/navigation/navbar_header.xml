@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<header>
+<item>index</item>
+<li_id>navbar0</li_id>
+<link>http://theduncandirectory.com/</link>
+<area>1</area>
+<name_1>Home</name_1>
+<name_2>Home</name_2>
+<name_5>Home</name_5>
+<name_>Unlabeled</name_>
+<item>listing</item>
+<li_id>navbar1</li_id>
+<link>http://theduncandirectory.com/listing/</link>
+<area>1</area>
+<name_1>Listings</name_1>
+<name_2>Empresas</name_2>
+<name_5>Listings</name_5>
+<name_>Unlabeled</name_>
+<item>event</item>
+<li_id>navbar2</li_id>
+<link>http://theduncandirectory.com/event/</link>
+<area>1</area>
+<name_1>Events</name_1>
+<name_2>Eventos</name_2>
+<name_5>Eventi</name_5>
+<name_>Unlabeled</name_>
+<item>deal</item>
+<li_id>navbar5</li_id>
+<link>http://theduncandirectory.com/deal/</link>
+<area>1</area>
+<name_1>Deals</name_1>
+<name_2>Ofertas</name_2>
+<name_5>Offerte</name_5>
+<name_>Unlabeled</name_>
+<item>advertise</item>
+<li_id>navbar7</li_id>
+<link>http://theduncandirectory.com/advertise.php</link>
+<area>1</area>
+<name_1>Advertise With Us</name_1>
+<name_2>Anuncie Aqui</name_2>
+<name_5>Fai pubblicità con noi</name_5>
+<name_>Unlabeled</name_>
+<item>contactus</item>
+<li_id>navbar8</li_id>
+<link>http://theduncandirectory.com/contactus.php</link>
+<area>1</area>
+<name_1>Contact Us</name_1>
+<name_2>Contato</name_2>
+<name_5>Contattaci</name_5>
+<name_>Unlabeled</name_>
+<name_1>chamber info</name_1>
+<name_2>Novo item</name_2>
+<name_5>Nuovo elemento</name_5>
+<name_>Unlabeled</name_>
+<link>http://theduncandirectory.com/content/chamber-welcome.html</link>
+<item>1</item>
+<area>1</area>
+</header>

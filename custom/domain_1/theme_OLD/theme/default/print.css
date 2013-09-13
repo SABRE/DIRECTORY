@@ -1,0 +1,91 @@
+/**
+* eDirectory - Print ( All pages )
+*
+* This style sheet describes the structure and the main components
+* of all Modules Landing Pages
+*
+* @package			print
+* @filesource		print.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 17, 2011
+*			
+*/
+
+/** Hidden items > structure */
+
+#user-navbar,
+#header-wrapper,
+#navbar-wrapper,
+#footer-wrapper,
+.advertisement
+{ display:none; }
+
+/** Hidden items > listing detail */
+
+button,
+.button,
+.share,
+.contact-form,
+iframe
+{ display:none; }
+
+/** Hidden items > event detail */
+
+.calendar
+{ display:none; }
+
+/** Hidden items > system messages */
+
+.informationMessage,
+.errorMessage,
+.successMessage,
+.warningMessage
+{ display:none; }
+
+/** Deal print */
+
+.deal
+{ border:1px dashed #CCC; padding:20px; }
+
+.deal h1
+{ font-size:30px; margin:0; padding:0 0 10px 0; text-align:left; width:100%; }
+
+/** Detail print */
+
+.top-button
+{ display: none; }
+
+.pnt-0
+{ display: none; }
+
+
+/* Deal */
+
+h2, p, a:link, a:visited, a:active, .detail address, 
+.list-category li a:link, .list-category li a:visited, .list-category li a:active,
+.sidebar .rate-it-first:link, .sidebar .rate-it-first:visited, .sidebar .rate-it-first:active,
+.sidebar h2 .rate-it, .deal-tag, .deal-discount,
+.featured-deal .featured-item-special .deal-tag,
+.featured-deal .featured-item-special .deal-discount
+{ color: #000; }
+
+.no-link, a img, .no-image
+{ border: 3px solid #ddd; }
+
+.detail .comment .reply-comment:link, 
+.detail .comment .reply-comment:visited, 
+.detail .comment .reply-comment:active
+{ display: none; }
+
+.content-ext
+{ width: 980px; }
+
+.button-call a, .button-call a:visited,
+.button-send a, .button-send a:visited
+{ padding: 2px 3px; }
+
+.content-main
+{ border-top: 1px solid #E3E3E3; }
+
