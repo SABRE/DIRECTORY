@@ -1,0 +1,101 @@
+/**
+* eDirectory - Print ( All pages )
+*
+* This style sheet describes the structure and the main components
+* of all Modules Landing Pages
+*
+* @package			print
+* @filesource		print.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			October, 17, 2011
+*			
+*/
+
+/** Hidden items > structure */
+
+#user-navbar,
+#header-wrapper,
+#navbar-wrapper,
+#footer-wrapper,
+.advertisement
+{ display:none; }
+
+/** Hidden items > listing detail */
+
+button,
+.button,
+.share,
+.contact-form,
+iframe
+{ display:none; }
+
+/** Hidden items > event detail */
+
+.calendar
+{ display:none; }
+
+/** Hidden items > system messages */
+
+.informationMessage,
+.errorMessage,
+.successMessage,
+.warningMessage
+{ display:none; }
+
+/** Deal print */
+
+.deal
+{ border:1px dashed #CCC; padding:20px; }
+
+.deal h1
+{ font-size:30px; margin:0; padding:0 0 10px 0; text-align:left; width:100%; }
+
+
+
+/** Detail print */
+
+.top-button
+{ display: none; }
+
+.pnt-0
+{ display: none; }
+
+
+/* Deal */
+
+.detail h1, h2, p, a:link, a:visited, a:active, .detail address, 
+.list-category li a:link, .list-category li a:visited, .list-category li a:active,
+.sidebar .rate-it-first:link, .sidebar .rate-it-first:visited, .sidebar .rate-it-first:active,
+.sidebar h2 .rate-it, .deal-tag, .deal-discount,
+.detail .claim a:link, .detail .claim a:visited, .detail .claim a:active
+{ color: #000; }
+
+.featured-deal .featured-item-special .deal-tag,
+.featured-deal .featured-item-special .deal-discount
+{ color: #000; padding: 0; }
+
+.detail .image,
+.detail .gallery ul li a img
+{ border: 1px solid #ddd; padding: 2px; }
+
+.contact-form,
+.detail-tabs
+{ display: none; }
+
+.content-ext
+{ width: 980px; }
+
+.button-call a, .button-call a:visited,
+.button-send a, .button-send a:visited
+{ padding: 2px 3px; }
+
+.content-main
+{ border-top: 1px solid #E3E3E3; }
+
+.sidebar .featured-deal .left
+{ background: #fff; right: 1px; top: 20px; width: 81px; }
+
+.button-back-fix
+{ position: absolute; right: 10px; top: 70px; }

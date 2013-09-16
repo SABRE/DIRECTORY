@@ -1,0 +1,830 @@
+/**
+* eDirectory - Result Pages ( Modules )
+*
+* @package			layout
+* @filesource		results.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.1
+* @since			October, 17, 2011
+*			
+*/
+
+/** Results Misc > Structure */
+
+.content
+{ padding-top:0; }
+
+.content-top .featured
+{ padding:0; }
+		
+/** Browse by Category */
+
+.browse-category
+{ background:#EAEAEB; border-top:none !important; height:1%; margin-top:20px; overflow:hidden; padding:15px; }
+
+	.browse-category li
+	{ float:left; padding:0 30px 8px 0; width:196px; }
+	
+		.browse-category li span
+		{ color:#62707B; font-style:italic; }
+		
+		.browse-category li.last
+		{ padding-right:0; }
+		
+	.browse-category li ul
+	{ padding:4px 0 4px 10px; }
+		
+		.browse-category li ul li
+		{ padding:1px 0; width:190px; }
+			
+			.browse-category li ul li a:link,
+			.browse-category li ul li a:visited,
+			.browse-category li ul li a:active
+			{ color:#447DAA; }
+			
+				.browse-category li ul li span
+				{ color:#536979; }
+				
+/** Results Info */	
+
+.search-info
+{ border-bottom:none; font-size:12px; margin-bottom:0; padding:10px 0 0 0; text-transform:none; }
+
+	.search-info strong
+	{ color:#061826; font-size:14px; font-weight:normal; }
+	
+/** Summary */	
+
+.summary
+{ /*background:#F4F5F6;*/ border:1px solid #BCCDDB; height:1%; margin:0 0 30px 0; overflow:visible; position:relative; }
+
+/** Summary > share */
+
+	.summary .share
+	{ background:#D5DDE4; border-bottom:1px solid #648094; height:20px; overflow:hidden; padding:0 10px 0 0; }
+		
+		.summary .share .share-actions
+		{ float:right; }
+		
+		.summary .share-social
+		{ float:left; }
+		
+			.summary .share-social li
+			{ padding:0 0 0 10px; }
+		
+		.summary .share ul li,
+		.summary .share-social li
+		{ color:#818D97; display:block; float:left; font-size:10px; line-height:20px; padding:0 2px; text-transform:uppercase; }
+		
+			.summary .share ul li.icon,
+			.summary .share-social li.icon
+			{ padding:2px 2px 2px 1px; }
+		
+			.summary .share ul li img,
+			.summary .share-social li img
+			{ border:none; }
+				
+/** Summary > structure */
+	
+	/*.summary .left,
+	.summary .right,
+	.summary .full
+	{ padding:15px; }
+	*/
+	
+	.summary .full
+	{ padding:15px; }
+	.summary .left
+	{ 
+		padding-right:0;
+		/*width:395px;*/
+		height:250px;
+		background-color:#f3f3f3;
+		width:250px;
+	}
+	
+	/*.summary .right
+	{ padding-left:0; width:240px; }*/
+	.summary .right {
+    
+    height: 250px;
+    padding-left: 0;
+    width: 435px;
+	}
+	
+	.summary .full
+	{ height:1%; overflow:hidden; width:646px; }
+	
+/** Summary > items > title */
+
+	.summary .title
+	{ padding:0 0 8px 0; }
+	
+		.summary .title h3
+		{ font-size:14px; font-weight:bold; padding-top:0; }
+		
+			.summary .title .map
+			{ display:inline !important; }
+			
+				.summary .title h3 a.map-link:link,
+				.summary .title h3 a.map-link:visited,
+				.summary .title h3 a.map-link:active
+				{ color:#004276; }
+				
+					.summary .title h3 a.map-link:hover
+					{ color:#FF510C; text-decoration:none; }
+					
+/** Summary > items > image */
+
+	.summary .image
+	{ 
+		float:left; 
+		margin:0 15px 0 0;
+		position: absolute;
+    	top: 20%;
+	 }
+	.summary .image img
+	{ 
+		height:140px;
+		width : 250px;
+	}
+	.summary .image img
+	{ 
+		height:140px;
+		width : 250px;
+	}
+	.summary .image a img
+	{ 
+		border:none;
+	}
+		
+/** Summary > items > rate */
+		
+.summary .rate
+{ 
+	clear:both; 
+	height:1%; 
+	overflow:hidden; 
+	padding:10px 0 0 0; 
+	/*width:158px; */
+        /*Edit on 1-07-2013
+	width:250px;*/
+}
+	
+.summary .rate .rate-stars
+{ height:1%; overflow:hidden; }
+.summary .rate .rate-stars img
+{ float:left; height:15px; margin:0 1px 0 0; width:15px; }
+.summary .rate img
+{ float:left; height:15px; margin:0 1px 0 0; width:15px; }
+		
+.summary .rate a
+{ 
+	font-size:12px;  
+	padding-left:5px; 
+	text-align:center;
+	line-height: 14px;
+}
+
+.summary .rate a number{/*color:#004276; */color:#186085 !important;}
+
+.summary .rate span
+{ 	
+	font-size:12px;  
+	padding-left:5px; 
+	text-align:center; 
+	line-height: 14px;
+}
+
+.summary .rate span number
+{ 
+	/*color:#004276; */
+	color:#186085 !important;
+}
+
+.summary .rate #review-link a
+{
+	color:#FF510C;
+	font-style:normal;
+	font-weight:bold;
+	float:none;
+}
+			.summary .rate p
+			{ clear:both; padding:2px 0 0 0; }
+		
+				.summary .rate p a
+				{ color:#FF510C; font-style:normal; font-weight:bold; float:none; }
+				
+/** Summary > items > check in */
+
+	.summary .check-in
+	{ border-top:1px solid #C4C9CC; margin:4px 0 0 0; padding:4px 0 0 0; }
+	
+		.summary .check-in a:link,
+		.summary .check-in a:visited,
+		.summary .check-in a:active
+		{ font-size:10px; font-style:italic; font-weight:bold; }
+		
+/** Summary > items > info */
+		
+	/*.summary .info
+	{ background:url(images/structure/bg-split-summary.gif) repeat-y 0 0; padding:0 0 0 15px; }
+	
+		.summary .full .info
+		{ background:none; }
+		
+		.summary .info address
+		{ color:#62707B; line-height:16px; padding:0 0 10px 0; }
+		
+			.summary .info address span
+			{ display:block; }
+		
+		.summary .info strong
+		{ color:#061826;}
+		
+		.summary .info .claim
+		{ padding:10px 0 0 0; }
+		
+			.summary .info .claim a:link,
+			.summary .info .claim a:visited,
+			.summary .info .claim a:active
+			{ color:#FF510C; font-weight:bold; }*/
+
+/** Summary > items > badges */
+			
+	.summary .badges
+	{ clear:both; height:1%; overflow:hidden; padding:10px 0 0 0; }
+	
+		.summary .badges img
+		{ float:left; margin:0 10px 0 0; }
+	
+			
+/** Summary > items > deal */
+				
+	/*.summary .deal
+	{ height:auto; margin:0 0 8px 0; overflow:hidden; width:240px; }
+	
+		.summary .deal h4
+		{ background:#EAEAEB; float:left; font-size:10px; font-weight:bold; height:24px; line-height:12px; padding:4px 4px 4px 6px; width:150px; }
+		
+			.summary .deal h4 a:link,
+			.summary .deal h4 a:visited,
+			.summary .deal h4 a:active
+			{ color:#061826; }*/
+		
+/** Summary > items > empty */
+
+
+  
+  
+* Summary > Summary Deal differences 
+
+.summary-deal
+{ background:none; border:none; border-bottom:1px solid #CDD4D9; height:1%; margin:0 0 15px 0; overflow:hidden; padding:0 0 15px 0; position:relative; }
+
+	.summary-deal:last-child
+	{ border-bottom:none; }
+
+	.summary-deal .left
+	{ height:auto; overflow:hidden; padding:0; width:240px; }
+	
+	.summary-deal .right
+	{ padding:0; width:423px; }
+	
+	.summary-deal .tag
+	{ float:left; padding-left:2px; width: 80px; }
+	
+	.summary-deal .image
+	{ margin:0; float:right; width:158px; }
+	
+	.summary-deal .share-social
+	{ float:right; padding:4px 4px 0 0; }
+	
+/** Summary Backlink */
+
+	.summary-backlink
+	{ background-color:#E4E6E9; border-color:#061826; }
+	
+		.summary-backlink .share
+		{ background-color:#061826; border-bottom-color:#000; border-top:3px solid #FF4800; padding:2px 2px 0 2px; }
+		
+			.summary-backlink .share a:link,
+			.summary-backlink .share a:visited,
+			.summary-backlink .share a:active
+			{ color:#FFF; }
+			
+			.summary-backlink .share img
+			{ -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; }
+
+/** Sidebar */
+
+/** Sidebar > google map definitions */
+
+.sidebar .map
+{ border:1px solid #CCC; height:288px; /*margin:0 0 15px 0; width:233px;*/margin-bottom: 5px; }
+
+.sidebar .map-control
+{ 	height:22px;
+	/*text-align:right;
+	*/background: none repeat scroll 0 0 #EAEAEB; 
+}
+
+	.sidebar .map-control a
+	{ display: block;
+    font-size: 15px;
+    padding: 2px 0 0 10px; }
+	
+/** Level Preview */
+
+.level-preview .summary .no-link, .level-preview .level-summary .summary .rate-stars img
+{ border:0 none !important; }
+	
+	
+/*******************************************Css Added for first Pattern*********************************/
+	.summary .empty
+	{ height:32px; margin:0 0 8px 0; }
+	
+	.summary .deal
+	{
+		height:167px;
+		border-bottom: 1px solid #BFBFBF;
+	}
+	
+	.summary .deal-details
+	{
+		height:85px;
+	}
+	.summary .deal-details-info
+	{
+		width:290px;
+		float:left;
+		height:75px;
+		padding:5px;
+	}
+	.summary .deal-title
+	{
+		font-size: 20px;
+    	font-weight: bold;
+	}
+	.summary .deal-title a
+	{
+		color:#186085 !important;
+	}
+	.summary .deal-url a
+	{
+		
+		/*color:#929292;*/
+		color:#818181;
+		font-weight:bold;
+		font-size: 12px;
+	}
+	.summary .deal-review
+	{
+	}
+	
+	.summary .images-link
+	{
+		height:51px;
+		width:130px;
+		float:right;
+	}
+	.summary .images-link-upper
+	{
+		height:27px;
+		width:130px;
+		float:right;
+		padding-bottom:2px;
+	}
+	.summary #social-links
+	{
+		
+		float:right;
+		padding-right: 7px;
+    	padding-top: 6px;
+	}
+	
+	.summary #social-links a img
+	{
+		border:none;
+	}
+	
+	.summary .images-link-upper #favourites a 
+	{
+		background:url(schemes/default/images/newImages/fav.png) no-repeat;
+		float:right;
+    	height: 28px;
+    	width: 28px;
+	}
+	.summary .images-link-upper #favourites a:hover
+	{
+		background:url(schemes/default/images/newImages/fav_h.png) no-repeat;
+		float:right;
+    	height: 28px;
+   		width: 28px;
+	}
+	.summary .images-link-upper #forward a 
+	{
+		background:url(schemes/default/images/newImages/forward.png) no-repeat;
+		float:right;
+    	height: 28px;
+    	width: 28px;
+	}
+	.summary .images-link-upper #forward a:hover
+	{
+		background:url(schemes/default/images/newImages/forward_h.png) no-repeat;
+		float:right;
+    	height: 28px;
+   		width: 28px;
+	}
+	.summary .images-link-upper #sendPhone a 
+	{
+		background:url(schemes/default/images/newImages/phone.png) no-repeat;
+		float:right;
+    	height: 28px;
+    	width: 28px;
+	}
+	.summary .images-link-upper #sendPhone a:hover
+	{
+		background:url(schemes/default/images/newImages/phone_h.png) no-repeat;
+		float:right;
+    	height: 28px;
+   		width: 28px;
+	}
+	
+	.summary .images-link-lower
+	{
+		height:22px;
+		/*float:right;*/
+		position:absolute;
+		right:-4px;
+		top:36px;
+		z-index:999;
+	}
+	.summary .images-link-lower a img
+	{
+		border:none;
+	}
+	.summary .deal-description
+	{
+		color: #4F4F4F;
+	    font-size: 13px;
+	    height: 67px;
+	    overflow-y: hidden;
+	    padding-left: 5px;
+	}
+	
+	.summary .deal-info
+	{
+		height:82px;
+		
+	}
+	.summary .address-map
+	{
+		width:219px;
+		border-right: 1px solid #BFBFBF;
+		height:72px;
+		float:left;
+		padding: 5px;
+	}
+	.summary .address-info
+	{
+            height: 40px;
+	   /*  overflow: hidden; */
+	    padding-bottom: 5px;
+	}
+        .summary .deal-info address 
+	{
+	    color: #5E5E5E;
+	    font-style: normal;
+	    font-weight: bold;
+            line-height:15px;
+	}
+	
+	.summary .deal-info address span 
+	{
+            font-size: 13px !important;
+	}
+        
+	.summary #map-info-detail
+	{
+		font-size: 14px;
+                /*padding-left: 5px;*/
+                /*Css add on 26-07-2013*/
+                float:left;
+                width:113px;
+        }
+        .summary #map-info-detail a
+	{
+		color:#186085 !important;
+                /*Css add on 26-07-2013*/
+                float:right;
+                margin-top:2px;
+        }
+	.summary .contact-info
+	{
+		width:205px;
+		height:82px;
+		float:left;
+		font-weight:bolder;
+	}
+	.summary .contact-no
+	{
+		height:12px;
+                /*width:177px;*/
+                width:187px;
+		border-bottom: 1px solid #BFBFBF;
+		padding:14px;
+		float:left;
+		
+	}	
+	.summary .contact-email
+	{
+		float: left;
+    	height: 13px;
+    	padding: 14px;
+    	width: 177px;
+	}
+	
+	.summary #contact-no-detail
+	{
+		font-size: 14px;
+    	padding-left: 10px;
+	}
+	.summary #contact-no-detail a
+	{
+		color:#186085 !important;
+	}
+	.summary #contact-email-detail
+	{
+		font-size: 14px;
+    	padding-left: 10px;
+    }
+    .summary #contact-email-detail a
+	{
+		color:#186085 !important;
+    }
+/****************************Css Ended for first pattern***************************/
+ 
+ /*******************************************Css Added for Second Pattern*********************************/
+ .deal-box
+ {
+ 	height:82px;
+ 	border: 1px solid #BFBFBF;
+    margin: 0 0 5px;
+    width: 706px;
+ }
+ .deal-box .first-box
+ { 
+ 	border-right: 1px solid #BFBFBF;
+    float: left;
+    height: 62px;
+    padding: 10px;
+    width: 229px;
+ }
+.deal-box .deal-title
+{
+	font-size: 15px;
+    font-weight: bold;
+}
+
+.deal-box .deal-review
+{
+}
+
+.deal-box .rate {
+    clear: both;
+    height: 1%;
+    overflow: hidden;
+    padding: 3px 0 0;
+    /* width: 90px; */
+}
+
+
+.deal-box .rate .rate-stars {
+    height: 1%;
+    overflow: hidden;
+}
+
+
+.deal-box .rate img {
+    float: left;
+    height: 13px;
+    margin: 0 1px 0 0;
+    width: 13px;
+}
+
+
+.deal-box .rate a, .deal-box .rate span {
+    font-size: 12px;
+    padding-left: 5px;
+    text-align: center;
+	line-height: 14px;
+}
+
+.deal-box .rate #review-link a
+{
+	color:#FF510C;
+	font-style:normal;
+	font-weight:bold;
+	float:none;
+}
+
+.deal-box .rate p {
+    clear: both;
+    padding: 2px 0 0;
+}
+
+.deal-box .rate p a {
+    color: #FF510C;
+    font-size: 11px;
+}
+.deal-box .rate p a {
+    color: #FF510C;
+    float: none;
+    font-style: normal;
+    font-weight: bold;
+}
+	
+.deal-box .second-box
+ {
+    border-right: 1px solid #BFBFBF;
+    float: left;
+    height: 67px;
+    padding: 5px 10px 10px;
+    width: 229px;
+ }
+ 
+ .deal-box .address-info {
+    padding-bottom: 5px;
+}
+
+.deal-box .second-box address {
+    color: #4F4F4F;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.deal-box .second-box address span {
+    display: block;
+    font-size: 12px;
+}
+
+.deal-box #map-info-detail {
+    font-size: 15px;
+    padding-left: 10px;
+}
+ 
+
+ .deal-box .image-links
+ {
+ 	border-bottom: 1px solid #BFBFBF;
+   	float: left;
+    height: 13px;
+    padding: 14px 14px 14px 5px;
+    width: 186px;
+}
+.deal-box .image-links #social-links
+{
+	float: left;
+    /*padding-left: 5px;
+    */padding-right: 5px;	
+}
+.deal-box .image-links #favourites
+{
+	float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.deal-box .image-links #favourites a 
+{
+	background:url(schemes/default/images/newImages/fav.png) no-repeat;
+	float: left;
+   	height: 28px;
+   	width: 28px;
+   	margin-top: -6px;
+   	margin-left: -14px;
+}
+.deal-box .image-links #favourites a:hover
+{
+	background:url(schemes/default/images/newImages/fav_h.png) no-repeat;
+	float: left;
+   	height: 28px;
+  	width: 28px;
+  	margin-top: -6px;
+  	margin-left: -14px;
+}
+.deal-box .image-links #forward
+{
+	float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.deal-box .image-links #forward a 
+{
+	background:url(schemes/default/images/newImages/forward.png) no-repeat;
+	float: left;
+   	height: 28px;
+   	width: 28px;
+   	margin-top: -6px;
+   	margin-left: -18px;
+}
+.deal-box .image-links #forward a:hover
+{
+	background:url(schemes/default/images/newImages/forward_h.png) no-repeat;
+	float: left;
+   	height: 28px;
+  	width: 28px;
+  	margin-top: -6px;
+  	margin-left: -15px;
+}
+
+.deal-box .image-links #sendPhone a 
+{
+	background:url(schemes/default/images/newImages/phone.png) no-repeat;
+	float: left;
+   	height: 28px;
+   	width: 28px;
+   	margin-top: -6px;
+   	margin-left: -8px;
+}
+.deal-box .image-links #sendPhone a:hover
+{
+	background:url(schemes/default/images/newImages/phone_h.png) no-repeat;
+	float: left;
+   	height: 28px;
+  	width: 28px;
+  	margin-top: -6px;
+  	margin-left: -8px;
+}
+.deal-box .image-links a img
+{
+	border:none;
+}
+.deal-box .contact-no
+{
+	float: left;
+    height: 13px;
+    padding: 14px;
+    width: 177px;
+}
+.deal-box #contact-no-detail 
+{
+    color: #4F4F4F;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+/****************************Css Ended for second pattern***************************/
+ .deal-box .third-box
+ {
+ 	width:201px;
+ 	float:left;
+ 	height:82px;
+ } 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+.summary .right {
+    height: 250px;
+    padding-left: 0;
+    width: 444px;
+}
+
+
+
+
+.side-bar #search_form_filter .letters-div ul.letters li {
+    float: left;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 0 3px;
+    width: 100%;
+}
+.side-bar #search_form_filter .letters-div ul.letters{
+width:100%;
+float:left;
+}
+
+
+.side-bar #search_form_filter .letters-div {
+    padding: 10px;
+    width: 219px;
+}
+
+
+
+/****************************************************************************************************/
+/**************************************27-06-2013***************************************************/
+
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.image-links .claim-class{
+float: right;
+margin: -24px -17px 0 0;
+}
+}

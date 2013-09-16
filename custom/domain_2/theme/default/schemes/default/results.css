@@ -1,0 +1,144 @@
+
+.browse-category
+{ }
+	
+	.browse-category li span
+	{ color:#62707B; }
+		
+		.browse-category li ul li a:link, .browse-category li ul li a:visited, .browse-category li ul li a:active
+		{ color:#447DAA; }
+		
+			.browse-category li ul li span
+			{ color:#536979; }
+			
+/** Results Info */	
+
+	.search-info
+	{ border-bottom:none; font-size:12px; margin-bottom:0; padding:10px 0 0 0; text-transform:none; font-weight:normal; }
+
+	.search-info strong
+	{ 
+		color: #262626;
+    	font-size: 24px;
+    	font-weight: bold;
+	}
+	
+/** Summary */	
+
+.summary
+{ /*border:1px solid #BCCDDB; */ 
+	border: 1px solid #BFBFBF !important;
+	margin:0 0 5px 0;
+	height:250px;
+	width:706px;
+}
+
+/** Summary > share */
+
+	.summary .share
+	{ background:#D5DDE4; border-bottom:1px solid #648094; }
+		
+		.summary .share ul li, .summary .share-social li
+		{ color:#818D97; font-size:12px;}
+	
+/** Summary > items > title */
+			
+	.summary .title h3 a.map-link:link, .summary .title h3 a.map-link:visited, .summary .title h3 a.map-link:active
+	{ color:#004276; }
+	
+		.summary .title h3 a.map-link:hover
+		{ color:#FF510C; }
+		
+/** Summary > items > summary text*/
+		
+.summary .left p		
+	{font-weight:normal;}
+		
+		
+/** Summary > items > rate */
+		
+	.summary .rate p a
+	{ color:#FF510C; font-size:11px; }
+				
+/** Summary > items > check in */
+
+	.summary .check-in
+	{ border-top:1px solid #C4C9CC; }
+		
+/** Summary > items > info */
+		
+	/*.summary .info
+	{ background:url(images/structure/bg-split-summary.gif) repeat-y 0 0; }
+		
+		.summary .info address
+		{ color:black; }
+		*/
+.summary .deal-info address
+{ 
+	/*color:#4f4f4f;*/
+	font-style: normal;
+	font-weight: bold;
+	color: #5E5E5E;
+}
+
+.summary .deal-info address span
+{ font-size:15px; }
+		
+		
+		.summary .info strong
+		{ color:#061826;}
+		
+			.summary .info .claim
+			{ padding:0 0 0 0; }
+			
+	.summary .info .claim a:link, .claim a:visited, .claim a:active
+	{background-repeat:no-repeat; padding: 23px 0 0 12px; color:white !important; font-weight:bold; font-size:20px; width:188px; height: 37px; background: url(images/iconography/claimbutton.png) 0 0px; display:block;}
+
+	.summary .info  .claim a:hover
+	{background-repeat:no-repeat; padding: 23px 0 0 12px; color:white !important; font-weight:bold; font-size:20px; width:188px; height: 37px; background: url(images/iconography/claimbutton.png) 0 -60px; display:block;}
+			
+/** Summary > items > deal */
+			
+	.summary .deal h4
+	{ background:#EAEAEB; }
+	
+		.summary .deal h4 a:link, .summary .deal h4 a:visited, .summary .deal h4 a:active
+		{ color:#061826; }
+	
+/** Summary > Summary Deal differences */
+
+.summary-deal
+{ background:none; border:none; border-bottom:1px solid #CDD4D9; }
+
+	.summary-deal:last-child
+	{ border-bottom:none; }
+	
+/** Summary Backlink */
+
+	.summary-backlink
+	{ background-color:#E4E6E9; border-color:#061826; }
+	
+		.summary-backlink .share
+		{ background-color:#061826; border-bottom-color:#000; border-top:3px solid #FF4800; }
+		
+			.summary-backlink .share a:link, .summary-backlink .share a:visited, .summary-backlink .share a:active
+			{ color:#FFF; }
+
+/** Sidebar > google map definitions */
+
+.sidebar .map
+{ border:1px solid #CCC; }
+	
+	
+
+.no-image
+{
+	height:140px;
+	width:250px;
+	border:none;
+}
+
+.no-image:hover
+{
+	border:none;
+}	

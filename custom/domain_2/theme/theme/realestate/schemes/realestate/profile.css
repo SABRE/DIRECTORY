@@ -1,0 +1,67 @@
+/**
+* eDirectory - Profile Pages
+*
+* @package			layout
+* @filesource		profile.css
+* @author			Arca Solutions
+* @copyright		Copyright (c) 2009, Arca Solutions Inc.
+* @version			eDirectory 9.3
+* @since			April, 17, 2012
+*			
+*/
+
+/** Detail Misc > Structure */
+
+.content-main .no-image
+{ background:#FFF url(images/iconography/icon-user-thumb.gif) no-repeat 0 0; }
+
+/** Items Summary */
+
+	.item-summary h3 a
+	{ color:#0072BC; }
+
+/** Tab navigation */
+
+.profile-tabs
+{ border-bottom:1px solid #E3E3E3; }
+
+	.profile-tabs li
+	{ background:#E3E3E3; }
+	
+		.profile-tabs li a:link, .profile-tabs li a:visited, .profile-tabs li a:active
+		{ color:#636363; }
+		
+		.profile-tabs li a:hover
+		{ color:#0072BC; text-decoration:none; }
+		
+		.profile-tabs li.active
+		{ background:#0072BC; }
+		
+			.profile-tabs li.active a:link, .profile-tabs li.active a:visited, .profile-tabs li.active a:active
+			{ color:#FFF; }
+			
+/** Members Table */
+
+table.standard-table th, table.standard-table td
+{ color:#636363; }
+
+/* User info > misc */
+
+.user-info p span
+{ color:#636363; }
+
+/* User info > No image */
+
+.user-info .no-image
+{ background:#E7E8E8 url(images/iconography/icon-user.gif) no-repeat center; }
+
+/* User info > Twitter differences */ 
+
+.user-info .last-tweets .loading
+{ background:url(images/iconography/icon-loading-content.gif) no-repeat center; }
+
+.user-info .last-tweets ul li a
+{ color:#898989; }
+
+.user-info .last-tweets ul li span a
+{ color:#0072BC; }
