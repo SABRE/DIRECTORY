@@ -170,7 +170,7 @@
                                 </tr>
                                 <tr>
                                     <th>Category and State</th>
-                                    <td><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/categoryandstatefriendlyurl.php">Click here to go to Category & State friendly URL</a></td>
+                                    <td><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/friendlyurl/categoryandstate/categoryandstatefriendlyurl.php">Click here to go to Category & State friendly URL</a></td>
                                 </tr>
                                 <!--Code end on 13-09-2013-->
 			</table>

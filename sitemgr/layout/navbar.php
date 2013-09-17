@@ -483,7 +483,10 @@
                         </ul>
                     </li>
                     <? } ?>
-
+                    
+                    <!--Code Add on the 17-09-2013 for friendly url with combination of the category and state-->
+                    
+                    <!--Code Ended on 17-09-2013-->
                 </ul>
                 
 			</div>

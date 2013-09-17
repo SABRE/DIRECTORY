@@ -40,10 +40,11 @@
 	$url_redirect = "".DEFAULT_URL."/".SITEMGR_ALIAS."/".EVENT_FEATURE_FOLDER;
 	$url_base = "".DEFAULT_URL."/".SITEMGR_ALIAS."";
 	$sitemgr = 1;
-
+        
 	$url_search_params = system_getURLSearchParams((($_POST)?($_POST):($_GET)));
-    $manageOrder = system_getManageOrderBy($_POST["order_by"] ? $_POST["order_by"] : $_GET["order_by"], "Event", EVENT_SCALABILITY_OPTIMIZATION, $fields);
-
+        
+        $manageOrder = system_getManageOrderBy($_POST["order_by"] ? $_POST["order_by"] : $_GET["order_by"], "Event", EVENT_SCALABILITY_OPTIMIZATION, $fields);
+        
 	extract($_GET);
 	extract($_POST);
 

@@ -42,22 +42,23 @@
 
             function pageBrowsing($table = "Listing", $screen = 1, $limit = false, $order = false, $letter_field = false, $letter = false, $where = false, $return_columns = "*", $return_object = false, $group_by = false, $force_main = false, $selected_domain_id = false, $having = false) {
                         
-			$this->force_main = $force_main;
+                        $this->force_main = $force_main;
 			$this->main_database = db_getDBObject(DEFAULT_DB, true);
 			$this->selected_domain_id = defined("SELECTED_DOMAIN_ID")? SELECTED_DOMAIN_ID: $selected_domain_id;
 			
 			if (!is_numeric($screen) || ($screen <= 0)) $screen = 1;
 			if (!$screen) $screen = 1;
-
-			if ($this->force_main) {
+                        if ($this->force_main) {
 				$db_mysqlversion = db_getDBObject(DEFAULT_DB, true);
 			} else if ($this->selected_domain_id) {
-				$db_mysqlversion = db_getDBObjectByDomainID($this->selected_domain_id, $this->main_database);
+                                $db_mysqlversion = db_getDBObjectByDomainID($this->selected_domain_id, $this->main_database);
+                                
 			} else {
 				$db_mysqlversion = db_getDBObject();
 			}
 			$mysqlversion = mysql_get_server_info($db_mysqlversion->link_id);
 			$mysqlversion = string_substr($mysqlversion, 0, string_strpos($mysqlversion, "."));
+                        
 
 			/* Implementation for Mysql 3.23 ********************************/
 			if ($mysqlversion <= 3) {
@@ -71,7 +72,7 @@
 				}
 
 				$sql = "SELECT $return_columns FROM $table";
-
+                                
 				if ($letter && $where) {
 					if ($letter == "no") {
 						$sql .= " WHERE $letter_field REGEXP '^[^a-zA-Z].*$' AND $where";
@@ -103,12 +104,14 @@
                                 
 			}
 			/******************************************************************/
+                        
+                        
 
 			$this->letters = explode(",", system_showText(LANG_LETTERS));
 
 			$aux = explode("|", $table);
-
-			$this->table			= $aux[0];
+                        
+                        $this->table			= $aux[0];
 			$this->join				= $aux[1];
 			$this->screen			= $screen;
 			$this->limit			= $limit;
@@ -122,15 +125,17 @@
 			$this->return_columns	= $return_columns;
 			$this->return_object	= $return_object;
 
+                        
 			/* Implementation for Mysql 3.23 ********************************/
 			if ($mysqlversion <= 3) {
-				$this->record_amount	= $record_amount;
+                        	$this->record_amount	= $record_amount;
 				$this->pages			= ceil($record_amount/$limit);
 				$this->next_screen		= ($screen >= ceil($record_amount/$limit)) ? ceil($record_amount/$limit) : ($screen+1);
 				$this->back_screen		= ($screen <= 1) ? 1 : ($screen-1);
 				$this->page_jump		= (ceil($record_amount/$limit) > 1000) ? 100 : 1;
 			}
 			/******************************************************************/
+                        
 
 		}
 
@@ -564,7 +569,8 @@
                         $this->back_screen		= ($this->screen <= 1) ? 1 : ($this->screen-1);
                         $this->page_jump		= $this->calculatePageJump();
                     }
-                          
+                    
+                   
                     $sql = "SELECT $this->return_columns FROM $this->table";
                    
                     if ($this->join) $sql .= $this->join;

@@ -22,7 +22,7 @@
 
 ?>
 	
-	<? if(($pageObj->getString("pages") > 1 && !(isset($bannerList[0]) && count($bannerList[0])>0)) || (isset($bannerList[0]) && count($bannerList[0])>0 && $bannerList[2]>1)) { ?>
+	<? if(($pageObj->getString("pages") > 1 && !(isset($bannerList[0]) && count($bannerList[0])>0)) || (isset($bannerList[0]) && count($bannerList[0])>0 && $bannerList[2]>1)) {?>
 
 		<? $letter = ($_GET["letter"]) ? $_GET["letter"] : $_POST["letter"]; ?>
 
@@ -100,3 +100,4 @@
 		</table>
 
 	<? } ?>
+        

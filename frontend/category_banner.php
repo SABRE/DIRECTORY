@@ -25,8 +25,7 @@
 	//}
         
 	front_getBannerInfo($category_item_id, $banner_section);
-
-	$location_sql = "";
+        $location_sql = "";
 	$connect = "";
 	$only_location1 = true;
 	if(isset($_GET["location_1"]) && $_GET["location_1"]!="" && $_GET["location_1"]>0)

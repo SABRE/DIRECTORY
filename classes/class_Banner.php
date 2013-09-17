@@ -1125,6 +1125,7 @@
 			//$sql.= " ORDER BY ".((BANNER_SCALABILITY_OPTIMIZATION == "on")?("random_number DESC"):("RAND()"))." LIMIT $amount";
 
                         $sql.= " ORDER BY ".((BANNER_SCALABILITY_OPTIMIZATION == "on")?("random_number DESC"):("RAND()"));
+                        
 			$dbMain = db_getDBObject(DEFAULT_DB, true);
 			if (defined("SELECTED_DOMAIN_ID")) {
 				$dbObj = db_getDBObjectByDomainID(SELECTED_DOMAIN_ID, $dbMain);

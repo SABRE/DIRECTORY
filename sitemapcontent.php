@@ -74,11 +74,10 @@
                                 echo "<li>";
                                 //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
                                 }
-                                  
+                                echo "</li>";  
 			}
 			if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".LISTING_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_LISTING_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -105,12 +104,12 @@
 				unset($catLink);
 				$catLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
 				echo "<li>";
-                                echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
-                                echo "<a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
+                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
                                 }
+                                echo "</li>";
 			}
 			if (EVENTCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".EVENT_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_EVENT_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -138,12 +137,13 @@
 			foreach ($categories as $category) {
 				$catLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
                                 echo "<li>";
-                                echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
-                                echo "<a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
+                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
+                                
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
                                 }
+                                echo "</li>";
 			}
 			if (CLASSIFIEDCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".CLASSIFIED_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_CLASSIFIED_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -171,12 +171,13 @@
 			foreach ($categories as $category) {
 				$catLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
 				echo "<li>";
-                                echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
-                                echo "<a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
+                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
+                                
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
                                 }
+                                echo "</li>";
 			}
 			if (ARTICLECATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".ARTICLE_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_ARTICLE_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -205,12 +206,13 @@
 			foreach ($categories as $category) {
 				$catLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
 				echo "<li>";
-                                echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
-                                echo "<a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
+                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
+                                
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
                                 }
+                                echo "</li>";
 			}
 			if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".PROMOTION_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_PROMOTION_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -238,12 +240,13 @@
 			foreach ($categories as $category) {
 				$catLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
 				echo "<li>";
-                                echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
-                                echo "<a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                echo "</li>";
+                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
+                                
                                 if($retrieved_locations){
                                     echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
                                 }
+                                echo "</li>";
 			}
             if (BLOGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".BLOG_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_BLOG_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -281,9 +284,24 @@
     }
 ?>
 <script>
-$('.sitemap ul li img').click(function(){
-   var src = ($(this).attr('src') === "<?=DEFAULT_URL.'/images/plus.png';?>")?"<?=DEFAULT_URL.'/images/minus.png';?>":"<?=DEFAULT_URL.'/images/plus.png';?>";
-   $(this).attr('src', src);
-   //$(".categoryStateLinks").slideDown("slow");
+$('span').click(function(){
+   var className = $(this).attr('class');
+   if(className == 'plus')
+   {
+       $('span').removeClass('minus');
+       $('span').addClass('plus');
+       $('span').parent('li').children('div .categoryStateLinks').slideUp('slow');
+       $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+       $(this).removeClass('plus');
+       $(this).addClass('minus');
+   }
+   else if(className == 'minus')
+   {
+       $(this).removeClass('minus');
+       $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+       $(this).addClass('plus');
+   }
+   
+   
 });
 </script>
