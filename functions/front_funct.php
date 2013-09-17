@@ -22,7 +22,8 @@
         
         if (string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false ||
             string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || 
-            string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) {
+            string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false ||
+            string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false ) {
 
             $keyword = ($_GET["keyword"]) ? $_GET["keyword"] : $_POST["keyword"];
             if ($keyword) {
@@ -207,6 +208,7 @@
     }
     
     function front_themeFiles() {
+        
         include(THEMEFILE_DIR."/".EDIR_THEME."/".EDIR_THEME.".php");
     }
     
@@ -330,7 +332,8 @@
        
         if (string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false ||
             string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || 
-            string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) {
+            string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false ||
+            string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false ) {
             
             if($itemRSSSection == "listing") {
                 $searchResults = $listings;
@@ -448,7 +451,7 @@
         * Getting URL to do correct include
         */
         $aux_array_url = explode("/", $_SERVER["REQUEST_URI"]);
-
+       
         if (EDIRECTORY_FOLDER) {
             $auxFolder = explode("/", EDIRECTORY_FOLDER);
             $searchPos = count($auxFolder);
@@ -467,12 +470,12 @@
             $searchPos_3 += $searchPos;
             $searchPos_4 += $searchPos;
         }
-
+        
         $module_key = array_search($aux_array_url[$searchPos], $alias_names);
         
         if ($module_key) {
             $banner_section = $module_key;
-            
+           
             if ($_GET["category_id"]) {
                 $category_id = $_GET["category_id"];
             } elseif (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) && $aux_array_url[$searchPos_3]) {
@@ -481,7 +484,6 @@
                 $category_id = $_GET["category_id"];
             }
         }
-        
     }
     
     function front_shareContent($title, $description, $hasImage, $images, $fromURL) {

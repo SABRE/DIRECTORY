@@ -16,16 +16,17 @@
 	# ----------------------------------------------------------------------------------------------------
 	# * FILE: /includes/views/view_listing_summary_code.php
 	# ----------------------------------------------------------------------------------------------------
+        
 	if (is_array($listing)) {
 		$aux = $listing;
 	} else if (is_object($listing)) {
 		$aux = $listing->listing_array;
 	}
-
+       
 	if ($listingtemplate_friendly_url){ ?>
 		<a name="<?=$listingtemplate_friendly_url;?>"></a>
 	<? } ?>
-	<? if($levelObj->getDetail(htmlspecialchars($listing["level"])) == "y"){?>
+	<? if($levelObj->getDetail(htmlspecialchars($listing["level"])) == "y"){ ?>
 	<div <?= $listing["id"] ? "id=\"listing_summary_".$listing["id"]."\"" : ""?> class="<?=$listing["backlink"] == "y" && BACKLINK_FEATURE == "on" ? "summary summary-backlink" : "summary" ?>">
 		<div class="left">
 			<?  if ($listingtemplate_image) { ?>
@@ -39,7 +40,7 @@
 				<div class="deal-details">
 					<div class="deal-details-info">
 						<div class="deal-title">
-							<? if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) && GOOGLE_MAPS_ENABLED == "on" && $mapObj->getString("value") == "on") { ?>
+							<? if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"],ACTUAL_MODULE_FOLDER) !== false) && GOOGLE_MAPS_ENABLED == "on" && $mapObj->getString("value") == "on" ) { ?>
 							<? if ($aux["latitude"] && $aux["longitude"]) { ?>
 								<span id="summaryNumberID<?=$mapNumber;?>" class="map <?=(($_COOKIE['showMap'] == 0) ? ('visible') : ('hidden'))?>">
 									<a class="map-link" href="javascript:void(0);" onclick="myclick(<?=($mapNumber);?>);scrollPage();">
@@ -152,10 +153,10 @@
 			<div class="deal-box">
 				<div class="first-box">
 					<div class="deal-title">
-						<? if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) && GOOGLE_MAPS_ENABLED == "on" && $mapObj->getString("value") == "on") { ?>
+						<? if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) && GOOGLE_MAPS_ENABLED == "on" && $mapObj->getString("value") == "on" || (string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false )) { ?>
 							<? if ($aux["latitude"] && $aux["longitude"]) { ?>
 								<span id="summaryNumberID<?=$mapNumber;?>" class="map <?=(($_COOKIE['showMap'] == 0) ? ('visible') : ('hidden'))?>">
-									<a class="map-link" href="javascript:void(0);" onclick="myclick(<?=($mapNumber);?>);scrollPage();">
+                    							<a class="map-link" href="javascript:void(0);" onclick="myclick(<?=($mapNumber);?>);scrollPage();">
 										<?=$mapNumber;?>.
 									</a>
 								</span>

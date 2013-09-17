@@ -84,7 +84,8 @@
          (string_strpos($_SERVER['REQUEST_URI'], ALIAS_REVIEW_URL_DIVISOR."/") !== false) || 
          (string_strpos($_SERVER['REQUEST_URI'], ALIAS_CHECKIN_URL_DIVISOR."/") !== false) || 
          (string_strpos($_SERVER['REQUEST_URI'], ALIAS_CLAIM_URL_DIVISOR."/") !== false) || 
-         (string_strpos($_SERVER['PHP_SELF'], "profile/index.php") !== false)) && 
+         (string_strpos($_SERVER['PHP_SELF'], "profile/index.php") !== false)|| 
+         (string_strpos($_SERVER['REQUEST_URI'], ACTUAL_MODULE_FOLDER) !== false)) && 
         (ACTUAL_MODULE_FOLDER != BLOG_FEATURE_FOLDER)) { ?>
         <link href="<?=system_getStylePath("results.css", "default");?>?v=1.0" rel="stylesheet" type="text/css" media="all" />
         <link href="<?=THEMEFILE_URL;?>/default/schemes/<?=$scheme_path?>/results.css?v=1.0" rel="stylesheet" type="text/css" media="all" />

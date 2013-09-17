@@ -1,4 +1,5 @@
 <style>
+    
     .search-info .letters-div
     {
         background:none !important;
@@ -85,6 +86,8 @@
     .sorting-div .rss-feed {
         margin: 0 0 0 5px !important;
     }
+    
+    
 </style>
 <?
 

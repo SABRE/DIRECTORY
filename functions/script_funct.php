@@ -160,7 +160,8 @@
                 /*
                  * LOAD JUST IN results, detail, reviews page, checkins page and blog home page
                  */
-                if (string_strpos($_SERVER["REQUEST_URI"], "/results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || (string_strpos($_SERVER['REQUEST_URI'], ".html") !== false) || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CHECKIN_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_REVIEW_URL_DIVISOR."/") !== false || ACTUAL_MODULE_FOLDER == BLOG_FEATURE_FOLDER) {
+                if (string_strpos($_SERVER["REQUEST_URI"], "/results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || (string_strpos($_SERVER['REQUEST_URI'], ".html") !== false) || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CHECKIN_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_REVIEW_URL_DIVISOR."/") !== false  || string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false || ACTUAL_MODULE_FOLDER == BLOG_FEATURE_FOLDER) {
+                    
                     $js_fileLoader = system_scriptColector("/scripts/socialbookmarking.js", $js_fileLoader);
                     $js_fileLoader = system_scriptColector("/scripts/contactclick.js", $js_fileLoader);
                 }
@@ -301,9 +302,9 @@
 
                 $js_fileLoader = system_scriptColectorOnReady($sidebar_script, $js_fileLoader, true);
                 
-            } elseif (string_strpos($_SERVER["REQUEST_URI"], "results.php") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_REVIEW_URL_DIVISOR."/") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CHECKIN_URL_DIVISOR."/")) {
+            } elseif (string_strpos($_SERVER["REQUEST_URI"], "results.php") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_REVIEW_URL_DIVISOR."/") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CHECKIN_URL_DIVISOR."/") || string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false) {
 
-                if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) && FEATURED_LOCATIONS_SIDEBAR) {
+                if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ACTUAL_MODULE_FOLDER) !== false) && FEATURED_LOCATIONS_SIDEBAR) {
                     /*
                      * Script to accordion 
                      */
@@ -316,6 +317,7 @@
                                         });";
 
                     $js_fileLoader = system_scriptColectorOnReady($sidebar_script, $js_fileLoader, true);
+                   
                 }
 
                 /**

@@ -1,6 +1,5 @@
 <?
-
-	/*==================================================================*\
+   	/*==================================================================*\
 	######################################################################
 	#                                                                    #
 	# Copyright 2005 Arca Solutions, Inc. All Rights Reserved.           #
@@ -17,29 +16,34 @@
 	# ----------------------------------------------------------------------------------------------------
 	# * FILE: /controller/listing/rewrite.php
 	# ----------------------------------------------------------------------------------------------------
+        
+        
     $failure = false;
-	$dbObj = db_getDBObject();
+    $dbObj = db_getDBObject();
 
     $browsebylocation   = false;
     $browsebycategory   = false;
     $browsebyitem       = false;
-
+   
     /**
     * Preparing URL 
     */
+    
+  
     if ($_GET["url_full"] && !$fromRSS) { 
         $_GET["url_full"] = $_SERVER["REQUEST_URI"];
     }
-
-    if ($_GET["url_full"] && (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_LOCATION_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_REVIEW_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_CHECKIN_URL_DIVISOR) !== false)) {
+    
+    if ($_GET["url_full"] && (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR.'/') !== false || string_strpos($_GET["url_full"], ALIAS_LOCATION_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_REVIEW_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_CHECKIN_URL_DIVISOR) !== false)) {
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
         if (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR) !== false) {
+            
             $browsebycategory = true;
-
             $auxFullFriendlyUrl = "";
             for ($i = 1; $i < count($parts); $i++) {
                 $_GET["category" . $i] = $parts[$i];
+                
             }
         } else if (string_strpos($_GET["url_full"], ALIAS_LOCATION_URL_DIVISOR) !== false) {
             $browsebylocation = true;
@@ -51,8 +55,8 @@
             $browsebyitem = true;
 
             $_GET["listing"] = $parts[1];
-
-            for ($i = 1; $i < count($parts); $i++) {
+            
+             for ($i = 1; $i < count($parts); $i++) {
                 $_GET["category" . $i] = $parts[$i];
             }
         } else if (string_strpos($_GET["url_full"], ALIAS_CHECKIN_URL_DIVISOR) !== false) {
@@ -63,7 +67,7 @@
             for ($i = 1; $i < count($parts); $i++) {
                 $_GET["category" . $i] = $parts[$i];
             }
-        } else {
+        }else {
 
             if (!$parts[1] && !$parts[3]) {
                 header("Location: " . LISTING_DEFAULT_URL . "/results.php");
@@ -97,15 +101,38 @@
                 }
             }
         }
+    }  else {
+        $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
+        $parts = explode("/", $url);
+        if(count($parts)>=2){
+            $searchbycategory = true;
+            $searchbylocation = true;
+            $auxFullFriendlyUrl = "";
+            $_GET["category"] = $parts[0];
+            $_GET["location"] = $parts[1];
+            for ($i == 2; $i < count($parts); $i++) {
+                switch ($parts[$i]) {
+                    case 'page': $_GET["page"] = $parts[$i + 1];
+                        break;
+                    case 'letter': $_GET["letter"] = $parts[$i + 1];
+                        break;
+                    case 'orderby': $_GET["orderby"] = $parts[$i + 1];
+                        break;
+                }
+            }
+        }
+       
     }
-	
-    if ($browsebycategory || $browsebyitem) { 
+    
+    if ($browsebycategory || $browsebyitem) {
+       
         for ($i = 1; $i < count($parts); $i++) {
             $aux = $_GET["category" . $i];
             if ($aux == "page") {
                 $_GET["category" . $i] = "";
                 $_GET["page"] = $_GET["category" . ($i + 1)];
                 $_GET["category" . ($i + 1)] = "";
+                
                 $i++;
             } else if ($aux == "letter") {
                 $_GET["category" . $i] = "";
@@ -122,6 +149,7 @@
                     $auxFullFriendlyUrl .= $aux . "/";
             }
         }
+        
     } else if ($browsebylocation) {
         for ($i = 1; $i < count($parts); $i++) {
             $aux = $_GET["friendLoc" . $i];
@@ -142,12 +170,35 @@
                 $i++;
             }
         }
-    }
+    }else if($searchbycategory && $searchbylocation){
+      
+        $sql = "SELECT id FROM ListingCategory WHERE full_friendly_url = '" . $_GET["category"] . "' AND enabled = 'y' LIMIT 1";
+	$result = $dbObj->query($sql);
+        if (mysql_num_rows($result) > 0) {
+            $aux = mysql_fetch_assoc($result);
+            $_GET["category_id"] = $aux["id"];
+        }
+        if (!$_GET["category_id"]) {
+            $failure = true;
+        }
+        
+        $sqlLocation = "SELECT id FROM location_3 WHERE friendly_url LIKE '".$_GET["location"]."'";
+        $dbObj_main = db_getDBObject(DEFAULT_DB, true);
+        $result = $dbObj_main->query($sqlLocation);
 
+        if (mysql_num_rows($result) > 0) {
+            $row = mysql_fetch_assoc($result);
+            $_GET["location_3"] = $row["id"];
+        
+        }
+    }
+    
     ##################################################
     ##################################################
     # LISTING
     ##################################################
+    
+    
 	
     if ($_GET["listing"]) { 
         $browsebyitem = true;
@@ -242,7 +293,9 @@
     /*
     * Get all path of category
     */
+    
     if ($auxFullFriendlyUrl && string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR)) {
+         
         if (string_substr($auxFullFriendlyUrl, -1) == "/")
             $auxFullFriendlyUrl = string_substr($auxFullFriendlyUrl, 0, -1);
 			
@@ -261,6 +314,8 @@
         }
 
     }
+    
+    
     ##################################################
     ##################################################
     # CLAIM
@@ -325,5 +380,4 @@
             $_GET["where"] = implode(", ", $array_where);
         }
     }
-
 ?>

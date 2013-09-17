@@ -19,13 +19,18 @@
 # ----------------------------------------------------------------------------------------------------
 # MODULE REWRITE
 # ----------------------------------------------------------------------------------------------------
+ 
 include(EDIR_CONTROLER_FOLDER . "/" . LISTING_FEATURE_FOLDER . "/rewrite.php");
+
+
+
 // echo "Location: ".LISTING_DEFAULT_URL."/index.php";die;
 # ----------------------------------------------------------------------------------------------------
 # VALIDATION
 # ----------------------------------------------------------------------------------------------------
 include(EDIRECTORY_ROOT . "/includes/code/validate_querystring.php");
 include(EDIRECTORY_ROOT . "/includes/code/validate_frontrequest.php");
+
 if ($category_id) {
     $catObj = new ListingCategory($category_id);
     if (!$catObj->getString("title")) {
@@ -84,6 +89,7 @@ if (LISTING_SCALABILITY_OPTIMIZATION == "on") {
 }
 
 // replacing useless spaces in search by "where"
+
 if ($_GET["where"]) {
     while (string_strpos($_GET["where"], "  ") !== false) {
         str_replace("  ", " ", $_GET["where"]);
@@ -131,7 +137,7 @@ if (!$search_lock) {
     $levelsWithReview = system_retrieveLevelsWithInfoEnabled("has_review");
 
     $array_search_params = array();
-
+    
     if ($_GET["url_full"]) {
         if ($browsebycategory) {
             $paging_url = LISTING_DEFAULT_URL . "/" . ALIAS_CATEGORY_URL_DIVISOR;
@@ -139,6 +145,9 @@ if (!$search_lock) {
         } else if ($browsebylocation) {
             $paging_url = LISTING_DEFAULT_URL . "/" . ALIAS_LOCATION_URL_DIVISOR;
             $aux = str_replace(EDIRECTORY_FOLDER . "/" . ALIAS_LISTING_MODULE . "/" . ALIAS_LOCATION_URL_DIVISOR . "/", "", $_GET["url_full"]);
+        }else if($searchbylocation && $searchbycategory){
+            $paging_url = DEFAULT_URL;
+            $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
         }
 
         $parts = explode("/", $aux);
@@ -179,6 +188,8 @@ if (!$search_lock) {
 
         $url_search_params = implode("&amp;", $array_search_params);
     }
+    
+    
 
     /*
      * Preparing Pagination
@@ -223,7 +234,7 @@ if (!$search_lock) {
     }
 
     if (SELECTED_DOMAIN_ID > 0)
-        $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts);
+        $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$searchbycategory,$searchbylocation);
     else
         $orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
 }

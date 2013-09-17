@@ -2211,7 +2211,7 @@
 
 	}   */ 
     
-    function search_getSortingLinks ($getData,$pagingUrl,$parts) {
+    function search_getSortingLinks ($getData,$pagingUrl,$parts,$searchbycategory,$searchbylocation) {
 	
     	if($getData['orderby']){
     		unset($getData['orderby']);
@@ -2225,34 +2225,49 @@
     	
     	if(!empty($getData) && !isset($getData['url_full']))
     	{
-			$url_search_params = http_build_query($getData);
+                $url_search_params = http_build_query($getData);
     	}
     	
     	$extraUrl = '';
     	if(isset($getData['url_full'])){
-    		if(!empty($parts)){
-    			$extraUrl .= '/'.$parts[0];
-    			if($parts[1] != 'orderby' && $parts[1] != 'page'){
-    				$extraUrl .= '/'.$parts[1];
-    			}
-    		}
+            if(!empty($parts)){
+                $extraUrl .= '/'.$parts[0];
+                if($searchbycategory && $searchbylocation){
+                    $extraUrl .= '/'.$parts[1];
+                }
+                for ($i == 2; $i < count($parts); $i++) {
+                    switch ($parts[$i]) {
+                        case 'page': 
+                                $extraUrl .= '/page/'.$parts[$i + 1];
+                                break;
+                        case 'letter':
+                                $extraUrl .= '/letter/'.$parts[$i + 1];
+                                break;
+                        case 'orderby': 
+                                $extraUrl .= '/orderby/'.$parts[$i + 1];
+                            break;
+                    }
+                }
+            }
     	}
-    	
+        
     	if(!empty($extraUrl)){
     		$pagingUrl = $pagingUrl.$extraUrl;
     	}
-    	$pagingUrl = rtrim($pagingUrl,'/');    	 
-		$orderbyDropDown = "";
-		$option_value = "characters";
-		$orderbyDropDown .= "<div class=\"sort-value-first\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>A - Z</a></div>";
-		$option_value = "rating";
-		$orderbyDropDown .= "<div class=\"sort-value-second\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Rating</a></div>";
-		$option_value = "popular";
-		$orderbyDropDown .= "<div class=\"sort-value-third\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Popularity</a></div>";
-		
-		return $orderbyDropDown;
+       
+        $pagingUrl = rtrim($pagingUrl,'/'); 
+        
+        $orderbyDropDown = "";
+        $option_value = "characters";
+        $orderbyDropDown .= "<div class=\"sort-value-first\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>A - Z</a></div>";
+        $option_value = "rating";
+        $orderbyDropDown .= "<div class=\"sort-value-second\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Rating</a></div>";
+        $option_value = "popular";
+        $orderbyDropDown .= "<div class=\"sort-value-third\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Popularity</a></div>";
 
-	}   
+        return $orderbyDropDown;
+
+    }   
 
 	function search_pagePrevNextLink($tableName = false, $listingId = null , $flag = false){
 		$db = db_getDBObject();
