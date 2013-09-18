@@ -168,7 +168,7 @@
                     setting_get("review_article_enabled", $review_article_enabled);
                     setting_get("review_promotion_enabled", $review_promotion_enabled);
 
-                    if ($review_enabled == "on" && $commenting_edir) {
+                    if ($review_enabled == "on" && $commenting_edir) { 
                         $locations = explode(",", EDIR_LOCATIONS);
                         $sql = " SELECT
                                     Listing_Summary.title,
@@ -586,7 +586,7 @@
                     if ($this->limit) $sql .= " LIMIT $this->start,$this->limit";
 
                     //if($_SERVER['REMOTE_ADDR'] == "121.97.95.82")echo $sql;
-                
+                    
                     if ($return_type == "object"){
                         $r = $db->query($sql);
                     }else{

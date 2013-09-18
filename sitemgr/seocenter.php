@@ -164,15 +164,7 @@
 						<td><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/<?=BLOG_FEATURE_FOLDER;?>/"><?=system_showText(LANG_SITEMGR_SEOCENTER_CLICKHERETOGO_BLOGSECTION)?></a></td>
 					</tr>
 				<? } ?>
-                                <!--Code is add for state and category friendly url on 13-09-2013-->
-                                <tr>
-                                    <th colspan="2" class="standard-tabletitle">Friendly URL</th>
-                                </tr>
-                                <tr>
-                                    <th>Category and State</th>
-                                    <td><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/friendlyurl/categoryandstate/categoryandstatefriendlyurl.php">Click here to go to Category & State friendly URL</a></td>
-                                </tr>
-                                <!--Code end on 13-09-2013-->
+                               
 			</table>
 
 		</div>

@@ -19,7 +19,7 @@
 	# ----------------------------------------------------------------------------------------------------
 
     function front_getHeaderTag(&$headertag_title, &$headertag_author, &$headertag_description, &$headertag_keywords) {
-        
+      
         if (string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false ||
             string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || 
             string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false ||
@@ -138,7 +138,7 @@
             }
 
         }
-
+         
         unset($aux_get_header_tag);
         $aux_get_header_tag = array();
         if (!$headertag_title) {
@@ -156,8 +156,9 @@
         if (!$headertag_keywords) {
             $aux_get_header_tag[] = "name = 'header_keywords'";
         }
-
+       
         $return_headertag = customtext_getByArray($aux_get_header_tag);
+        
         if(is_array($return_headertag)){
 
             extract($return_headertag);
@@ -173,7 +174,7 @@
             if(array_key_exists ("header_description", $return_headertag)){
                 $headertag_description = (($header_description) ? ($header_description) : (EDIRECTORY_TITLE));
             }
-
+            
             if(array_key_exists ("header_keywords", $return_headertag)){
                 $headertag_keywords	= (($header_keywords) ? ($header_keywords) : EDIRECTORY_TITLE);
             }
@@ -188,6 +189,7 @@
         $headertag_author = (($headertag_author) ? ($headertag_author) : ("Arca Solutions"));
         $headertag_description = (($headertag_description) ? ($headertag_description) : (EDIRECTORY_TITLE));
         $headertag_keywords = (($headertag_keywords) ? ($headertag_keywords) : (EDIRECTORY_TITLE));
+        
     }
     
     function front_searchMetaTag() {

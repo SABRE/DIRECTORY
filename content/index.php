@@ -36,6 +36,7 @@
 
 	$contentObj = new Content();
 	$content_id = $contentObj->retrieveIDByURL($content);
+       
 	if ($content_id) {
 		$contentObj = new Content($content_id);
 		$content_show = $contentObj->retrieveContentByURL($content);
@@ -58,7 +59,8 @@
 	# ----------------------------------------------------------------------------------------------------
 	# HEADER
 	# ----------------------------------------------------------------------------------------------------
-	$headertag_title = $headertagtitle;
+        
+        $headertag_title = $headertagtitle;
 	$headertag_description = $headertagdescription;
 	$headertag_keywords = $headertagkeywords;
 	include(system_getFrontendPath("header.php", "layout"));

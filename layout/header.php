@@ -23,10 +23,10 @@
     header("Cache-Control: post-check=0, pre-check=0", FALSE);
     header("Pragma: no-cache");
     header("Content-Type: text/html; charset=".EDIR_CHARSET, TRUE);
-
+    
     //This function returns the variables to fill in the meta tags content below. Do not change this line.
     front_getHeaderTag($headertag_title, $headertag_author, $headertag_description, $headertag_keywords);
-
+    
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

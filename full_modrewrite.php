@@ -116,6 +116,7 @@
         } 
         else 
         { 
+                
            
             //Others pages
             define("LOAD_MODULE_CSS_HOME", "off");
@@ -373,7 +374,6 @@
             }
             elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || (!empty($aux_array_url[$searchPos_2]) &&  !empty($aux_array_url[$searchPos_3]))) 
             {
-                
                 # ----------------------------------------------------------------------------------------------------
                 # CACHE
                 # ----------------------------------------------------------------------------------------------------
@@ -411,7 +411,6 @@
                 $headertag_title = $headertagtitle;
                 $headertag_description = $headertagdescription;
                 $headertag_keywords = $headertagkeywords;
-                
                 if ($browsebycategory || $category_id) {
                     if ($category_id) {
                         $categoryObjHeaderTag = new ListingCategory($category_id);
@@ -426,7 +425,6 @@
                 } elseif ($browsebylocation) {
                     include(INCLUDES_DIR."/code/headertaglocation.php");
                 }
-                
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
                 define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
             

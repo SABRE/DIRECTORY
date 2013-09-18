@@ -1,4 +1,9 @@
 <style>
+    .sitemap ul li
+    {
+        padding-left:5px !important;
+        line-height:23px !important;
+    }
     .sitemap ul li a
     {
         padding-left:5px !important;
@@ -15,6 +20,22 @@
     }
     
     .sitemap span.minus
+    {
+        background:url("<?=DEFAULT_URL."/images/minus.png";?>") no-repeat;
+        float:left;
+        height:16px;
+        width:8px;
+        cursor:pointer;
+    }
+    .sitemap div.categoryandstate
+    {
+        background:url("<?=DEFAULT_URL."/images/plus.png";?>") no-repeat;
+        float:left;
+        height:16px;
+        width:8px;
+        cursor:pointer;
+    }
+    .sitemap div.categoryandstateminus
     {
         background:url("<?=DEFAULT_URL."/images/minus.png";?>") no-repeat;
         float:left;
@@ -69,13 +90,32 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
-				unset($catLink);
+                                unset($catLink);
 				$catLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
                                 echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(1,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
+                                    }
+                                }
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><span class=\"subcategoryandstate\"></span>Category/Subcategory/State combination";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
                                 }
                                 echo "</li>";  
 			}
@@ -282,6 +322,41 @@
         
         return $returnMessage;
     }
+    
+    function subcategoriesFunction($number , $id)
+    {
+        $subCategories = array();
+        switch($number)
+        {
+            case 1:
+            if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") 
+            {
+                    $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_listing DESC LIMIT 20";
+            } 
+            else 
+            {
+                    $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            $subCategories = db_getFromDBBySQL("listingcategory", $sql);
+            break;
+            default:
+                //
+        }
+        return $subCategories;
+    }
+    
+//    function commonLinks($subcategories)
+//    {
+//        $returnMessage = '';
+//        //$returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+//        $returnMessage .= "<ul>";
+//        $returnMessage .= "<li><span class=\"categoryandstateplus\"></span>Category/State combination</li>";
+//        if($subcategories)
+//            $returnMessage .= "<li><span class=\"subcategoryandstate\"></span>Category/Subcategory/State combination</li>";
+//        $returnMessage .= "</ul>";
+//        return $returnMessage;
+//        
+//    }
 ?>
 <script>
 $('span').click(function(){
@@ -301,7 +376,31 @@ $('span').click(function(){
        $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
        $(this).addClass('plus');
    }
-   
-   
 });
+
+$('.categoryandstate').click(function(){
+    alert("url(\"<?=DEFAULT_URL."/images/minus.png";?>\")");
+    if($(this).css({'background-image': "url(\"<?=DEFAULT_URL."/images/plus.png";?>\")"})){
+        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+        $(this).css({'background-image': "url(\"<?=DEFAULT_URL."/images/minus.png";?>\")"})
+    }else if($(this).attr('style').indexof('background-image')=="url(\"<?=DEFAULT_URL."/images/minus.png";?>\")"){
+        alert('hi testing');
+        $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+    }
+   //var className = $(this).attr('class');
+   //alert(className);       
+//  if(className == 'categoryandstateplus')
+//   {   
+//       $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+//       $(this).removeClass('categoryandstateplus');
+//       $(this).addClass('categoryandstateminus');
+//   }
+//   else if(className == 'categoryandstateminus')
+//   {
+//       $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+//       $(this).removeClass('categoryandstateminus');
+//       $(this).addClass('categoryandstateplus');
+//   }
+});
+
 </script>

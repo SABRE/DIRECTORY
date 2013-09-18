@@ -112,6 +112,8 @@
 	$openLang			=	(string_strpos($_SERVER["PHP_SELF"], "langcenter"));
 	$openPackage		=	(string_strpos($_SERVER["PHP_SELF"], "package"));
 	$openplugin			=	(string_strpos($_SERVER["PHP_SELF"], "plugin"));
+       // $openfriendlyurlcategoryandstate = (string_strpos($_SERVER["PHP_SELF"],'categoryandstatefriendlyurl.php') || string_strpos($_SERVER["PHP_SELF"],'categoryandstatefriendlyurladd.php') || string_strpos($_SERVER["PHP_SELF"],'categoryandstatefriendlyurlsearch.php'));
+        
 	?>
 
 	<div id="main-left">
@@ -485,6 +487,16 @@
                     <? } ?>
                     
                     <!--Code Add on the 17-09-2013 for friendly url with combination of the category and state-->
+<!--                   <li class="listing topLink package_">
+                        <a  id="link_plugin" <?=($openfriendlyurlcategoryandstate && !$blockMenuTodo ? "class=\"borderDownSelected\"" : "");?> <?=($blockMenuTodo ? "href=\"javascript: void(0);\" style=\"cursor:default;\"" : "href=\"".DEFAULT_URL."/".SITEMGR_ALIAS."/friendlyurl/categoryandstate/categoryandstatefriendlyurl.php"."\"")?>>
+                            <span <?=($blockMenuTodo ? "class=\"module_off\"" : "")?>>Friendly URL</span>
+                        </a>
+                        <ul id="ul_plugin" style="visibility: hidden;" class="left-topMainNavbar-sub" id="navBar_submenu_plugin" <? if (!$openfriendlyurlcategoryandstate) {?> style="display:none" <?}?> >
+                           <li><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/friendlyurl/categoryandstate/categoryandstatefriendlyurl.php"><?=system_showText(LANG_SITEMGR_MANAGE);?></a></li>
+                           <li><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/friendlyurl/categoryandstate/categoryandstatefriendlyurladd.php"><?=system_showText(LANG_SITEMGR_ADD);?></a></li>
+                           <li><a href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/friendlyurl/categoryandstate/categoryandstatefriendlyurlsearch.php"><?=system_showText(LANG_SITEMGR_SEARCH);?></a></li>
+                        </ul>
+                    </li>-->
                     
                     <!--Code Ended on 17-09-2013-->
                 </ul>

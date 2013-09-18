@@ -72,7 +72,7 @@
        
     //Modules Pages
     if ($module_key) {
-    
+        
         define("ACTUAL_MODULE_FOLDER", $module_key);
         include(EDIRECTORY_ROOT."/full_modrewrite.php");
     
@@ -192,10 +192,11 @@
             # ----------------------------------------------------------------------------------------------------
             # BODY
             # ----------------------------------------------------------------------------------------------------
+            
             if ($theme_file && file_exists($theme_file)) {
                 include($theme_file);
             }
-			
+            
             if ($coreFile && file_exists($coreFile)) {
                 include($coreFile);
             }

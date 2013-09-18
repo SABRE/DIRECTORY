@@ -54,7 +54,7 @@
 	# ----------------------------------------------------------------------------------------------------
 	$pageObj  = new pageBrowsing("ListingCategory", $screen, RESULTS_PER_PAGE, "title, id", "title", $letter, "category_id = ".db_formatNumber($category_id), "id, `title`");
 	$categories = $pageObj->retrievePage("array");
-
+       
 	$paging_url = DEFAULT_URL."/".SITEMGR_ALIAS."/listingcategs/index.php?category_id=".$category_id;
 
 	// Letters Menu
