@@ -116,14 +116,15 @@
 		include(EDIRECTORY_ROOT."/includes/code/rss.php");
 	}
 	if($show_results){ ?>
+        <h2 class="search-info">
 		<? if ($str_search) {
 			?>
-			<h2 class="search-info">
+			
                             <strong><?=ucwords($str_search)?></strong>
 			<?
 		}
 	}
-        include(system_getFrontendPath("results_letters.php"));?>
+            include(system_getFrontendPath("results_letters.php"));?>
 	</h2>
         <? if ($aux_module_items && !$hideResults) { ?> 
             <div class='sorting-div'>
