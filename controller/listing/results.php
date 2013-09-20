@@ -19,7 +19,7 @@
 # ----------------------------------------------------------------------------------------------------
 # MODULE REWRITE
 # ----------------------------------------------------------------------------------------------------
- 
+
 include(EDIR_CONTROLER_FOLDER . "/" . LISTING_FEATURE_FOLDER . "/rewrite.php");
 
 
@@ -104,6 +104,7 @@ unset($searchReturn);
 if (!$search_lock) {
 
     $searchReturn = search_frontListingSearch($_GET, "listing_results");
+       
     $aux_items_per_page = ($_COOKIE["listing_results_per_page"] ? $_COOKIE["listing_results_per_page"] : 10);
     $pageObj = new pageBrowsing($searchReturn["from_tables"], ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, $searchReturn["order_by"], "Listing_Summary.title", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Listing_Summary", $searchReturn["group_by"]);
 
@@ -146,11 +147,13 @@ if (!$search_lock) {
             $paging_url = LISTING_DEFAULT_URL . "/" . ALIAS_LOCATION_URL_DIVISOR;
             $aux = str_replace(EDIRECTORY_FOLDER . "/" . ALIAS_LISTING_MODULE . "/" . ALIAS_LOCATION_URL_DIVISOR . "/", "", $_GET["url_full"]);
         }else if($friendlyurl){
+             /*This else case is write on the 20-09-2013 for friendly url*/
             $paging_url = DEFAULT_URL;
-            $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
+            $aux = $_GET["url_full"];
         }
-
+        
         $parts = explode("/", $aux);
+        
 
         for ($i = 0; $i < count($parts); $i++) {
             if ($parts[$i]) {
@@ -232,7 +235,7 @@ if (!$search_lock) {
     if (LISTING_ORDERBY_PRICE) {
         array_unshift($orderBy, LANG_PAGING_ORDERBYPAGE_PRICE);
     }
-
+    
     if (SELECTED_DOMAIN_ID > 0)
         $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl);
     else

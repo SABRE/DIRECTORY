@@ -2133,8 +2133,8 @@
         }
     }
     
-    /*Fucntions is created to links for Sorting
-    function search_getSortingLinks ($getData, $pagingUrl, $orderBy, $defaultText = "Order by: ", $defaultOnChange = "this.form.submit();", $array_params = false, $deal = false, $blog = false) {
+    /*Fucntions is created to links for Sorting*/
+    /*function search_getSortingLinks ($getData, $pagingUrl, $orderBy, $defaultText = "Order by: ", $defaultOnChange = "this.form.submit();", $array_params = false, $deal = false, $blog = false) {
 
 		$url_base = $_SERVER["PHP_SELF"];
 
@@ -2211,7 +2211,9 @@
 
 	}   */ 
     
-    function search_getSortingLinks ($getData,$pagingUrl,$parts,$friendlyurl) {
+
+        /*Function regenrate on 20-09-2013 for friendly url*/
+        function search_getSortingLinks($getData,$pagingUrl,$parts,$friendlyurl) {
 	
     	if($getData['orderby']){
     		unset($getData['orderby']);
@@ -2229,63 +2231,43 @@
     	}
     	
     	$extraUrl = '';
-    	if(isset($getData['url_full'])){
-            if(!empty($parts)){
-                if($friendlyurl){
-                    for ($i == 0; $i < count($parts); $i++) {
-                        switch ($parts[$i]) {
-                            case 'page': 
-                                    $extraUrl .= '/page/'.$parts[$i + 1];
-                                    break;
-                            case 'letter':
-                                    $extraUrl .= '/letter/'.$parts[$i + 1];
-                                    break;
-                            case 'orderby': 
-                                    $extraUrl .= '/orderby/'.$parts[$i + 1];
-                                break;
-                            default :
-                                    $extraUrl .='/'.$parts[$i];
+        if(isset($getData['url_full'])){
+                if(!empty($parts)){
+                    for($i=0;$i<count($parts);$i++)
+                    {
+                        if($parts[$i] != 'page' && $parts[$i] != 'orderby'){
+                            if(!empty($parts[$i])){
+                                $extraUrl .= '/'.$parts[$i];
+                                if($parts[$i] == 'letter'){
+                                    $extraUrl .= '/'.$parts[$i+1];
+                                    $i++;
+                                }
+                            }
+                        }else{
+                            $i++;
                         }
                     }
-                }else{
-                    $extraUrl .= '/'.$parts[0];
-                    for ($i == 2; $i < count($parts); $i++) {
-                        switch ($parts[$i]) {
-                            case 'page': 
-                                    $extraUrl .= '/page/'.$parts[$i + 1];
-                                    break;
-                            case 'letter':
-                                    $extraUrl .= '/letter/'.$parts[$i + 1];
-                                    break;
-                            case 'orderby': 
-                                    $extraUrl .= '/orderby/'.$parts[$i + 1];
-                                break;
-                        }
-                    }
-                }
-                    
-            }
+    		}
+    	}
+    	
+    	if(!empty($extraUrl)){
+    		$pagingUrl = rtrim($pagingUrl,'/').$extraUrl;
     	}
         
-    	if(!empty($extraUrl)){
-            if($friendlyurl)
-                $pagingUrl = $pagingUrl.'/'.ACTUAL_MODULE_FOLDER.'/'.ltrim($extraUrl,'/');
-            else
-    		$pagingUrl = $pagingUrl.$extraUrl;
-    	}
-       
-        $pagingUrl = rtrim($pagingUrl,'/'); 
+    	$pagingUrl = rtrim($pagingUrl,'/'); 
+        
         $orderbyDropDown = "";
         $option_value = "characters";
-        $orderbyDropDown .= "<div class=\"sort-value-first\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>A - Z</a></div>";
-        $option_value = "rating";
-        $orderbyDropDown .= "<div class=\"sort-value-second\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Rating</a></div>";
-        $option_value = "popular";
-        $orderbyDropDown .= "<div class=\"sort-value-third\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Popularity</a></div>";
+		$orderbyDropDown .= "<div class=\"sort-value-first\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>A - Z</a></div>";
+		$option_value = "rating";
+		$orderbyDropDown .= "<div class=\"sort-value-second\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Rating</a></div>";
+		$option_value = "popular";
+		$orderbyDropDown .= "<div class=\"sort-value-third\"><a href='javascript:void(0)' onclick='changePageOrder(\"".$pagingUrl."\",\"".$option_value."\",\"".$url_search_params."\")'>Popularity</a></div>";
+		
+		return $orderbyDropDown;
 
-        return $orderbyDropDown;
+	}   
 
-    }   
 
 	function search_pagePrevNextLink($tableName = false, $listingId = null , $flag = false){
 		$db = db_getDBObject();

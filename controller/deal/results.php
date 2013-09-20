@@ -101,7 +101,11 @@
 		} else if ($browsebylocation){
 			$paging_url = PROMOTION_DEFAULT_URL."/".ALIAS_LOCATION_URL_DIVISOR;
 			$aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_PROMOTION_MODULE."/".ALIAS_LOCATION_URL_DIVISOR."/", "", $_GET["url_full"]);
-		}
+		}else if($friendlyurl){
+                    /*This else case is write on the 20-09-2013 for friendly url*/
+                   $paging_url = DEFAULT_URL;
+                   $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
+               }
 
 		$parts = explode("/", $aux);
 
@@ -170,7 +174,7 @@
 	}
 	
 	 if(SELECTED_DOMAIN_ID > 0)
-        	$orderbyDropDown = search_getSortingLinks($_GET, $paging_url,$parts);
+        	 $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl);
         else 
         	$orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
 	

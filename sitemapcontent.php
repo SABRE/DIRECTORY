@@ -51,6 +51,13 @@
         width:8px;
         cursor:pointer;
     }
+    
+    .content-main 
+    {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 690px !important;
+    }
 </style>
 <?
 

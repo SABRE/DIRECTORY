@@ -38,7 +38,7 @@
         //Modules Home Page
         if (($aux_array_url[$searchPos_2] == "") || ($aux_array_url[$searchPos_2] == "index.php") || (($module_key == BLOG_FEATURE_FOLDER) && (($aux_array_url[$searchPos_2] == "page") && $aux_array_url[$searchPos_3]))) 
         {
-            
+             
             front_validateIndex();
         
             # ----------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@
         } 
         else 
         { 
-                
+               
            
             //Others pages
             define("LOAD_MODULE_CSS_HOME", "off");
@@ -124,12 +124,11 @@
             if ($module_key == LISTING_FEATURE_FOLDER) 
             {  
                 
-//                echo '<pre>';
-//                print_r($aux_array_url);
+                    
                 //Listing Results
                 if (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) && $aux_array_url[$searchPos_3]) || (($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR) && $aux_array_url[$searchPos_3])) 
                 {
-                
+                     
                     
                     # ----------------------------------------------------------------------------------------------------
                     # CACHE
@@ -146,14 +145,14 @@
                     # SESSION
                     # ----------------------------------------------------------------------------------------------------
                     sess_validateSessionFront();
-                
-                    if (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) 
+                   
+                    if (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || ($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) 
                     {
                         $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                     }
                     
                     include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
-              
+                   
                     # ----------------------------------------------------------------------------------------------------
                     # SITE CONTENT
                     # ----------------------------------------------------------------------------------------------------
@@ -357,7 +356,7 @@
             } 
             elseif ((string_strpos($aux_array_url[$searchPos_2], ALIAS_CLAIM_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3]) 
             {
-
+               
                 # ----------------------------------------------------------------------------------------------------
                 # MAINTENANCE MODE
                 # ----------------------------------------------------------------------------------------------------
@@ -378,7 +377,8 @@
             elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || 
                     (!empty($aux_array_url[$searchPos_2]))) 
             {
-                
+               
+                /*This else case completed on the 20-09-2013 for friendly url*/
                 # ----------------------------------------------------------------------------------------------------
                 # CACHE
                 # ----------------------------------------------------------------------------------------------------
@@ -399,7 +399,7 @@
                 {
                     $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 }
-               
+                
                 include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
                
                 # ----------------------------------------------------------------------------------------------------
@@ -416,20 +416,36 @@
                 $headertag_title = $headertagtitle;
                 $headertag_description = $headertagdescription;
                 $headertag_keywords = $headertagkeywords;
-                if ($browsebycategory || $category_id) {
-                    if ($category_id) {
-                        $categoryObjHeaderTag = new ListingCategory($category_id);
-                        if ($categoryObjHeaderTag->getString("seo_description")) {
-                            $headertag_description = $categoryObjHeaderTag->getString("seo_description");
-                        }
-                        if ($categoryObjHeaderTag->getString("seo_keywords")) {
-                            $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
-                        }
-                        unset($categoryObjHeaderTag);
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ListingCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
                     }
-                } elseif ($browsebylocation) {
-                    include(INCLUDES_DIR."/code/headertaglocation.php");
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
                 }
+                
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                    
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
                 define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
             
@@ -468,7 +484,7 @@
                 # ----------------------------------------------------------------------------------------------------
                 if (EVENT_FEATURE != "on" || CUSTOM_EVENT_FEATURE != "on") { exit; }
                 
-                if (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
+                if (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || ($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
                     $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 }
                 
@@ -596,7 +612,83 @@
                 $headertag_description = $headertagdescription;
                 $headertag_keywords = $headertagkeywords;
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
-            } else {
+                
+            } elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || 
+                    (!empty($aux_array_url[$searchPos_2]))) {
+                /*This else case completed on the 20-09-2013 for friendly url*/
+                
+                # ----------------------------------------------------------------------------------------------------
+                # CACHE
+                # ----------------------------------------------------------------------------------------------------
+                cachefull_header();
+                $closeCacheFull = true;
+
+                # ----------------------------------------------------------------------------------------------------
+                # MAINTENANCE MODE
+                # ----------------------------------------------------------------------------------------------------
+                verify_maintenanceMode();
+                
+                # ----------------------------------------------------------------------------------------------------
+                # SESSION
+                # ----------------------------------------------------------------------------------------------------
+                sess_validateSessionFront();
+               
+                if(!empty($aux_array_url[$searchPos_2]))
+                {
+                    $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                }
+               
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+               
+                # ----------------------------------------------------------------------------------------------------
+                # SITE CONTENT
+                # ----------------------------------------------------------------------------------------------------
+                $sitecontentSection = "Event Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);
+                
+                # ----------------------------------------------------------------------------------------------------
+                # HEADER
+                # ----------------------------------------------------------------------------------------------------
+                $banner_section = "event";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ListingCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+                
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                    
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            
+              
+            }else {
                 front_errorPage();
             }
            
@@ -627,7 +719,7 @@
                 # ----------------------------------------------------------------------------------------------------
                 if (CLASSIFIED_FEATURE != "on" || CUSTOM_CLASSIFIED_FEATURE != "on") { exit; }
                 
-                if (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
+                if (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || ($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
                     $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 }
                 
@@ -756,7 +848,82 @@
                 $headertag_keywords = $headertagkeywords;
                 
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
-            } else {
+            } elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || 
+                    (!empty($aux_array_url[$searchPos_2]))) {
+                /*This else case completed on the 20-09-2013 for friendly url*/
+                
+                # ----------------------------------------------------------------------------------------------------
+                # CACHE
+                # ----------------------------------------------------------------------------------------------------
+                cachefull_header();
+                $closeCacheFull = true;
+
+                # ----------------------------------------------------------------------------------------------------
+                # MAINTENANCE MODE
+                # ----------------------------------------------------------------------------------------------------
+                verify_maintenanceMode();
+                
+                # ----------------------------------------------------------------------------------------------------
+                # SESSION
+                # ----------------------------------------------------------------------------------------------------
+                sess_validateSessionFront();
+               
+                if(!empty($aux_array_url[$searchPos_2]))
+                {
+                    $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                }
+               
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+               
+                # ----------------------------------------------------------------------------------------------------
+                # SITE CONTENT
+                # ----------------------------------------------------------------------------------------------------
+                $sitecontentSection = "Classified Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);
+                
+                # ----------------------------------------------------------------------------------------------------
+                # HEADER
+                # ----------------------------------------------------------------------------------------------------
+                $banner_section = "classified";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ListingCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+                
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                    
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            
+                
+            }else {
                 front_errorPage();
             }
            
@@ -972,7 +1139,7 @@
                 # ----------------------------------------------------------------------------------------------------
                 if (PROMOTION_FEATURE != "on" || CUSTOM_PROMOTION_FEATURE != "on" || CUSTOM_HAS_PROMOTION != "on") exit;
                 
-                if (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
+                if ( ((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || ($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) || ($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR)) {
                     $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 }
                 
@@ -1135,6 +1302,81 @@
                 }
                 
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
+            }elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || 
+                    (!empty($aux_array_url[$searchPos_2]))) {
+                /*This else case completed on the 20-09-2013 for friendly url*/
+                
+                # ----------------------------------------------------------------------------------------------------
+                # CACHE
+                # ----------------------------------------------------------------------------------------------------
+                cachefull_header();
+                $closeCacheFull = true;
+
+                # ----------------------------------------------------------------------------------------------------
+                # MAINTENANCE MODE
+                # ----------------------------------------------------------------------------------------------------
+                verify_maintenanceMode();
+                
+                # ----------------------------------------------------------------------------------------------------
+                # SESSION
+                # ----------------------------------------------------------------------------------------------------
+                sess_validateSessionFront();
+               
+                if(!empty($aux_array_url[$searchPos_2]))
+                {
+                    $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                }
+               
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+               
+                # ----------------------------------------------------------------------------------------------------
+                # SITE CONTENT
+                # ----------------------------------------------------------------------------------------------------
+                $sitecontentSection = "Deal Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);
+                
+                # ----------------------------------------------------------------------------------------------------
+                # HEADER
+                # ----------------------------------------------------------------------------------------------------
+                $banner_section = "promotion";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ListingCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+                
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                    
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            
+                //Listing Backlink return
             } else {
                 front_errorPage();
             }

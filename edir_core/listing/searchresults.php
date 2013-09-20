@@ -50,7 +50,7 @@
 		}
                 
                 
-                /*Code is Add on 13-09-2013 For friendly URL*/
+                /*Code is Add on 20-09-2013 For friendly URL*/
 		if(empty($where) && empty($dist_loc) && !empty($location_3)){
                    $search_category = new Location3($location_3);
                    if($search_category->getString("name"))
@@ -61,7 +61,7 @@
                     }
                    
                 }
-                /*Code End on 13-09-2013*/
+                /*Code End on 20-09-2013*/
                 
 		if ($template_id) {
 			$search_template = new ListingTemplate($template_id);

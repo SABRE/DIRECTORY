@@ -58,6 +58,21 @@
 				$str_search .= $searchConditionDivisor;
 			$str_search .= $where.(($dist_loc)?(" (".$dist_loc." ".ZIPCODE_UNIT_LABEL_PLURAL.")"):(""));
 		}
+                
+                /*Code is Add on 20-09-2013 For friendly URL*/
+		if(empty($where) && empty($dist_loc) && !empty($location_3)){
+                   $search_category = new Location3($location_3);
+                   if($search_category->getString("name"))
+                    {
+                        if(!empty($str_search))
+                            $str_search .= $searchConditionDivisor;
+                        $str_search .= $search_category->getString("name");
+                    }
+                   
+                }
+                /*Code End on 20-09-2013*/
+                
+                
 		if ($category_id) {
 			$search_category = new EventCategory($category_id);
 			/*Code is added on 26-06-2013*/

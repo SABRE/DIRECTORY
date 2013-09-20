@@ -35,6 +35,8 @@
     }
     
     if ($_GET["url_full"] && (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR.'/') !== false || string_strpos($_GET["url_full"], ALIAS_LOCATION_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_REVIEW_URL_DIVISOR) !== false || string_strpos($_GET["url_full"], ALIAS_CHECKIN_URL_DIVISOR) !== false)) {
+        
+           
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
         if (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR) !== false) {
@@ -101,7 +103,10 @@
                 }
             }
         }
-    }   else {
+    }   else if($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php')== FALSE){
+       
+        
+        /*This else case is write on the 20-09-2013 for friendly url*/
         $friendlyurl = true;
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
@@ -129,7 +134,7 @@
                     $aux = mysql_fetch_assoc($result);
                     $_GET["category_id"] = $aux["id"];
                 }
-                $sqlLocation = "SELECT id FROM location_3 WHERE friendly_url LIKE '".$locationName."'";
+                $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$locationName."'";
                 $dbObj_main = db_getDBObject(DEFAULT_DB, true);
                 $result = $dbObj_main->query($sqlLocation);
                 if (mysql_num_rows($result) > 0) {
@@ -351,7 +356,9 @@
     ##################################################
     # CLAIM
     ##################################################
+    
     if ($_GET["claim"]) {
+        
         $_GET["claim"] = str_replace("/", "", $_GET["claim"]);
         $db = db_getDBObject();
         $sql = "SELECT Listing.id as id FROM Listing WHERE Listing.friendly_url = " . db_formatString($_GET["claim"]) . " LIMIT 1";
