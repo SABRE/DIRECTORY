@@ -35,9 +35,17 @@
         width:8px;
         cursor:pointer;
     }
-    .sitemap div.categoryandstateminus
+    .sitemap div.subcategoryandstate
     {
-        background:url("<?=DEFAULT_URL."/images/minus.png";?>") no-repeat;
+        background:url("<?=DEFAULT_URL."/images/plus.png";?>") no-repeat;
+        float:left;
+        height:16px;
+        width:8px;
+        cursor:pointer;
+    }
+    .sitemap div.subcategorylinks
+    {
+        background:url("<?=DEFAULT_URL."/images/plus.png";?>") no-repeat;
         float:left;
         height:16px;
         width:8px;
@@ -112,7 +120,21 @@
                                         echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
                                     }
                                     echo "</li>";
-                                    echo "<li><span class=\"subcategoryandstate\"></span>Category/Subcategory/State combination";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,LISTING_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
                                     echo "</li>";
                                     echo "</ul>";
                                     echo "</div>";    
@@ -141,15 +163,48 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
-				unset($catLink);
+                                unset($catLink);
 				$catLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
-				echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(2,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
+                                    }
                                 }
-                                echo "</li>";
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,EVENT_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
+                                }
+                                echo "</li>";  
 			}
 			if (EVENTCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".EVENT_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_EVENT_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -175,15 +230,48 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
+                                unset($catLink);
 				$catLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
                                 echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(3,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
+                                    }
                                 }
-                                echo "</li>";
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,CLASSIFIED_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
+                                }
+                                echo "</li>";  
 			}
 			if (CLASSIFIEDCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".CLASSIFIED_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_CLASSIFIED_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -209,15 +297,48 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
+                                unset($catLink);
 				$catLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
-				echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(4,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
+                                    }
                                 }
-                                echo "</li>";
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,ARTICLE_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
+                                }
+                                echo "</li>";  
 			}
 			if (ARTICLECATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".ARTICLE_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_ARTICLE_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -244,15 +365,48 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
+                                unset($catLink);
 				$catLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
-				echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(5,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
+                                    }
                                 }
-                                echo "</li>";
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,PROMOTION_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
+                                }
+                                echo "</li>";  
 			}
 			if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".PROMOTION_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_PROMOTION_VIEWALLCATEGORIES)." &raquo;</a></li>";
@@ -278,17 +432,50 @@
 		if ($categories) {
 			echo "<ul>";
 			foreach ($categories as $category) {
+                                unset($catLink);
 				$catLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
-				echo "<li>";
-                                //echo "<img src=\"".DEFAULT_URL."/images/plus.png\" height=\"16px\" width=\"8px\" style=\"float:left;cursor:pointer;\"/>";
+                                echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
-                                
-                                if($retrieved_locations){
-                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
+                                $subcategories = subcategoriesFunction(6,$category->id);
+                                if(empty($subcategories))
+                                {
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
+                                    }
                                 }
-                                echo "</li>";
+                                else
+                                {
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                    echo "<ul>";
+                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                    if($retrieved_locations)
+                                    {
+                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
+                                    }
+                                    echo "</li>";
+                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                    foreach($subcategories as $sub){
+                                        unset($subcatLink);
+                                        $subcatLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                        echo "<li>";
+                                        echo "<div class=\"subcategorylinks\"></div>";
+                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
+                                        if($retrieved_locations)
+                                        {
+                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,BLOG_DEFAULT_URL,$category);
+                                        }
+                                        echo "</li>";
+                                    }
+                                    echo "</ul></div>";
+                                    echo "</li>";
+                                    echo "</ul>";
+                                    echo "</div>";    
+                                }
+                                echo "</li>";  
 			}
-            if (BLOGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                        if (BLOGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
 				echo "<li class=\"view-more\"><a href=\"".BLOG_DEFAULT_URL."/".ALIAS_ALLCATEGORIES_URL_DIVISOR.".php\">".system_showText(LANG_BLOG_VIEWALLCATEGORIES)." &raquo;</a></li>";
 			}
 			echo "</ul>";
@@ -329,15 +516,53 @@
         switch($number)
         {
             case 1:
-            if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") 
-            {
-                    $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_listing DESC LIMIT 20";
-            } 
-            else 
-            {
-                    $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_listing DESC LIMIT 20";
+            }else {
+                $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
             }
             $subCategories = db_getFromDBBySQL("listingcategory", $sql);
+            break;
+            case 2:
+            if (EVENTCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM EventCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_event DESC LIMIT 20";
+            } else {
+                $sql = "SELECT id, title, friendly_url FROM EventCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            $subCategories = db_getFromDBBySQL("eventcategory", $sql);
+            break;
+            case 3:
+            if (CLASSIFIEDCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM ClassifiedCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_classified DESC LIMIT 20";
+            } else {
+                $sql = "SELECT id, title, friendly_url FROM ClassifiedCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            
+            $subCategories = db_getFromDBBySQL("classifiedcategory", $sql);
+            break;
+            case 4:
+            if (ARTICLECATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM ArticleCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_article DESC LIMIT 20";
+            } else {
+                $sql = "SELECT id, title, friendly_url FROM ArticleCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            $subCategories = db_getFromDBBySQL("articlecategory", $sql);
+            break;
+            case 5:
+            if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_listing DESC LIMIT 20";
+            } else {
+                $sql = "SELECT id, title, friendly_url FROM ListingCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            $subCategories = db_getFromDBBySQL("listingcategory", $sql);
+            break;
+            case 6:
+            if (BLOGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
+                $sql = "SELECT id, title, friendly_url FROM BlogCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY active_post DESC LIMIT 20";
+            } else {
+                $sql = "SELECT id, title, friendly_url FROM BlogCategory WHERE category_id =".$id." AND title <> '' AND friendly_url <> '' AND enabled = 'y' ORDER BY title LIMIT ".MAX_SHOW_ALL_CATEGORIES;
+            }
+            $subCategories = db_getFromDBBySQL("blogcategory", $sql);
             break;
             default:
                 //
@@ -345,22 +570,32 @@
         return $subCategories;
     }
     
-//    function commonLinks($subcategories)
-//    {
-//        $returnMessage = '';
-//        //$returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-//        $returnMessage .= "<ul>";
-//        $returnMessage .= "<li><span class=\"categoryandstateplus\"></span>Category/State combination</li>";
-//        if($subcategories)
-//            $returnMessage .= "<li><span class=\"subcategoryandstate\"></span>Category/Subcategory/State combination</li>";
-//        $returnMessage .= "</ul>";
-//        return $returnMessage;
-//        
-//    }
+    function subcategoryStateLinks($subcategory,$retrieved_locations,$module,$category)
+    {
+        $returnMessage = '';
+        if($category){
+                $returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                $returnMessage .= "<ul>";
+                $subcatStateLink = $module."/".$category->getString("friendly_url")."/".$subcategory->getString("friendly_url")."/";
+                foreach($retrieved_locations as $each_location){
+                    $returnMessage .= "<li><a href=\"".$subcatStateLink.$each_location['friendly_url']."\">".$category->getString("title")."/".$subcategory->getString("friendly_url")."/".$each_location['name']."</a></li>";
+                }
+                $returnMessage .= "</ul></div>";
+        }
+        
+        return $returnMessage;
+    }
+
 ?>
 <script>
 $('span').click(function(){
    var className = $(this).attr('class');
+    $('.subcategorylinks').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategorylinks').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    $('.subcategoryandstate').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategoryandstate').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    $('.categoryandstate').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.categoryandstate').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
    if(className == 'plus')
    {
        $('span').removeClass('minus');
@@ -379,28 +614,44 @@ $('span').click(function(){
 });
 
 $('.categoryandstate').click(function(){
-    alert("url(\"<?=DEFAULT_URL."/images/minus.png";?>\")");
-    if($(this).css({'background-image': "url(\"<?=DEFAULT_URL."/images/plus.png";?>\")"})){
-        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
-        $(this).css({'background-image': "url(\"<?=DEFAULT_URL."/images/minus.png";?>\")"})
-    }else if($(this).attr('style').indexof('background-image')=="url(\"<?=DEFAULT_URL."/images/minus.png";?>\")"){
-        alert('hi testing');
+    $('.subcategorylinks').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategorylinks').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    $('.subcategoryandstate').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategoryandstate').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    if($(this).parent('li').children('div .categoryStateLinks').is(':visible')){
         $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+        $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    }else{
+        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+        $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/minus.png";?>\")');
     }
-   //var className = $(this).attr('class');
-   //alert(className);       
-//  if(className == 'categoryandstateplus')
-//   {   
-//       $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
-//       $(this).removeClass('categoryandstateplus');
-//       $(this).addClass('categoryandstateminus');
-//   }
-//   else if(className == 'categoryandstateminus')
-//   {
-//       $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
-//       $(this).removeClass('categoryandstateminus');
-//       $(this).addClass('categoryandstateplus');
-//   }
 });
 
+$('.subcategoryandstate').click(function(){
+    $('.subcategorylinks').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategorylinks').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    $('.categoryandstate').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.categoryandstate').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    if($(this).parent('li').children('div .categoryStateLinks').is(':visible')){
+        $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    }else{
+        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/minus.png";?>\")');
+    }
+   
+});
+
+$('.subcategorylinks').click(function(){
+    
+    $('.subcategorylinks').parent('li').children('div .categoryStateLinks').slideUp('slow');
+    $('.subcategorylinks').css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    if($(this).parent('li').children('div .categoryStateLinks').is(':visible')){
+        $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
+         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
+    }else{
+        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/minus.png";?>\")');
+    }
+});
 </script>

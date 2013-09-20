@@ -123,6 +123,9 @@
             //Listing
             if ($module_key == LISTING_FEATURE_FOLDER) 
             {  
+                
+//                echo '<pre>';
+//                print_r($aux_array_url);
                 //Listing Results
                 if (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || (($aux_array_url[$searchPos_2] == ALIAS_CATEGORY_URL_DIVISOR) && $aux_array_url[$searchPos_3]) || (($aux_array_url[$searchPos_2] == ALIAS_LOCATION_URL_DIVISOR) && $aux_array_url[$searchPos_3])) 
                 {
@@ -372,8 +375,10 @@
                 define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/claim.php");
                 
             }
-            elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || (!empty($aux_array_url[$searchPos_2]) &&  !empty($aux_array_url[$searchPos_3]))) 
+            elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") !== false)) || 
+                    (!empty($aux_array_url[$searchPos_2]))) 
             {
+                
                 # ----------------------------------------------------------------------------------------------------
                 # CACHE
                 # ----------------------------------------------------------------------------------------------------
@@ -390,11 +395,11 @@
                 # ----------------------------------------------------------------------------------------------------
                 sess_validateSessionFront();
                
-                if(!empty($aux_array_url[$searchPos_2]) && (!empty($aux_array_url[$searchPos_3])))
+                if(!empty($aux_array_url[$searchPos_2]))
                 {
                     $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 }
-                
+               
                 include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
                
                 # ----------------------------------------------------------------------------------------------------

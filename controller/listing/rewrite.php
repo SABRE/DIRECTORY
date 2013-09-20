@@ -101,27 +101,58 @@
                 }
             }
         }
-    }  else {
+    }   else {
+        $friendlyurl = true;
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
-        if(count($parts)>=2){
-            $searchbycategory = true;
-            $searchbylocation = true;
-            $auxFullFriendlyUrl = "";
-            $_GET["category"] = $parts[0];
-            $_GET["location"] = $parts[1];
-            for ($i == 2; $i < count($parts); $i++) {
-                switch ($parts[$i]) {
-                    case 'page': $_GET["page"] = $parts[$i + 1];
-                        break;
-                    case 'letter': $_GET["letter"] = $parts[$i + 1];
-                        break;
-                    case 'orderby': $_GET["orderby"] = $parts[$i + 1];
-                        break;
+        if(count($parts) < 2){
+            front_errorPage();
+        }else{
+            if($parts[1] != 'page' && $parts[1] != 'orderby' && $parts[1] != 'letter'){
+                
+                if($parts[2]){
+                    if($parts[2] != 'page' && $parts[2] != 'orderby' && $parts[2] != 'letter'){
+                        $categoryName = $parts[1];
+                        $locationName = $parts[2];
+                    }else{
+                        $categoryName = $parts[0];
+                        $locationName = $parts[1];
+                    }
+                }else{
+                    $categoryName = $parts[0];
+                    $locationName = $parts[1];
                 }
+                
+                $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $categoryName . "' AND enabled = 'y' LIMIT 1";
+                $result = $dbObj->query($sql);
+                if (mysql_num_rows($result) > 0) {
+                    $aux = mysql_fetch_assoc($result);
+                    $_GET["category_id"] = $aux["id"];
+                }
+                $sqlLocation = "SELECT id FROM location_3 WHERE friendly_url LIKE '".$locationName."'";
+                $dbObj_main = db_getDBObject(DEFAULT_DB, true);
+                $result = $dbObj_main->query($sqlLocation);
+                if (mysql_num_rows($result) > 0) {
+                    $row = mysql_fetch_assoc($result);
+                    $_GET["location_3"] = $row["id"];
+                }
+                if (empty($_GET["category_id"]) || empty($_GET["location_3"]) ) {
+                    $failure = true;
+                }
+            }else{
+                $failure = true;
             }
         }
-       
+        for ($i == 2; $i < count($parts); $i++) {
+            switch ($parts[$i]) {
+                case 'page': $_GET["page"] = $parts[$i + 1];
+                    break;
+                case 'letter': $_GET["letter"] = $parts[$i + 1];
+                    break;
+                case 'orderby': $_GET["orderby"] = $parts[$i + 1];
+                    break;
+            }
+        }
     }
     
     if ($browsebycategory || $browsebyitem) {
@@ -172,7 +203,7 @@
         }
     }else if($searchbycategory && $searchbylocation){
       
-        $sql = "SELECT id FROM ListingCategory WHERE full_friendly_url = '" . $_GET["category"] . "' AND enabled = 'y' LIMIT 1";
+        $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $_GET["category"] . "' AND enabled = 'y' LIMIT 1";
 	$result = $dbObj->query($sql);
         if (mysql_num_rows($result) > 0) {
             $aux = mysql_fetch_assoc($result);

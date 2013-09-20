@@ -22,6 +22,8 @@
 	# DEFINES
 	# ----------------------------------------------------------------------------------------------------
 	$includeUrl = EDIRECTORY_ROOT."/custom/domain_".SELECTED_DOMAIN_ID."/theme/default/body/extra/";
+        
+        
         //Get fields according to level
         unset($array_fields);
         $array_fields = system_getFormFields("Event", $event->getNumber("level"));
@@ -46,6 +48,8 @@
             $str_time = $event->getTimeString();
         }
     
+       
+        
 	$friendly_url = $event->getString('friendly_url');
 	
 	if ((string_strpos($_SERVER["REQUEST_URI"], "results.php") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_CATEGORY_URL_DIVISOR."/") !== false || string_strpos($_SERVER["REQUEST_URI"], ALIAS_LOCATION_URL_DIVISOR."/") !== false) && GOOGLE_MAPS_ENABLED == "on" && $mapObj->getString("value") == "on") { 
@@ -202,7 +206,6 @@
 	if (is_array($array_fields) && in_array("summary_description", $array_fields)){
 		$description = $event->getString("description", true);
 	}
-    
     $summaryFileName = $includeUrl."includes/views/view_event_summary_code.php";
     $themeSummaryFileName = INCLUDES_DIR."/views/view_event_summary_code_".EDIR_THEME.".php";
 

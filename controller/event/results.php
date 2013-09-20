@@ -76,7 +76,8 @@
 	} else {
 		$events = false;
 	}
-
+//        echo '<pre>';
+//        print_r($events);die;
 	/*
 	 * Will be used on:
 	 * /frontend/results_info.php

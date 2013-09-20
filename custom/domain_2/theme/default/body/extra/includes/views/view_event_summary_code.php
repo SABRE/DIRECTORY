@@ -1,3 +1,11 @@
+<style>
+    span.date
+    {
+        font-size:12px !important;
+        color:#62707B !important;
+        padding-left: 5px !important;
+    }
+</style>
 <?
 
 	/*==================================================================*\
@@ -45,6 +53,7 @@
 										</span>
                     				<? } ?>	
 									<?=$title?>
+                                                                        <span class ="date"><?=$str_date?></span>
 									<?/*?><p <?=($event->getNumber("id") ? "id=\"showCategory_".$event->getNumber("id")."\"" : "")?>>
 									<?=$complementary_info?></p><? */?>
 								</div>

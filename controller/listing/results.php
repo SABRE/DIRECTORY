@@ -145,7 +145,7 @@ if (!$search_lock) {
         } else if ($browsebylocation) {
             $paging_url = LISTING_DEFAULT_URL . "/" . ALIAS_LOCATION_URL_DIVISOR;
             $aux = str_replace(EDIRECTORY_FOLDER . "/" . ALIAS_LISTING_MODULE . "/" . ALIAS_LOCATION_URL_DIVISOR . "/", "", $_GET["url_full"]);
-        }else if($searchbylocation && $searchbycategory){
+        }else if($friendlyurl){
             $paging_url = DEFAULT_URL;
             $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
         }
@@ -234,7 +234,7 @@ if (!$search_lock) {
     }
 
     if (SELECTED_DOMAIN_ID > 0)
-        $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$searchbycategory,$searchbylocation);
+        $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl);
     else
         $orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
 }

@@ -1,3 +1,16 @@
+<style>
+    span.eventurl
+    {
+        padding-left:10px !important;
+        padding-top:5px !important;
+    }
+    span.eventurl a
+    {
+        float:left !important;
+        margin-top:10px !important;
+        padding-left:10px !important;
+    }
+</style>
 <div class="list-title-link-block">
 	<div class="listing-title">
 		<?=$event_title;?>
@@ -66,9 +79,10 @@
 		<div class="email">
 			<img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/sms.png';?>"  style="display:inline;"/>
 			<span id="email-link">
-				<?=$event_email?>
-			</span>
-		</div>
+                            <?=$event_email?>
+                            <span class="eventurl"><a href="<?=$event_url?>" target="_blank"><?=$event_url?></a></span>
+                        </span>
+                </div>
 	<?}?>
 	<?if($event_facebook_buttons){?>
 		<div style="clear:both;"></div>
