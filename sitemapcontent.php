@@ -1,8 +1,15 @@
 <style>
+    
+    .sitemap ul
+    {
+        padding:0 0 0px;
+    }
     .sitemap ul li
     {
-        padding-left:5px !important;
-        line-height:23px !important;
+        float: none !important;
+        line-height: 23px !important;
+        padding-left: 5px !important;
+        width: 100% !important;
     }
     .sitemap ul li a
     {
@@ -57,6 +64,14 @@
         padding-left: 10px !important;
         padding-right: 10px !important;
         width: 690px !important;
+    }
+    
+    .paginglinks ul li
+    {
+        float:left !important;
+        cursor:pointer !important;
+        padding-left:10px !important;
+        width:0 !important;
     }
 </style>
 <?
@@ -500,7 +515,25 @@
 
 	</div>
 <? 
+
+// COmmented on the 23-09-2013//    
     /*Function is created For create the friendly url for category  and state combination on 11-09-2013*/
+//    function categoryStateLinks($category,$retrieved_locations,$module)
+//    {
+//        $returnMessage = '';
+//        if($category){
+//                $returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+//                $returnMessage .= "<ul>";
+//                foreach($retrieved_locations as $each_location){
+//                    $catStateLink = $module."/".$category->getString("friendly_url")."/".$each_location['friendly_url'];
+//                    $returnMessage .= "<li><a href=\"".$catStateLink."\">".$category->getString("title")."/".$each_location['name']."</a></li>";
+//                }
+//                $returnMessage .= "</ul></div>";
+//        }
+//        
+//        return $returnMessage;
+//    }
+
     function categoryStateLinks($category,$retrieved_locations,$module)
     {
         $returnMessage = '';
@@ -511,7 +544,18 @@
                     $catStateLink = $module."/".$category->getString("friendly_url")."/".$each_location['friendly_url'];
                     $returnMessage .= "<li><a href=\"".$catStateLink."\">".$category->getString("title")."/".$each_location['name']."</a></li>";
                 }
-                $returnMessage .= "</ul></div>";
+                $returnMessage .= "</ul>";
+                $countLocations = count($retrieved_locations);
+                if($countLocations > 10 ){
+                    $returnMessage .= "<div class=\"paginglinks\">";
+                    $returnMessage .= "<ul>";
+                    for($i = 1,$j=1;$i <= $countLocations;$i = $i+10,$j++){
+                       $returnMessage .= "<li class=\"link\" id=\"link_$j\">$j</li>";
+                    }
+                    $returnMessage .= "</ul>";
+                    $returnMessage .= "</div>";
+                }
+                $returnMessage .= "</div>";
         }
         
         return $returnMessage;
@@ -572,10 +616,27 @@
             $subCategories = db_getFromDBBySQL("blogcategory", $sql);
             break;
             default:
-                //
+             //   
         }
         return $subCategories;
     }
+    
+// COmmented on the 23-09-2013//    
+//    function subcategoryStateLinks($subcategory,$retrieved_locations,$module,$category)
+//    {
+//        $returnMessage = '';
+//        if($category){
+//                $returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+//                $returnMessage .= "<ul>";
+//                $subcatStateLink = $module."/".$category->getString("friendly_url")."/".$subcategory->getString("friendly_url")."/";
+//                foreach($retrieved_locations as $each_location){
+//                    $returnMessage .= "<li><a href=\"".$subcatStateLink.$each_location['friendly_url']."\">".$category->getString("title")."/".$subcategory->getString("friendly_url")."/".$each_location['name']."</a></li>";
+//                }
+//                $returnMessage .= "</ul></div>";
+//        }
+//        
+//        return $returnMessage;
+//    }
     
     function subcategoryStateLinks($subcategory,$retrieved_locations,$module,$category)
     {
@@ -584,14 +645,27 @@
                 $returnMessage .= "<div class=\"categoryStateLinks\" style=\"display:none;\">";
                 $returnMessage .= "<ul>";
                 $subcatStateLink = $module."/".$category->getString("friendly_url")."/".$subcategory->getString("friendly_url")."/";
+                
                 foreach($retrieved_locations as $each_location){
                     $returnMessage .= "<li><a href=\"".$subcatStateLink.$each_location['friendly_url']."\">".$category->getString("title")."/".$subcategory->getString("friendly_url")."/".$each_location['name']."</a></li>";
                 }
-                $returnMessage .= "</ul></div>";
+                $returnMessage .= "</ul>";
+                $countLocations = count($retrieved_locations);
+                if($countLocations > 10 ){
+                    $returnMessage .= "<div class=\"paginglinks\">";
+                    $returnMessage .= "<ul>";
+                    for($i = 1,$j=1;$i <= $countLocations;$i = $i+10,$j++){
+                       $returnMessage .= "<li class=\"sublink\" id=\"sublink_$j\">$j</li>";
+                    }
+                    $returnMessage .= "</ul>";
+                    $returnMessage .= "</div>";
+                }
+                $returnMessage .="</div>";
         }
         
         return $returnMessage;
     }
+
 
 ?>
 <script>
@@ -630,6 +704,9 @@ $('.categoryandstate').click(function(){
         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
     }else{
         $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+        $(this).parent('li').children('div .categoryStateLinks').find('li').css('display','none');
+        $(this).parent('li').children('div .categoryStateLinks').find('li').slice(0,10).css('display','block');
+        $(this).parent('li').children('div .categoryStateLinks').find('.paginglinks').find('li').css('display','block');
         $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/minus.png";?>\")');
     }
 });
@@ -657,8 +734,48 @@ $('.subcategorylinks').click(function(){
         $(this).parent('li').children('div .categoryStateLinks').slideUp('slow');
          $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/plus.png";?>\")');
     }else{
-        $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+         $(this).parent('li').children('div .categoryStateLinks').slideDown('slow');
+         $(this).parent('li').children('div .categoryStateLinks').find('li').css('display','none');
+         $(this).parent('li').children('div .categoryStateLinks').find('li').slice(0,10).css('display','block');
+         $(this).parent('li').children('div .categoryStateLinks').find('.paginglinks').find('li').css('display','block');
          $(this).css('background-image','url(\"<?=DEFAULT_URL."/images/minus.png";?>\")');
     }
 });
+
+$('.sublink').click(function(){
+    var id = $(this).attr('id').replace(/sublink_/,'');
+    var start;
+    var end;
+    if(id == 1){
+        start = 0;
+        end = 10;
+    }else{
+        start = (id-1)*10;
+        end = id*10;
+    }
+    $(this).parent('ul').parent('div .paginglinks').parent('div .categoryStateLinks').find('li').css('display','none');
+    $(this).parent('ul').parent('div .paginglinks').parent('div .categoryStateLinks').find('li').slice(start,end).css('display','block');
+    $(this).parent('ul').parent('div .paginglinks').find('li').css('display','block');
+    
+});
+
+
+$('.link').click(function(){
+    var id = $(this).attr('id').replace(/link_/,'');
+    var start;
+    var end;
+    if(id == 1){
+        start = 0;
+        end = 10;
+    }else{
+        start = (id-1)*10;
+        end = id*10;
+    }
+    
+    $(this).parent('ul').parent('div .paginglinks').parent('div .categoryStateLinks').find('li').css('display','none');
+    $(this).parent('ul').parent('div .paginglinks').parent('div .categoryStateLinks').find('li').slice(start,end).css('display','block');
+    $(this).parent('ul').parent('div .paginglinks').find('li').css('display','block');
+    
+});
+
 </script>
