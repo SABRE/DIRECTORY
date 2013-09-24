@@ -17,132 +17,126 @@
 	# * FILE: /functions/search_funct.php
 	# ----------------------------------------------------------------------------------------------------
 
-	function search_frontListingSearch($search_for, $section, $mobile = false) {
-        
-      
-		$searchReturn["select_columns"] = false;
-		$searchReturn["from_tables"]    = false;
-		$searchReturn["where_clause"]   = false;
-		$searchReturn["group_by"]       = false;
-		$searchReturn["order_by"]       = false;
-
-		$orderByConf =  array("characters",
-							"lastupdate",
-							"datecreated",
-							"popular",
-							"rating");
-        
-        if (LISTING_ORDERBY_PRICE) {
-            array_unshift($orderByConf, "price");
-        }
-			
-        $selecId = false;
-
-        if ($section == "listing_results_api") {
-            $section = "listing_results";
-            $selecId = true;
-        }
-		
-        $user_order_by = "";
-		if (in_array($_GET["orderby"], $orderByConf)) {
-			$user_order_by = $_GET["orderby"];
-		}
-
-		if (($section == "listing") || ($section == "mobile")) {
-			$searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.*" : "Listing.*");
-		} else if ($section == "random") {
-			if ($mobile) {
-				$searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.*" : "Listing.*");
-			} else {
-				$searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.id, Listing_Summary.title, Listing_Summary.description, Listing_Summary.friendly_url, Listing_Summary.account_id, Listing_Summary.thumb_id " : "Listing.*");
-			}
-			
-		} else if ($section == "listing_results") {
-
-			/*
-			 * Get fields of Listing Table
-			 */
-			$db = db_getDBObject();
-			$sql_fields = "DESC Listing_Summary";
-			$result = $db->query($sql_fields);
-			if (mysql_num_rows($result) > 0) {
-				$aux_fields_array = array();
-				while ($row = mysql_fetch_assoc($result)) {
-					$aux_fields_array[] = "Listing_Summary.".$row["Field"];
-				}
-				if (count($aux_fields_array) > 0) {
-					$listing_fields = implode(",",$aux_fields_array);
-				} else {
-					$listing_fields = "Listing_Summary.*";
-				}
-			} else {
-				$listing_fields = "Listing_Summary.*";
-			}
-			
-            if ($selecId) {
-                $listing_fields = "Listing_Summary.id";
-            }
+	function search_frontListingSearch($search_for, $section, $mobile = false) 
+        {
+            $searchReturn["select_columns"] = false;
+            $searchReturn["from_tables"]    = false;
+            $searchReturn["where_clause"]   = false;
+            $searchReturn["group_by"]       = false;
+            $searchReturn["order_by"]       = false;
+            $orderByConf =  array("characters",
+                                                    "lastupdate",
+                                                    "datecreated",
+                                                    "popular",
+                                                    "rating");
             
-			$searchReturn["select_columns"] = $listing_fields;
+            if (LISTING_ORDERBY_PRICE) {
+                array_unshift($orderByConf, "price");
+            }
 			
-            if (SEARCH_FORCE_BOOLEANMODE == "on") {
-                $searchReturn["select_columns"] = $searchReturn["select_columns"].", Listing_Summary.title REGEXP '^".db_formatString($search_for["keyword"], "", false, false)."$' AS reg_exp_order";
+            $selecId = false;
+
+            if ($section == "listing_results_api") {
+                $section = "listing_results";
+                $selecId = true;
+            }
+		
+            $user_order_by = "";
+            if (in_array($_GET["orderby"], $orderByConf)) {
+                    $user_order_by = $_GET["orderby"];
             }
 
+            if (($section == "listing") || ($section == "mobile")) {
+                $searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.*" : "Listing.*");
+            } else if ($section == "random") {
+                if ($mobile) {
+                        $searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.*" : "Listing.*");
+                } else {
+                        $searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.id, Listing_Summary.title, Listing_Summary.description, Listing_Summary.friendly_url, Listing_Summary.account_id, Listing_Summary.thumb_id " : "Listing.*");
+                }
+			
+            } else if ($section == "listing_results") {
+                $db = db_getDBObject();
+                $sql_fields = "DESC Listing_Summary";
+                $result = $db->query($sql_fields);
+                if (mysql_num_rows($result) > 0) {
+                        $aux_fields_array = array();
+                        while ($row = mysql_fetch_assoc($result)) {
+                                $aux_fields_array[] = "Listing_Summary.".$row["Field"];
+                        }
+                        if (count($aux_fields_array) > 0) {
+                                $listing_fields = implode(",",$aux_fields_array);
+                        } else {
+                                $listing_fields = "Listing_Summary.*";
+                        }
+                } else {
+                        $listing_fields = "Listing_Summary.*";
+                }
+			
+                if ($selecId) {
+                    $listing_fields = "Listing_Summary.id";
+                }
+                $searchReturn["select_columns"] = $listing_fields;
+			
+                if (SEARCH_FORCE_BOOLEANMODE == "on") {
+                    $searchReturn["select_columns"] = $searchReturn["select_columns"].", Listing_Summary.title REGEXP '^".db_formatString($search_for["keyword"], "", false, false)."$' AS reg_exp_order";
+                }
+
 		} elseif ($section == "count") {
-			$searchReturn["select_columns"] = "COUNT(DISTINCT(Listing_Summary.id))";
+                    $searchReturn["select_columns"] = "COUNT(DISTINCT(Listing_Summary.id))";
 		} elseif ($section == "rss") {
-			$searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.id" : "Listing.id");"Listing.id";
-			$searchReturn["from_tables"] = (FORCE_SECOND ? "Listing_Summary" : "Listing");
+                    $searchReturn["select_columns"] = (FORCE_SECOND ? "Listing_Summary.id" : "Listing.id");"Listing.id";
+                    $searchReturn["from_tables"] = (FORCE_SECOND ? "Listing_Summary" : "Listing");
 		}
 
 		if (($section == "listing") || ($section == "mobile")) {
-			$searchReturn["from_tables"] = (FORCE_SECOND ? "Listing_Summary" : "Listing");
+                    $searchReturn["from_tables"] = (FORCE_SECOND ? "Listing_Summary" : "Listing");
 		} elseif ($section == "count") {
-			$searchReturn["from_tables"] = "Listing_Summary";
+                    $searchReturn["from_tables"] = "Listing_Summary";
 		} else if ($section == "random") {
-			$searchReturn["from_tables"] = "Listing_FeaturedTemp
+                    $searchReturn["from_tables"] = "Listing_FeaturedTemp
 											LEFT JOIN ".(FORCE_SECOND ? "Listing_Summary Listing_Summary" : "Listing Listing")." ON (".(FORCE_SECOND ? "Listing_Summary.id" : "Listing.id")." = Listing_FeaturedTemp.listing_id)";
 		} else if ($section == "listing_results") {
-			$searchReturn["from_tables"] = "Listing_Summary";
+                    $searchReturn["from_tables"] = "Listing_Summary";
 		}
 		
 		if (isset($search_for["id"]) && is_numeric($search_for["id"])) {
-			if ($section == "listing_results") {
-				$where_clause[] = "Listing_Summary.id = ".$search_for["id"]."";
-			} else {
-				$where_clause[] = (FORCE_SECOND ? "Listing_Summary" : "Listing").".id = ".$search_for["id"]."";
-			}
+                    if ($section == "listing_results") {
+                        $where_clause[] = "Listing_Summary.id = ".$search_for["id"]."";
+                    } else {
+                        $where_clause[] = (FORCE_SECOND ? "Listing_Summary" : "Listing").".id = ".$search_for["id"]."";
+                    }
 		}
 
-        if (isset($search_for["except_id"])) {
-			if ($section == "listing_results") {
-				$where_clause[] = "Listing_Summary.id NOT IN (".$search_for["except_id"].") ";
-			} else {
-				$where_clause[] = (FORCE_SECOND ? "Listing_Summary" : "Listing").".id NOT IN (".$search_for["except_id"].")";
-			}
+                if (isset($search_for["except_id"])) {
+                    if ($section == "listing_results") {
+                        $where_clause[] = "Listing_Summary.id NOT IN (".$search_for["except_id"].") ";
+                    } else {
+                        $where_clause[] = (FORCE_SECOND ? "Listing_Summary" : "Listing").".id NOT IN (".$search_for["except_id"].")";
+                    }
 		}
       
 		if (USING_THEME_TEMPLATE && THEME_TEMPLATE_ID > 0) {
-			unset($aux_table_name);
-			if ($section == "listing_results") {
-				$aux_table_name = "Listing_Summary";
-			} else {
-				$aux_table_name = (FORCE_SECOND ? "Listing_Summary" : "Listing");
-			}
+                    unset($aux_table_name);
+                    if ($section == "listing_results") {
+                            $aux_table_name = "Listing_Summary";
+                    } else {
+                            $aux_table_name = (FORCE_SECOND ? "Listing_Summary" : "Listing");
+                    }
             
-			for ($i=0; $i<10; $i++) {
-				if ($search_for["checkbox".$i] == "y") $where_clause[] = $aux_table_name.".custom_checkbox".$i." = ".db_formatString($search_for["checkbox".$i])."";
-				if ($search_for["dropdown".$i]) $where_clause[] = $aux_table_name.".custom_dropdown".$i." = ".db_formatString($search_for["dropdown".$i])."";
-				if ($search_for["text".$i]) $where_clause[] = $aux_table_name.".custom_text".$i." LIKE ".db_formatString("%".$search_for["text".$i]."%")."";
-				if ($search_for["fromtext".$i]) $where_clause[] = "CAST(".$aux_table_name.".custom_text".$i." AS SIGNED INTEGER) >= CAST(".db_formatNumber($search_for["fromtext".$i])." AS SIGNED INTEGER)";
-				if ($search_for["totext".$i]) $where_clause[] = "CAST(".$aux_table_name.".custom_text".$i." AS SIGNED INTEGER) <= CAST(".db_formatNumber($search_for["totext".$i])." AS SIGNED INTEGER)";
-				if ($search_for["short_desc".$i]) $where_clause[] = $aux_table_name.".custom_short_desc".$i." LIKE ".db_formatString("%".$search_for["short_desc".$i]."%")."";
-				if ($search_for["long_desc".$i]) $where_clause[] = $aux_table_name.".custom_long_desc".$i." LIKE ".db_formatString("%".$search_for["long_desc".$i]."%")."";
-			}
+                    for ($i=0; $i<10; $i++) {
+                            if ($search_for["checkbox".$i] == "y") $where_clause[] = $aux_table_name.".custom_checkbox".$i." = ".db_formatString($search_for["checkbox".$i])."";
+                            if ($search_for["dropdown".$i]) $where_clause[] = $aux_table_name.".custom_dropdown".$i." = ".db_formatString($search_for["dropdown".$i])."";
+                            if ($search_for["text".$i]) $where_clause[] = $aux_table_name.".custom_text".$i." LIKE ".db_formatString("%".$search_for["text".$i]."%")."";
+                            if ($search_for["fromtext".$i]) $where_clause[] = "CAST(".$aux_table_name.".custom_text".$i." AS SIGNED INTEGER) >= CAST(".db_formatNumber($search_for["fromtext".$i])." AS SIGNED INTEGER)";
+                            if ($search_for["totext".$i]) $where_clause[] = "CAST(".$aux_table_name.".custom_text".$i." AS SIGNED INTEGER) <= CAST(".db_formatNumber($search_for["totext".$i])." AS SIGNED INTEGER)";
+                            if ($search_for["short_desc".$i]) $where_clause[] = $aux_table_name.".custom_short_desc".$i." LIKE ".db_formatString("%".$search_for["short_desc".$i]."%")."";
+                            if ($search_for["long_desc".$i]) $where_clause[] = $aux_table_name.".custom_long_desc".$i." LIKE ".db_formatString("%".$search_for["long_desc".$i]."%")."";
+                    }
 		}
 
 		if (!$search_for["category_id"]) {
+                       
 			if ($section == "listing_results") {
 				$where_clause[] = "Listing_Summary.status = 'A'";
 			} elseif($section == "random") {
@@ -160,28 +154,27 @@
 			}
 		}			
 		if ($search_for["category_id"]) {
-            //Create a category object to get hierarchy of categories
-			unset($aux_categoryObj,$aux_cat_hierarchy);
-			$aux_categoryObj = new ListingCategory($search_for["category_id"]);
-			$aux_cat_hierarchy = $aux_categoryObj->getHierarchy($search_for["category_id"],false,true);
-			if ($aux_cat_hierarchy) {
-				$listing_ids = '0';
-				if (($section == "listing_results") || ($section == "mobile")) {
-					unset($listing_CategoryObj);
-					$listing_CategoryObj = new Listing_Category();
-                                      
-                                        $listing_ids = $listing_CategoryObj->getListingsByCategoryHierarchy($aux_categoryObj->root_id,$aux_categoryObj->left,$aux_categoryObj->right,$search_for["letter"]);
-		                     
-                                        $total_listings_ids = $listing_CategoryObj->total_listings;
-				}				
-					
-				$where_clause[] = ($section == "listing_results" ? "Listing_Summary" : "Listing_Summary").".id in (".$listing_ids.")";
-				
-                                $searchReturn["total_listings"] = $total_listings_ids;	
-			}
-           
-		}
-		$_locations = explode(",", EDIR_LOCATIONS);
+                    //Create a category object to get hierarchy of categories
+                    unset($aux_categoryObj,$aux_cat_hierarchy);
+                    $aux_categoryObj = new ListingCategory($search_for["category_id"]);
+                    $aux_cat_hierarchy = $aux_categoryObj->getHierarchy($search_for["category_id"],false,true);
+                    if ($aux_cat_hierarchy) {
+                            $listing_ids = '0';
+                            if (($section == "listing_results") || ($section == "mobile")) {
+                                    unset($listing_CategoryObj);
+                                    $listing_CategoryObj = new Listing_Category();
+
+                                    $listing_ids = $listing_CategoryObj->getListingsByCategoryHierarchy($aux_categoryObj->root_id,$aux_categoryObj->left,$aux_categoryObj->right,$search_for["letter"]);
+
+                                    $total_listings_ids = $listing_CategoryObj->total_listings;
+                            }				
+
+                            $where_clause[] = ($section == "listing_results" ? "Listing_Summary" : "Listing_Summary").".id in (".$listing_ids.")";
+
+                            $searchReturn["total_listings"] = $total_listings_ids;	
+                    }
+                }
+                $_locations = explode(",", EDIR_LOCATIONS);
 		$latLoc=false;
 		$longLoc=false;
 		

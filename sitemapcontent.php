@@ -125,42 +125,35 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(1,$category->id);
-                                if(empty($subcategories))
+                                
+                                
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,LISTING_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,LISTING_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,LISTING_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                                
                                 echo "</li>";  
 			}
 			if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
@@ -190,42 +183,35 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(2,$category->id);
-                                if(empty($subcategories))
+                               
+                               
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,EVENT_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,EVENT_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,EVENT_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                                
                                 echo "</li>";  
 			}
 			if (EVENTCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
@@ -257,42 +243,35 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(3,$category->id);
-                                if(empty($subcategories))
+                                
+                               
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,CLASSIFIED_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,CLASSIFIED_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,CLASSIFIED_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                                
                                 echo "</li>";  
 			}
 			if (CLASSIFIEDCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
@@ -324,42 +303,34 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(4,$category->id);
-                                if(empty($subcategories))
+                                
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,ARTICLE_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,ARTICLE_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,ARTICLE_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                                
                                 echo "</li>";  
 			}
 			if (ARTICLECATEGORY_SCALABILITY_OPTIMIZATION == "on") {
@@ -392,42 +363,35 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(5,$category->id);
-                                if(empty($subcategories))
+                                
+                                
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,PROMOTION_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,PROMOTION_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,PROMOTION_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                                
                                 echo "</li>";  
 			}
 			if (LISTINGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {
@@ -459,42 +423,34 @@
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(6,$category->id);
-                                if(empty($subcategories))
+                               
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
+                                echo "<ul>";
+                                echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
+                                if($retrieved_locations)
                                 {
+                                    echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
+                                }
+                                echo "</li>";
+                                echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
+                                echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
+                                foreach($subcategories as $sub){
+                                    unset($subcatLink);
+                                    $subcatLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    echo "<li>";
+                                    echo "<div class=\"subcategorylinks\"></div>";
+                                    echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
                                     if($retrieved_locations)
                                     {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
-                                    }
-                                }
-                                else
-                                {
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\">";
-                                    echo "<ul>";
-                                    echo "<li><div class=\"categoryandstate\"></div>Category/State combination";
-                                    if($retrieved_locations)
-                                    {
-                                        echo $categoryStateLinks = categoryStateLinks($category,$retrieved_locations,BLOG_DEFAULT_URL);
+                                        echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,BLOG_DEFAULT_URL,$category);
                                     }
                                     echo "</li>";
-                                    echo "<li><div class=\"subcategoryandstate\"></div>Category/Subcategory/State combination";
-                                    echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
-                                    foreach($subcategories as $sub){
-                                        unset($subcatLink);
-                                        $subcatLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
-                                        echo "<li>";
-                                        echo "<div class=\"subcategorylinks\"></div>";
-                                        echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
-                                        if($retrieved_locations)
-                                        {
-                                            echo $subcategoryStateLinks = subcategoryStateLinks($sub,$retrieved_locations,BLOG_DEFAULT_URL,$category);
-                                        }
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></div>";
-                                    echo "</li>";
-                                    echo "</ul>";
-                                    echo "</div>";    
                                 }
+                                echo "</ul></div>";
+                                echo "</li>";
+                                echo "</ul>";
+                                echo "</div>";    
+                               
                                 echo "</li>";  
 			}
                         if (BLOGCATEGORY_SCALABILITY_OPTIMIZATION == "on") {

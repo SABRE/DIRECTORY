@@ -1,35 +1,35 @@
 <?  
-	flush();
-       
-	/*==================================================================*\
-	######################################################################
-	#                                                                    #
-	# Copyright 2005 Arca Solutions, Inc. All Rights Reserved.           #
-	#                                                                    #
-	# This file may not be redistributed in whole or part.               #
-	# eDirectory is licensed on a per-domain basis.                      #
-	#                                                                    #
-	# ---------------- eDirectory IS NOT FREE SOFTWARE ----------------- #
-	#                                                                    #
-	# http://www.edirectory.com | http://www.edirectory.com/license.html #
-	######################################################################
-	\*==================================================================*/
+    flush();
 
-	# ----------------------------------------------------------------------------------------------------
-	# * FILE: /index.php
-	# ----------------------------------------------------------------------------------------------------
-	
-	# ----------------------------------------------------------------------------------------------------
-	# LOAD CONFIG
-	# ----------------------------------------------------------------------------------------------------
-	
-	include("./conf/loadconfig.inc.php");
-	
+    /*==================================================================*\
+    ######################################################################
+    #                                                                    #
+    # Copyright 2005 Arca Solutions, Inc. All Rights Reserved.           #
+    #                                                                    #
+    # This file may not be redistributed in whole or part.               #
+    # eDirectory is licensed on a per-domain basis.                      #
+    #                                                                    #
+    # ---------------- eDirectory IS NOT FREE SOFTWARE ----------------- #
+    #                                                                    #
+    # http://www.edirectory.com | http://www.edirectory.com/license.html #
+    ######################################################################
+    \*==================================================================*/
+   
+    # ----------------------------------------------------------------------------------------------------
+    # * FILE: /index.php
+    # ----------------------------------------------------------------------------------------------------
+
+    # ----------------------------------------------------------------------------------------------------
+    # LOAD CONFIG
+    # ----------------------------------------------------------------------------------------------------
+
+    include("./conf/loadconfig.inc.php");
+
     # ----------------------------------------------------------------------------------------------------
     # VALIDATE URL TO OPEN
     # ----------------------------------------------------------------------------------------------------
     unset($aux_array_url, $alias_names);
-    
+
     /**
      * Aux constants to alias for modules
      */
@@ -54,36 +54,59 @@
     $acceptPages[] = ALIAS_SITEMAP_URL_DIVISOR.".php";
     $acceptPages[] = ALIAS_FAQ_URL_DIVISOR.".php";
     $acceptPages[] = "";
-    
+
     $activeMenuHome = false;
-    
+
     /**
      * Getting URL to do correct include
      */
     $aux_array_url = explode("/", $_SERVER["REQUEST_URI"]);
-    
     if (EDIRECTORY_FOLDER) {
         $auxFolder = explode("/", EDIRECTORY_FOLDER);
         $searchPos = count($auxFolder);
     } else {
         $searchPos = 1;
     }
-    
-  $module_key = array_search($aux_array_url[$searchPos], $alias_names);
+
+    $module_key = array_search($aux_array_url[$searchPos], $alias_names);
        
     //Modules Pages
-    if ($module_key) {
-        
+    if ($module_key) 
+    {
         define("ACTUAL_MODULE_FOLDER", $module_key);
+        /*Code is entered on the 24-09-2013 to redirect without the category sepaator*/
+        $removeKey = '';
+        if(array_search(ALIAS_CATEGORY_URL_DIVISOR,$aux_array_url)!== false)
+        {
+            $_SERVER["REQUEST_URI"] = '';
+            foreach($aux_array_url as $key => $value)
+            {
+                if($value !== ALIAS_CATEGORY_URL_DIVISOR)
+                    $_SERVER["REQUEST_URI"] .= $value.'/';
+                else
+                    $removeKey = $key;
+            }
+            unset($aux_array_url[$removeKey]);
+            $url = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER,'',$_SERVER['REQUEST_URI']);
+            
+?>          
+            <script>
+                window.location = '<?=$url?>';
+            </script>
+<?      }
+        /*Code is ended on the 24-09-2013*/
         include(EDIRECTORY_ROOT."/full_modrewrite.php");
-    
-    //Front Pages (index, advertise, contact us, faq, sitemap)
-    } else {
         
-        if (array_search($aux_array_url[$searchPos], $acceptPages) === false && string_strpos($aux_array_url[$searchPos], ALIAS_FAQ_URL_DIVISOR.".php") === false) {
+    } 
+    else 
+    {
+        //Front Pages (index, advertise, contact us, faq, sitemap)
+        if (array_search($aux_array_url[$searchPos], $acceptPages) === false && string_strpos($aux_array_url[$searchPos], ALIAS_FAQ_URL_DIVISOR.".php") === false) 
+        {
             front_errorPage();
-        } else {
-
+        } 
+        else 
+        {
             //Advertise Page
             if (string_strpos($aux_array_url[$searchPos], ALIAS_ADVERTISE_URL_DIVISOR.".php") !== false) { 
 				
@@ -213,8 +236,6 @@
             if ($loadCache) {
                 cachefull_footer();
             }
-            
         }
     }
-    
 ?>
