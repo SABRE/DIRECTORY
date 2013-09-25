@@ -78,18 +78,21 @@
     }   
     else if($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php')== FALSE)
     {
+            
        /*This else case is write on the 20-09-2013 for friendly url*/
         $friendlyurl = true;
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
         $tempParts = array();
-        foreach($parts as $key => $value)
+        
+        for($i = 0; $i < count($parts); $i++)
         {
-            if($value != 'page' && $value != 'letter' && $value != 'orderby' && $value != ''){
-                $tempParts[] = $value;
+            if($parts[$i] != 'page' && $parts[$i] != 'letter' && $parts[$i] != 'orderby' && $parts[$i] != ''){
+                $tempParts[] = $parts[$i];
+            }else{
+                $i = $i+1;
             }
         }
-        
         $countTempParts = count($tempParts);
         if($tempParts){
             if($countTempParts == 1){
@@ -98,6 +101,8 @@
                 if (mysql_num_rows($result) > 0) {
                     $aux = mysql_fetch_assoc($result);
                     $_GET["category_id"] = $aux["id"];
+                }else{
+                    $failure = true;
                 }
             }elseif($countTempParts == 2){
                 $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
@@ -105,58 +110,69 @@
                 if (mysql_num_rows($result) > 0) {
                     $aux = mysql_fetch_assoc($result);
                     $_GET["category_id"] = $aux["id"];
-                }
                 
-                $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[1]."'";
-                $dbObj_main = db_getDBObject(DEFAULT_DB, true);
-                $result = $dbObj_main->query($sqlLocation);
-                if (mysql_num_rows($result) > 0) {
-                    $row = mysql_fetch_assoc($result);
-                    $_GET["location_3"] = $row["id"];
-                }else{
-                    $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
-                    $result = $dbObj->query($sql);
+                    $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[1]."'";
+                    $dbObj_main = db_getDBObject(DEFAULT_DB, true);
+                    $result = $dbObj_main->query($sqlLocation);
                     if (mysql_num_rows($result) > 0) {
-                        $aux = mysql_fetch_assoc($result);
-                        $_GET["category_id"] = $aux["id"];
+                        $row = mysql_fetch_assoc($result);
+                        $_GET["location_3"] = $row["id"];
+                    }else{
+                        unset($_GET["category_id"]);
+                        $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
+                        $result = $dbObj->query($sql);
+                        if (mysql_num_rows($result) > 0) {
+                            $aux = mysql_fetch_assoc($result);
+                            $_GET["category_id"] = $aux["id"];
+                        }else{
+                            $failure = true;
+                        }
                     }
+                }else{
+                    $failure = true;
                 }
-            }elseif($countTempParsts == 3){
-                $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
+            }elseif($countTempParts == 3){  
+                $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
                 $result = $dbObj->query($sql);
-                if (mysql_num_rows($result) > 0) {
-                    $aux = mysql_fetch_assoc($result);
-                    $_GET["category_id"] = $aux["id"];
-                }else{
-                    $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
-                    $result = $dbObj->query($sql);
+                if(mysql_num_rows($result) > 0){
                     if (mysql_num_rows($result) > 0) {
                         $aux = mysql_fetch_assoc($result);
                         $_GET["category_id"] = $aux["id"];
+                        $sql = "SELECT id FROM ListingCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
+                        $result = $dbObj->query($sql);
+                        if (mysql_num_rows($result) > 0) {
+                            $aux = mysql_fetch_assoc($result);
+                            $_GET["category_id"] = $aux["id"];
+                            $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[2]."'";
+                            $dbObj_main = db_getDBObject(DEFAULT_DB, true);
+                            $result = $dbObj_main->query($sqlLocation);
+                            if (mysql_num_rows($result) > 0) {
+                                $row = mysql_fetch_assoc($result);
+                                $_GET["location_3"] = $row["id"];
+                            }else{
+                                $failure = true;
+                            }
+                        }else{
+                            $failure = true;
+                        }
                     }
+                }else{
+                    $failure = true;
                 }
-                $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[2]."'";
-                $dbObj_main = db_getDBObject(DEFAULT_DB, true);
-                $result = $dbObj_main->query($sqlLocation);
-                if (mysql_num_rows($result) > 0) {
-                    $row = mysql_fetch_assoc($result);
-                    $_GET["location_3"] = $row["id"];
+            }else{
+                $failure = true;
+            }
+            
+            
+            for ($i = $countTempParts; $i < count($parts); $i++) {
+                switch ($parts[$i]) {
+                    case 'page': $_GET["page"] = $parts[$i + 1];
+                        break;
+                    case 'letter': $_GET["letter"] = $parts[$i + 1];
+                        break;
+                    case 'orderby': $_GET["orderby"] = $parts[$i + 1];
+                        break;
                 }
-            }
-            if(((isset($_GET['category_id']) && empty($_GET['category_id'])) || (isset($_GET['location_3']) && empty($_GET['location_3'])))){
-                $failur = true;
-            }
-        }else{
-            $failure = true;
-        }
-        for ($i == $countTempParsts; $i < count($parts); $i++) {
-            switch ($parts[$i]) {
-                case 'page': $_GET["page"] = $parts[$i + 1];
-                    break;
-                case 'letter': $_GET["letter"] = $parts[$i + 1];
-                    break;
-                case 'orderby': $_GET["orderby"] = $parts[$i + 1];
-                    break;
             }
         }
     }

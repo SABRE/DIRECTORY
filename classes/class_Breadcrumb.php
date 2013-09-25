@@ -746,9 +746,9 @@ class breadcrumb {
 
 				if ($break_dir) {
                     if ($this->section == "location")
-                        $dir = "$sub_dir"."/$this->module/".ALIAS_LOCATION_URL_DIVISOR."/";
+                        $dir = $sub_dir."/".$this->module."/".ALIAS_LOCATION_URL_DIVISOR;
                     else if ($this->section == "category")
-                        $dir = "$sub_dir"."/$this->module/".ALIAS_CATEGORY_URL_DIVISOR;
+                        $dir = $sub_dir."/".$this->module."/".ALIAS_CATEGORY_URL_DIVISOR;
 				} else {
 					if ($this->sub_folder && $this->section == 'home')
 						$dir .= $this->sub_folder;

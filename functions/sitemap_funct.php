@@ -249,7 +249,7 @@
                 if ($url_number <= 0) {
                     $buffer_category .= sitemap_printHeader();
                 }
-                $category_str = $item_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category_row['friendly_url'];
+                $category_str = $item_default_url."/".$category_row['friendly_url'];
                 $buffer_category .= sitemap_printNodeUrl($category_str, $default_lastmod);
                 $url_number++;
                 if ($url_number == SITEMAP_MAXURL) {
@@ -273,7 +273,7 @@
                         if ($url_number <= 0) {
                             $buffer_category .= sitemap_printHeader();
                         }
-                        $category_str = $item_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url'];
+                        $category_str = $item_default_url."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url'];
                         $buffer_category .= sitemap_printNodeUrl($category_str, $default_lastmod);
                         $url_number++;
                         if ($url_number == SITEMAP_MAXURL) {
@@ -293,7 +293,7 @@
                                 if ($url_number <= 0) {
                                     $buffer_category .= sitemap_printHeader();
                                 }
-                                $category_str = $item_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url'];
+                                $category_str = $item_default_url."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url'];
                                 $buffer_category .= sitemap_printNodeUrl($category_str, $default_lastmod);
                                 $url_number++;
                                 if ($url_number == SITEMAP_MAXURL) {
@@ -313,7 +313,7 @@
                                         if ($url_number <= 0) {
                                             $buffer_category .= sitemap_printHeader();
                                         }
-                                        $category_str = $item_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url']."/".$sub3category_row['friendly_url'];
+                                        $category_str = $item_default_url."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url']."/".$sub3category_row['friendly_url'];
                                         $buffer_category .= sitemap_printNodeUrl($category_str, $default_lastmod);
                                         $url_number++;
                                         if ($url_number == SITEMAP_MAXURL) {
@@ -333,7 +333,7 @@
                                                 if ($url_number <= 0) {
                                                     $buffer_category .= sitemap_printHeader();
                                                 }
-                                                $category_str = $item_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url']."/".$sub3category_row['friendly_url']."/".$sub4category_row['friendly_url'];
+                                                $category_str = $item_default_url."/".$category_row['friendly_url']."/".$sub1category_row['friendly_url']."/".$sub2category_row['friendly_url']."/".$sub3category_row['friendly_url']."/".$sub4category_row['friendly_url'];
                                                 $buffer_category .= sitemap_printNodeUrl($category_str, $default_lastmod);
                                                 $url_number++;
                                                 if ($url_number == SITEMAP_MAXURL) {

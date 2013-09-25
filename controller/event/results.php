@@ -21,6 +21,7 @@
     # ----------------------------------------------------------------------------------------------------
     # MODULE REWRITE
     # ----------------------------------------------------------------------------------------------------
+     
     include(EDIR_CONTROLER_FOLDER."/".EVENT_FEATURE_FOLDER."/rewrite.php");
     
     # ----------------------------------------------------------------------------------------------------
@@ -109,11 +110,15 @@
 			$aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_EVENT_MODULE."/".ALIAS_LOCATION_URL_DIVISOR."/", "", $_GET["url_full"]);
 		}else if($friendlyurl){
                      /*This else case is write on the 20-09-2013 for friendly url*/
-                    $paging_url = DEFAULT_URL;
-                    $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
+                    
+                    if(EDIRECTORY_FOLDER){
+                        $paging_url = str_replace(EDIRECTORY_FOLDER,'',DEFAULT_URL);
+                    }else{
+                        $paging_url = DEFAULT_URL;
+                    }
+                    $aux = $_GET["url_full"];
                 }
-
-		$parts = explode("/", $aux);
+                $parts = explode("/", $aux);
 
 		for ($i=0; $i < count($parts); $i++ ) {
 			if ($parts[$i]) {
@@ -129,7 +134,7 @@
 				}
 			}
 		}
-
+                
 		$url_search_params = implode("/", $array_search_params);
 		
 		if (string_substr($url_search_params, -1) == "/") {
@@ -156,10 +161,10 @@
 	 if(SELECTED_DOMAIN_ID > 0){
         	$letters_menu		= system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, EVENT_SCALABILITY_OPTIMIZATION);
         	$array_pages_code	= system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page  : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
-     }else{
+        }else{
         	$letters_menu = system_prepareLetterToPagination($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, EVENT_SCALABILITY_OPTIMIZATION);
         	$array_pages_code	= system_preparePagination($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page  : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
-    }
+        }
 	
 	
 	

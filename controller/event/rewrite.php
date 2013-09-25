@@ -19,112 +19,168 @@
 	# ----------------------------------------------------------------------------------------------------
     
     $failure = false;
-	$dbObj = db_getDBObject();
+    $dbObj = db_getDBObject();
 
-	$browsebylocation = false;
-	$browsebycategory = false;
-	$browsebyitem = false;
+    $browsebylocation = false;
+    $browsebycategory = false;
+    $browsebyitem = false;
 
-	if ($_GET["url_full"] && !$fromRSS){
-		$_GET["url_full"] = $_SERVER["REQUEST_URI"];
-	}
+    if ($_GET["url_full"] && !$fromRSS){
+            $_GET["url_full"] = $_SERVER["REQUEST_URI"];
+    }
 
-    if ($_GET["url_full"] && (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR.'/') !== false || string_strpos($_GET["url_full"], ALIAS_LOCATION_URL_DIVISOR) !== false)) {
+    if ($_GET["url_full"]!== false && string_strpos($_GET["url_full"],'results.php')!= FALSE || string_strpos($_GET["url_full"], ALIAS_SHARE_URL_DIVISOR) !== false) 
+    {
+        $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_EVENT_MODULE."/", "", $_GET["url_full"]);
+        $parts = explode("/", $url);
 
-		$url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_EVENT_MODULE."/", "", $_GET["url_full"]);
-		$parts = explode("/", $url);
-        
-		if (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR) !== false ){
-			$browsebycategory = true;
-			
-			for ($i=1; $i<count($parts); $i++){
-					$_GET["category".$i] = $parts[$i];
-			}
-		} else if (string_strpos($_GET["url_full"],ALIAS_LOCATION_URL_DIVISOR) !== false){
-			$browsebylocation = true;
-			
-			for ($i=1; $i<count($parts); $i++){
-					$_GET["friendLoc".$i] = $parts[$i];
-			}
-		} else {
+        if (string_strpos($_GET["url_full"], ALIAS_CATEGORY_URL_DIVISOR) !== false ){
+                $browsebycategory = true;
 
-			if (!$parts[1] && !$parts[3]) {
-				header("Location: ".EVENT_DEFAULT_URL."/results.php");
-				exit;
-			}
+                for ($i=1; $i<count($parts); $i++){
+                                $_GET["category".$i] = $parts[$i];
+                }
+        } else if (string_strpos($_GET["url_full"],ALIAS_LOCATION_URL_DIVISOR) !== false){
+                $browsebylocation = true;
 
-			if ($parts[1] != "empty"){
-				$_GET["keyword"] = $parts[1];
-				$_GET["keyword"] = str_replace("|2F","/", $_GET["keyword"]);
-				$_GET["keyword"] = str_replace("|3F","\\", $_GET["keyword"]);
-			} else {
-				$_GET["keyword"] = "";
-			}
+                for ($i=1; $i<count($parts); $i++){
+                                $_GET["friendLoc".$i] = $parts[$i];
+                }
+        } else {
 
-			if ($parts[3] != "empty"){
-				$_GET["where"] = $parts[3];
-				$_GET["where"] = str_replace("|2F","/", $_GET["where"]);
-				$_GET["where"] = str_replace("|3F","\\", $_GET["where"]);
-			} else {
-				$_GET["where"] = "";
-			}
+                if (!$parts[1] && !$parts[3]) {
+                        header("Location: ".EVENT_DEFAULT_URL."/results.php");
+                        exit;
+                }
 
-			for ($i==2; $i<count($parts); $i++){
-				switch($parts[$i]) {
-					case 'page': $_GET["page"] = $parts[$i+1];
-									break;
-					case 'letter': $_GET["letter"] = $parts[$i+1];
-									break;
-					case 'orderby': $_GET["orderby"] = $parts[$i+1];
-									break;
-				}
-			}
-		}
-	} else if($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php')== FALSE){
-            /*This else case is write on the 20-09-2013 for friendly url*/
-            $friendlyurl = true;
-            $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_EVENT_MODULE."/", "", $_GET["url_full"]);
-            $parts = explode("/", $url);
-            if(count($parts) < 2){
-                front_errorPage();
-            }else{
-                if($parts[1] != 'page' && $parts[1] != 'orderby' && $parts[1] != 'letter'){
+                if ($parts[1] != "empty"){
+                        $_GET["keyword"] = $parts[1];
+                        $_GET["keyword"] = str_replace("|2F","/", $_GET["keyword"]);
+                        $_GET["keyword"] = str_replace("|3F","\\", $_GET["keyword"]);
+                } else {
+                        $_GET["keyword"] = "";
+                }
 
-                    if($parts[2]){
-                        if($parts[2] != 'page' && $parts[2] != 'orderby' && $parts[2] != 'letter'){
-                            $categoryName = $parts[1];
-                            $locationName = $parts[2];
-                        }else{
-                            $categoryName = $parts[0];
-                            $locationName = $parts[1];
+                if ($parts[3] != "empty"){
+                        $_GET["where"] = $parts[3];
+                        $_GET["where"] = str_replace("|2F","/", $_GET["where"]);
+                        $_GET["where"] = str_replace("|3F","\\", $_GET["where"]);
+                } else {
+                        $_GET["where"] = "";
+                }
+
+                for ($i==2; $i<count($parts); $i++){
+                        switch($parts[$i]) {
+                                case 'page': $_GET["page"] = $parts[$i+1];
+                                                                break;
+                                case 'letter': $_GET["letter"] = $parts[$i+1];
+                                                                break;
+                                case 'orderby': $_GET["orderby"] = $parts[$i+1];
+                                                                break;
                         }
-                    }else{
-                        $categoryName = $parts[0];
-                        $locationName = $parts[1];
-                    }
-
-                    $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $categoryName . "' AND enabled = 'y' LIMIT 1";
-                    $result = $dbObj->query($sql);
-                    if (mysql_num_rows($result) > 0) {
-                        $aux = mysql_fetch_assoc($result);
-                        $_GET["category_id"] = $aux["id"];
-                    }
-                    $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$locationName."'";
+                }
+        }
+    } 
+    else if($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php')== FALSE)
+    {
+        /*This else case is write on the 20-09-2013 for friendly url*/
+        $friendlyurl = true;
+        $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_EVENT_MODULE."/", "", $_GET["url_full"]);
+        $parts = explode("/", $url);
+        $tempParts = array();
+        for($i = 0; $i < count($parts); $i++)
+        {
+            if($parts[$i] != 'page' && $parts[$i] != 'letter' && $parts[$i] != 'orderby' && $parts[$i] != ''){
+                $tempParts[] = $parts[$i];
+            }else{
+                $i = $i+1;
+            }
+        }
+        $countTempParts = count($tempParts);
+        if($tempParts)
+        {
+            if($countTempParts == 1){
+                $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
+                $result = $dbObj->query($sql);
+                if (mysql_num_rows($result) > 0) {
+                    $aux = mysql_fetch_assoc($result);
+                    $_GET["category_id"] = $aux["id"];
+                }else{
+                    $failure = true;
+                }
+            }
+            elseif($countTempParts == 2)
+            {
+                $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
+                $result = $dbObj->query($sql);
+                if (mysql_num_rows($result) > 0) 
+                {
+                    $aux = mysql_fetch_assoc($result);
+                    $_GET["category_id"] = $aux["id"];
+                    $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[1]."'";
                     $dbObj_main = db_getDBObject(DEFAULT_DB, true);
                     $result = $dbObj_main->query($sqlLocation);
                     if (mysql_num_rows($result) > 0) {
                         $row = mysql_fetch_assoc($result);
                         $_GET["location_3"] = $row["id"];
+                    }else{
+                        unset($_GET["category_id"]);
+                        $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
+                        $result = $dbObj->query($sql);
+                        if (mysql_num_rows($result) > 0) {
+                            $aux = mysql_fetch_assoc($result);
+                            $_GET["category_id"] = $aux["id"];
+                        }else{
+                            $failure = true;
+                        }
                     }
-                    if (empty($_GET["category_id"]) || empty($_GET["location_3"]) ) {
-                        $failure = true;
-                    }
-                }else{
+                }
+                else
+                {
                     $failure = true;
                 }
             }
-            for ($i == 2; $i < count($parts); $i++) {
-                switch ($parts[$i]) {
+            elseif($countTempParts == 3)
+            {  
+                $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $tempParts[0] . "' AND enabled = 'y' LIMIT 1";
+                $result = $dbObj->query($sql);
+                if(mysql_num_rows($result) > 0)
+                {
+                    if (mysql_num_rows($result) > 0) {
+                        $aux = mysql_fetch_assoc($result);
+                        $_GET["category_id"] = $aux["id"];
+                        $sql = "SELECT id FROM EventCategory WHERE friendly_url = '" . $tempParts[1] . "' AND enabled = 'y' LIMIT 1";
+                        $result = $dbObj->query($sql);
+                        if (mysql_num_rows($result) > 0) {
+                            $aux = mysql_fetch_assoc($result);
+                            $_GET["category_id"] = $aux["id"];
+                            $sqlLocation = "SELECT id FROM Location_3 WHERE friendly_url LIKE '".$tempParts[2]."'";
+                            $dbObj_main = db_getDBObject(DEFAULT_DB, true);
+                            $result = $dbObj_main->query($sqlLocation);
+                            if (mysql_num_rows($result) > 0) {
+                                $row = mysql_fetch_assoc($result);
+                                $_GET["location_3"] = $row["id"];
+                            }else{
+                                $failure = true;
+                            }
+                        }else{
+                            $failure = true;
+                        }
+                    }
+                }
+                else
+                {
+                    $failure = true;
+                }
+            }
+            else
+            {
+                $failure = true;
+            }
+            for ($i = $countTempParts; $i < count($parts); $i++) 
+            {
+                switch ($parts[$i]) 
+                {
                     case 'page': $_GET["page"] = $parts[$i + 1];
                         break;
                     case 'letter': $_GET["letter"] = $parts[$i + 1];
@@ -134,6 +190,7 @@
                 }
             }
         }
+    }
     
 	if ($browsebycategory){
 		for ($i=1; $i < count($parts); $i++){

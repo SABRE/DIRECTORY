@@ -38,7 +38,7 @@
         }
     }
 
-    $href = $aux_CategoryModuleURL."/".ALIAS_CATEGORY_URL_DIVISOR."/".implode("/",$friendly_url_path);
+    $href = $aux_CategoryModuleURL."/".implode("/",$friendly_url_path);
 	
 	unset($categories_content);
 	if ($subcategories){

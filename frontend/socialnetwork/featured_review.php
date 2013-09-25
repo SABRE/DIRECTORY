@@ -106,7 +106,7 @@
 					unset($cats);
 					foreach ($categories as $categoryObj) {
 
-						$href = "".LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR;
+						$href = "".LISTING_DEFAULT_URL;
 	
                         $path_elem_arr = $categoryObj->getFullPath();
                         if ($path_elem_arr) {
@@ -135,7 +135,7 @@
 				if ($categories) {
 					unset($cats);
 					foreach ($categories as $categoryObj) {
-                        $href = "".constant("ARTICLE_DEFAULT_URL")."/".ALIAS_CATEGORY_URL_DIVISOR;
+                        $href = "".constant("ARTICLE_DEFAULT_URL");
 
                         $path_elem_arr = $categoryObj->getFullPath();
                         if ($path_elem_arr) {

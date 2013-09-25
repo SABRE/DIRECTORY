@@ -44,8 +44,8 @@
                         $categories_listing[$key] = $value;
                     }
                     if($categories_listing){
-                        $categoryLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_listing["friendly_url"];
-
+                        //$categoryLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_listing["friendly_url"];
+                        $categoryLink = LISTING_DEFAULT_URL."/".$categories_listing["friendly_url"];
                         $sideBarStr .="     <li><a href=\"".$categoryLink."\">".string_htmlentities($categories_listing["title"])."</a>";
 
                         if(SHOW_CATEGORY_COUNT == "on"){
@@ -73,8 +73,8 @@
                                     <ul class=\"list\">";
 
                 for ($i=0; $i<count($categories_event); $i++) {
-                    $categoryLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_event[$i]["friendly_url"];
-
+                    //$categoryLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_event[$i]["friendly_url"];
+                    $categoryLink = EVENT_DEFAULT_URL."/".$categories_event[$i]["friendly_url"];
                     $sideBarStr .="     <li><a href=\"".$categoryLink."\">".string_htmlentities($categories_event[$i]["title"])."</a>";
                     if (SHOW_CATEGORY_COUNT == "on"){
                         $sideBarStr .="     <span>(".$categories_event[$i]["active_event"].")</span>";
@@ -97,8 +97,8 @@
                                     <ul class=\"list\">";
 
                 for ($i=0; $i<count($categories_classified); $i++) {
-                    $categoryLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_classified[$i]["friendly_url"];
-
+                    //$categoryLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_classified[$i]["friendly_url"];
+                     $categoryLink = CLASSIFIED_DEFAULT_URL."/".$categories_classified[$i]["friendly_url"];   
                     $sideBarStr .="     <li><a href=\"".$categoryLink."\">".string_htmlentities($categories_classified[$i]["title"])."</a>";
                     if (SHOW_CATEGORY_COUNT == "on"){
                         $sideBarStr .="     <span>(".$categories_classified[$i]["active_classified"].")</span>";
@@ -123,8 +123,8 @@
                                     <ul class=\"list\">";
 
                 for ($i=0; $i<count($categories_article); $i++) {
-                    $categoryLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_article[$i]["friendly_url"];
- 
+                    //$categoryLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_article[$i]["friendly_url"];
+                    $categoryLink = ARTICLE_DEFAULT_URL."/".$categories_article[$i]["friendly_url"];
                     $sideBarStr .="     <li><a href=\"".$categoryLink."\">".string_htmlentities($categories_article[$i]["title"])."</a>";
                     if (SHOW_CATEGORY_COUNT == "on"){
                         $sideBarStr .="     <span>(".$categories_article[$i]["active_article"].")</span>";
@@ -156,8 +156,8 @@
                             $categories_deal[$key] = $value;
                         }
                         if ($categories_deal) {
-                            $categoryLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_deal["friendly_url"];
-
+                            //$categoryLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories_deal["friendly_url"];
+                            $categoryLink = PROMOTION_DEFAULT_URL."/".$categories_deal["friendly_url"];
                             $sideBarStr .= " <li><a href=\"".$categoryLink."\">".string_htmlentities($categories_deal["title"])."</a></li>";
 
                         }

@@ -9,7 +9,6 @@
             exit;
         }
     }
-
     # ----------------------------------------------------------------------------------------------------------------------
     # RESULTS
     # ----------------------------------------------------------------------------------------------------------------------
@@ -114,13 +113,14 @@
                 $aux = str_replace(EDIRECTORY_FOLDER . "/" . ALIAS_LISTING_MODULE . "/" . ALIAS_LOCATION_URL_DIVISOR . "/", "", $_GET["url_full"]);
             }else if($friendlyurl){
                  /*This else case is write on the 20-09-2013 for friendly url*/
-                $paging_url = DEFAULT_URL;
+                if(EDIRECTORY_FOLDER){
+                    $paging_url = str_replace(EDIRECTORY_FOLDER,'',DEFAULT_URL);
+                }else{
+                    $paging_url = DEFAULT_URL;
+                }
                 $aux = $_GET["url_full"];
             }
-
             $parts = explode("/", $aux);
-
-
             for ($i = 0; $i < count($parts); $i++) {
                 if ($parts[$i]) {
                     if ($parts[$i] != "page" && $parts[$i] != "letter" && $parts[$i] != "orderby") {

@@ -363,9 +363,9 @@
 			$path_elem_arr = $catObj->getFullPath();
 
             if ($item_aux) {
-                $href = "".constant(string_strtoupper($item_aux)."_DEFAULT_URL")."/".ALIAS_CATEGORY_URL_DIVISOR;
+                $href = "".constant(string_strtoupper($item_aux)."_DEFAULT_URL");
             } else {
-                $href = "".constant(string_strtoupper($item)."_DEFAULT_URL")."/".ALIAS_CATEGORY_URL_DIVISOR;
+                $href = "".constant(string_strtoupper($item)."_DEFAULT_URL");
             }
 
             if ($path_elem_arr) {
@@ -2048,7 +2048,7 @@
                     else if ($item_type=='deal')
                         $urlToModule=PROMOTION_DEFAULT_URL;
 					if ($user) {
-						$categoriesString[] = "<a href=\"".$urlToModule."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories[$i]["friendly_url"]."\">".format_getString($categories[$i]["title"])."</a>";
+						$categoriesString[] = "<a href=\"".$urlToModule."/".$categories[$i]["friendly_url"]."\">".format_getString($categories[$i]["title"])."</a>";
 					} else {
 						$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".format_getString($categories[$i]["title"])."</a>";
 					}
@@ -2068,7 +2068,7 @@
 				if ($categories[$i]["title"] && $categories[$i]["enabled"] == "y") {
                     $urlToModule = BLOG_DEFAULT_URL;
 					if ($user) {
-						$categoriesString[] = "<a href=\"".$urlToModule."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories[$i]["friendly_url"]."\">".format_getString($categories[$i]["title"])."</a>";
+						$categoriesString[] = "<a href=\"".$urlToModule."/".$categories[$i]["friendly_url"]."\">".format_getString($categories[$i]["title"])."</a>";
 					} else {
 						$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".format_getString($categories[$i]["title"])."</a>";
 					}
@@ -2111,7 +2111,7 @@
                                 else if ($item_type=='deal')
                                     $urlToModule=PROMOTION_DEFAULT_URL;
 								if ($user) {
-									$categoriesString[] = "<a href=\"".$urlToModule."/".ALIAS_CATEGORY_URL_DIVISOR."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
+									$categoriesString[] = "<a href=\"".$urlToModule."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
 								} else {
 									$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".$mainCategoryObj->getString("title")."</a>";
 								}
@@ -2120,7 +2120,7 @@
 							$mainCategoryObj = new EventCategory($mainCategoryID);
 							if ($mainCategoryObj->getString("title") && $mainCategoryObj->getString("enabled") == "y") {
 								if ($user) {
-									$categoriesString[] = "<a href=\"".EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
+									$categoriesString[] = "<a href=\"".EVENT_DEFAULT_URL."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
 								} else {
 									$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".$mainCategoryObj->getString("title")."</a>";
 								}
@@ -2130,7 +2130,7 @@
 							if ($mainCategoryObj->getString("title") && $mainCategoryObj->getString("enabled") == "y") {
 								$categoryName = $mainCategoryObj->getString("title", true,50);
 								if ($user) {
-									$categoriesString[] = "<a href=\"".CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$mainCategoryObj->getString("friendly_url")."\" title=\"".$mainCategoryObj->getString("title")."\">".$categoryName."</a>";
+									$categoriesString[] = "<a href=\"".CLASSIFIED_DEFAULT_URL."/".$mainCategoryObj->getString("friendly_url")."\" title=\"".$mainCategoryObj->getString("title")."\">".$categoryName."</a>";
 								} else {
 									$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".$categoryName."</a>";
 								}
@@ -2139,7 +2139,7 @@
 							$mainCategoryObj = new ArticleCategory($mainCategoryID);
 							if ($mainCategoryObj->getString("title") && $mainCategoryObj->getString("enabled") == "y") {
 								if ($user) {
-									$categoriesString[] = "<a href=\"".ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
+									$categoriesString[] = "<a href=\"".ARTICLE_DEFAULT_URL."/".$mainCategoryObj->getString("friendly_url")."\">".$mainCategoryObj->getString("title")."</a>";
 								} else {
 									$categoriesString[] = "<a href=\"javascript:void(0);\" style=\"cursor:default\">".$mainCategoryObj->getString("title")."</a>";
 								}
@@ -5660,8 +5660,7 @@
 	}
 	
 	function system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, $fieldOnTable, $blog_module = false, $promotion_module = false, $listingForceJoin = false, $scalability = "off"){
-	
-		/*
+                /*
 		 * Get letters of events
 		 */
 		$letters = $pageObj->getString("letters");
@@ -5723,6 +5722,7 @@
 					}
 				} else{
 					if ($specialChar){
+                                                
 						$letters_menu .= "<a href=\"$paging_url".(($url_search_params) ? "$url_search_params" : "")."/letter/no\" ".(($letter == "no") ? "class=\"active\"" : "" ).">".string_strtoupper($each_letter)."</a>";
 					} else{
 						$letters_menu .="<span>#</span>";

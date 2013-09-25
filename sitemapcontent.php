@@ -121,7 +121,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = LISTING_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(1,$category->id);
@@ -139,7 +139,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = LISTING_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = LISTING_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
@@ -179,7 +179,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = EVENT_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(2,$category->id);
@@ -197,7 +197,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = EVENT_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = EVENT_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
@@ -239,7 +239,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = CLASSIFIED_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(3,$category->id);
@@ -257,7 +257,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = CLASSIFIED_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = CLASSIFIED_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
@@ -299,7 +299,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = ARTICLE_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(4,$category->id);
@@ -316,7 +316,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = ARTICLE_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
@@ -359,7 +359,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = PROMOTION_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(5,$category->id);
@@ -377,7 +377,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = PROMOTION_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";
@@ -419,7 +419,7 @@
 			echo "<ul>";
 			foreach ($categories as $category) {
                                 unset($catLink);
-				$catLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url");
+				$catLink = BLOG_DEFAULT_URL."/".$category->getString("friendly_url");
                                 echo "<li>";
                                 echo "<span class=\"plus\"></span><a href=\"".$catLink."\">".$category->getString("title")."</a>";
                                 $subcategories = subcategoriesFunction(6,$category->id);
@@ -436,7 +436,7 @@
                                 echo "<div class=\"categoryStateLinks\" style=\"display:none;\"><ul>";
                                 foreach($subcategories as $sub){
                                     unset($subcatLink);
-                                    $subcatLink = BLOG_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
+                                    $subcatLink = BLOG_DEFAULT_URL."/".$category->getString("friendly_url")."/".$sub->getString("friendly_url");
                                     echo "<li>";
                                     echo "<div class=\"subcategorylinks\"></div>";
                                     echo "<a href=\"".$subcatLink."\">".$sub->getString("title")."</a>";

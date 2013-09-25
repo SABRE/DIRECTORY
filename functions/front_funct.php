@@ -108,7 +108,7 @@
             if ($page) {
                 $extra_headertag_title_page = $page;
             }
-
+            
             $extra_headertag_title = "";
             if ($extra_headertag_title_keyword) {
                 $extra_headertag_title .= system_showText(LANG_SEARCHRESULTS_KEYWORD)." ".$extra_headertag_title_keyword;
@@ -162,7 +162,6 @@
         if(is_array($return_headertag)){
 
             extract($return_headertag);
-
             if(array_key_exists ("header_title", $return_headertag)){
                 $headertag_title = (($header_title) ? ($header_title) : (EDIRECTORY_TITLE));
             }
@@ -180,7 +179,7 @@
             }
 
         }
-
+        
         if ($extra_headertag_title) {
             $headertag_title = $extra_headertag_title.$headertag_title ;
         }

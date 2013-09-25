@@ -88,6 +88,7 @@
             }
             unset($aux_array_url[$removeKey]);
             $url = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER,'',$_SERVER['REQUEST_URI']);
+            $url = rtrim($url,'/');
             
 ?>          
             <script>

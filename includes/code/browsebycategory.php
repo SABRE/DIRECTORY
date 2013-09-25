@@ -107,7 +107,7 @@
 				if ($categories) {
 
                                
-				 $categoryLink = $module_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories["friendly_url"];              
+				 $categoryLink = $module_default_url."/".$categories["friendly_url"];              
                     $array_item_categories[$i]["categoryLink"] = $categoryLink;
                     if ($total == 3){
                         $array_item_categories[$i]["liClass"] = "class=\"last\"";
@@ -136,7 +136,7 @@
                                     }
                                     if ($subcategories) {
 
-                                        $subCategoryLink = $module_default_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories["friendly_url"]."/".$subcategories["friendly_url"];
+                                        $subCategoryLink = $module_default_url."/".$categories["friendly_url"]."/".$subcategories["friendly_url"];
 
                                         $array_item_categories[$i]["subcategories"][$j]["subCategoryLink"] = $subCategoryLink;
                                         $array_item_categories[$i]["subcategories"][$j]["subCategoryTitle"] = system_showTruncatedText($subcategories["title"], 25);

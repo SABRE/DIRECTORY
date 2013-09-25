@@ -33,7 +33,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
 
     <head>
-
         <title><?=$headertag_title?></title>
         <meta name="author" content="<?=$headertag_author?>" />
         <meta name="description" content="<?=$headertag_description?>" />

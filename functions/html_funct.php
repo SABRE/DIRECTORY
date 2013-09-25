@@ -381,7 +381,7 @@
 					$main_add_class = "Select";
 				}
 				
-				$categoryLink =  $module_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories[$i]["friendly_url"];
+				$categoryLink =  $module_url."/".$categories[$i]["friendly_url"];
 				$htmlStr .= "<li><div class='".$main_cat_open."'></div>";
 				$htmlStr .= "<a id='".$categories[$i]["id"]."' class='main_cat_link ".$main_add_class."' href='".$categoryLink."'>".system_showTruncatedText($categories[$i]["title"],15)."</a>";
 				if($categoryCount=='on')
@@ -394,7 +394,7 @@
                                         for($j=0; $j < count($categories[$i]['subcategories']); $j++)
                                         {
                                                 $sub_add_class = ($sub_id != $categories[$i]["subcategories"][$j]["id"])?null : "Select" ;
-                                                $subCategoryLink = $module_url."/".ALIAS_CATEGORY_URL_DIVISOR."/".$categories[$i]["friendly_url"]."/".$categories[$i]["subcategories"][$j]["friendly_url"];
+                                                $subCategoryLink = $module_url."/".$categories[$i]["friendly_url"]."/".$categories[$i]["subcategories"][$j]["friendly_url"];
                                                 $htmlStr .= "<li>";
                                                 $htmlStr .= "<a id='".$categories[$i]["subcategories"][$j]["id"]."' class='sub_cat_link ".$sub_add_class."' href='".$subCategoryLink."'>".system_showTruncatedText($categories[$i]["subcategories"][$j]["title"],15)."</a>";
                                                 if($categoryCount=='on')
