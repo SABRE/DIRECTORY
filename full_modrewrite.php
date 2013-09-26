@@ -446,7 +446,7 @@
                 $headertag_keywords = $headertagkeywords;
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
             } 
-            elseif (string_strpos($aux_array_url[$searchPos_2], "results.php") !== false) 
+            elseif (string_strpos($aux_array_url[$searchPos_2], "results.php") == false) 
             {
                 $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
                 include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
@@ -519,129 +519,379 @@
                 }
                 $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
                 define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
-            } elseif((string_strpos($aux_array_url[$searchPos_2], "rss") !== false)) {
-
-            if (string_strpos($aux_array_url[$searchPos_3], ".xml") !== false) {
-                $_GET["qs"] = str_replace(ALIAS_ARTICLE_MODULE."_", "", $aux_array_url[$searchPos_3]);
-                $_GET["qs"] = str_replace(".xml", "", $_GET["qs"]);
-            }
-
-            include(EDIR_CONTROLER_FOLDER."/".$module_key."/rss.php");
-            exit;
-
-        //Article Detail
-        } elseif ((string_strpos($aux_array_url[$searchPos_2],".html") !== false)) {
-
-            # ----------------------------------------------------------------------------------------------------
-            # MAINTENANCE MODE
-            # ----------------------------------------------------------------------------------------------------
-            verify_maintenanceMode();
-
-            # ----------------------------------------------------------------------------------------------------
-            # SESSION
-            # ----------------------------------------------------------------------------------------------------
-            sess_validateSessionFront();
-
-            # ----------------------------------------------------------------------------------------------------
-            # VALIDATE FEATURE
-            # ----------------------------------------------------------------------------------------------------
-            if (ARTICLE_FEATURE != "on" || CUSTOM_ARTICLE_FEATURE != "on") { exit; }
-
-            include(EDIR_CONTROLER_FOLDER."/".$module_key."/detail.php");
-
-            # ----------------------------------------------------------------------------------------------------
-            # HEADER
-            # ----------------------------------------------------------------------------------------------------
-            $banner_section = "article";
-            $headertag_title = (($article->getString("seo_title"))?($article->getString("seo_title")):($article->getString("title")));
-            $headertag_description = (($article->getString("seo_abstract"))?($article->getString("seo_abstract")):($article->getString("abstract")));
-            $headertag_keywords = (($article->getString("seo_keywords"))?($article->getString("seo_keywords")):(str_replace(" || ", ", ", $article->getString("keywords"))));
-
-            $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/detail.php";
-
-            define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/detail.php");
-
-        //Article Share
-        } elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_3], ".html") !== false) ||
-                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false)
-                ) {
-
-            //Share from reviews page
-            if ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false) {
-                $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_4], 0, string_strpos($aux_array_url[$searchPos_4], ".html"));
-            //Share from detail/results    
-            } else {
-                $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_3], 0, string_strpos($aux_array_url[$searchPos_3], ".html"));
-            }
-
-            $_GET["from"] = string_replace_once(EDIRECTORY_FOLDER."/".$alias_names[$module_key]."/", "", $_SERVER["REQUEST_URI"]);
-
-            include(EDIR_CONTROLER_FOLDER."/".$module_key."/share.php");
-
-        //Article General Pages - reviews, all categories
-        } elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR.".php") !== false) ||
-                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3])) {
-
-            # ----------------------------------------------------------------------------------------------------
-            # MAINTENANCE MODE
-            # ----------------------------------------------------------------------------------------------------
-            verify_maintenanceMode();
-
-            # ----------------------------------------------------------------------------------------------------
-            # SESSION
-            # ----------------------------------------------------------------------------------------------------
-            sess_validateSessionFront();
-
-            # ----------------------------------------------------------------------------------------------------
-            # VALIDATE FEATURE
-            # ----------------------------------------------------------------------------------------------------
-            if (ARTICLE_FEATURE != "on" || CUSTOM_ARTICLE_FEATURE != "on") { exit; }
-
-            //Reviews page
-            if ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3]) {
-
-                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
-
-                include(EDIR_CONTROLER_FOLDER."/".$module_key."/review.php");
-
-                # ----------------------------------------------------------------------------------------------------
-                # HEADER
-                # ----------------------------------------------------------------------------------------------------
+            } 
+            elseif((string_strpos($aux_array_url[$searchPos_2], "rss") !== false))
+            {
+                if (string_strpos($aux_array_url[$searchPos_3], ".xml") !== false) {
+                    $_GET["qs"] = str_replace(ALIAS_ARTICLE_MODULE."_", "", $aux_array_url[$searchPos_3]);
+                    $_GET["qs"] = str_replace(".xml", "", $_GET["qs"]);
+                }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/rss.php");
+                exit;
+            } 
+            elseif ((string_strpos($aux_array_url[$searchPos_2],".html") !== false)) 
+            {
+                if (ARTICLE_FEATURE != "on" || CUSTOM_ARTICLE_FEATURE != "on") { exit; }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/detail.php");
                 $banner_section = "article";
-                $headertag_title = system_showText(LANG_REVIEWSOF)." ".(($articleObj->getString("seo_title")) ? ($articleObj->getString("seo_title")) : ($articleObj->getString("title")));
-                $headertag_description = (($articleObj->getString("seo_description")) ? ($articleObj->getString("seo_description")) : ($articleObj->getString("description")));
-                $headertag_keywords = (($articleObj->getString("seo_keywords")) ? ($articleObj->getString("seo_keywords")) : (str_replace(" || ", ", ", $articleObj->getString("keywords"))));
-
-                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/comments.php");
-
-            //All categories page
-            } else {
-
-                # ----------------------------------------------------------------------------------------------------
-                # SITE CONTENT
-                # ----------------------------------------------------------------------------------------------------
-                $sitecontentSection = "Article View All Categories";
+                $headertag_title = (($article->getString("seo_title"))?($article->getString("seo_title")):($article->getString("title")));
+                $headertag_description = (($article->getString("seo_abstract"))?($article->getString("seo_abstract")):($article->getString("abstract")));
+                $headertag_keywords = (($article->getString("seo_keywords"))?($article->getString("seo_keywords")):(str_replace(" || ", ", ", $article->getString("keywords"))));
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/detail.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/detail.php");
+            } elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_3], ".html") !== false) ||
+                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false)
+                ) 
+            {
+                if ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false) {
+                    $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_4], 0, string_strpos($aux_array_url[$searchPos_4], ".html"));
+                } else {
+                    $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_3], 0, string_strpos($aux_array_url[$searchPos_3], ".html"));
+                }
+                $_GET["from"] = string_replace_once(EDIRECTORY_FOLDER."/".$alias_names[$module_key]."/", "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/share.php");
+            } 
+            elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR.".php") !== false) ||
+                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3]))
+            {
+                if (ARTICLE_FEATURE != "on" || CUSTOM_ARTICLE_FEATURE != "on") { exit; }
+                if ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3]) {
+                    $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                    include(EDIR_CONTROLER_FOLDER."/".$module_key."/review.php");
+                    $banner_section = "article";
+                    $headertag_title = system_showText(LANG_REVIEWSOF)." ".(($articleObj->getString("seo_title")) ? ($articleObj->getString("seo_title")) : ($articleObj->getString("title")));
+                    $headertag_description = (($articleObj->getString("seo_description")) ? ($articleObj->getString("seo_description")) : ($articleObj->getString("description")));
+                    $headertag_keywords = (($articleObj->getString("seo_keywords")) ? ($articleObj->getString("seo_keywords")) : (str_replace(" || ", ", ", $articleObj->getString("keywords"))));
+                    define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/comments.php");
+                } 
+                else
+                {
+                    $sitecontentSection = "Article View All Categories";
+                    $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                    extract($array_HeaderContent);
+                    $banner_section = "article";
+                    $headertag_title = $headertagtitle;
+                    $headertag_description = $headertagdescription;
+                    $headertag_keywords = $headertagkeywords;
+                    define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/allcategories.php");
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
+            }
+            elseif (((string_strpos($aux_array_url[$searchPos_2], "results.php") == false))) 
+            {
+                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+                $sitecontentSection = "Article Results";
                 $array_HeaderContent = front_getSiteContent($sitecontentSection);
                 extract($array_HeaderContent);
-
-                # ----------------------------------------------------------------------------------------------------
-                # HEADER
-                # ----------------------------------------------------------------------------------------------------
                 $banner_section = "article";
                 $headertag_title = $headertagtitle;
                 $headertag_description = $headertagdescription;
                 $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ArticleCategory($_GET['category_id']);
 
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            }
+            else
+            {
+                front_errorPage();
+            }
+        }
+        elseif ($module_key == PROMOTION_FEATURE_FOLDER) 
+        {
+            if (string_strpos($aux_array_url[$searchPos_2], "results.php") !== false) 
+            {
+                if (PROMOTION_FEATURE != "on" || CUSTOM_PROMOTION_FEATURE != "on" || CUSTOM_HAS_PROMOTION != "on") exit;
+                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+                $sitecontentSection = "Deal Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);
+                $banner_section = "promotion";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if ($browsebycategory || $category_id) {
+                    if ($category_id) {
+                        $categoryObjHeaderTag = new ListingCategory($category_id);
+                        if ($categoryObjHeaderTag->getString("seo_description")){
+                            $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                        }
+                        if ($categoryObjHeaderTag->getString("seo_keywords")){
+                            $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                        }
+                        unset($categoryObjHeaderTag);
+                    }
+                } elseif ($browsebylocation) {
+                    include(INCLUDES_DIR."/code/headertaglocation.php");
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            } 
+            elseif ((string_strpos($aux_array_url[$searchPos_2],"rss") !== false)) 
+            {
+                if (string_strpos($aux_array_url[$searchPos_3], ".xml") !== false) {
+                    $_GET["qs"] = str_replace(ALIAS_PROMOTION_MODULE."_", "", $aux_array_url[$searchPos_3]);
+                    $_GET["qs"] = str_replace(".xml", "", $_GET["qs"]);
+                }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/rss.php");
+                exit;
+            } 
+            elseif ((string_strpos($aux_array_url[$searchPos_2],".html") !== false)) 
+            {
+                if (PROMOTION_FEATURE != "on" || CUSTOM_PROMOTION_FEATURE != "on" || CUSTOM_HAS_PROMOTION != "on") exit;
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/detail.php");
+                $banner_section = "promotion";
+                $headertag_title = (($promotion->getString("seo_name")) ? ($promotion->getString("seo_name")) : ($promotion->getString("title")));
+                $headertag_description = (($promotion->getString("seo_description")) ? ($promotion->getString("seo_description")) : ($promotion->getString("description")));
+                $headertag_keywords = (($promotion->getString("seo_keywords")) ? ($promotion->getString("seo_keywords")) : (str_replace(" || ", ", ", $promotion->getString("keywords"))));
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/detail.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/detail.php");
+            } 
+            elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_3], ".html") !== false) ||
+                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false)
+                )
+            {
+                if ((string_strpos($aux_array_url[$searchPos_2] ,ALIAS_REVIEW_URL_DIVISOR) !== false) && (string_strpos($aux_array_url[$searchPos_3], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_4], ".html") !== false) {
+                    $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_4], 0, string_strpos($aux_array_url[$searchPos_4], ".html"));
+                } else {
+                    $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_3], 0, string_strpos($aux_array_url[$searchPos_3], ".html"));
+                }
+                $_GET["from"] = string_replace_once(EDIRECTORY_FOLDER."/".$alias_names[$module_key]."/", "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/share.php");
+            } 
+            elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR.".php") !== false) ||
+                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLLOCATIONS_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLLOCATIONS_URL_DIVISOR.".php") !== false) ||
+                ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3])) 
+            {
+                if (PROMOTION_FEATURE != "on" || CUSTOM_PROMOTION_FEATURE != "on" || CUSTOM_HAS_PROMOTION != "on") exit;
+                if ((string_strpos($aux_array_url[$searchPos_2], ALIAS_REVIEW_URL_DIVISOR) !== false) && $aux_array_url[$searchPos_3]) {
+                    $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                    include(EDIR_CONTROLER_FOLDER."/".$module_key."/review.php");
+                    define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/comments.php");
+                    $banner_section = "promotion";
+                    $headertag_title = system_showText(LANG_REVIEWSOF)." ".(($promotionObj->getString("seo_name")) ? ($promotionObj->getString("seo_name")) : ($promotionObj->getString("name")));
+                    $headertag_description = (($promotionObj->getString("seo_description")) ? ($promotionObj->getString("seo_description")) : ($promotionObj->getString("description")));
+                    $headertag_keywords = (($promotionObj->getString("seo_keywords")) ? ($promotionObj->getString("seo_keywords")) : (str_replace(" || ", ", ", $promotionObj->getString("keywords"))));
+                }
+                else
+                {
+                    if (string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLLOCATIONS_URL_DIVISOR) !== false) {
+                        $sitecontentSection = "Deal View All Locations";
+                        define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/alllocations.php");
+                    } elseif (string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR) !== false) {
+                        $sitecontentSection = "Deal View All Categories";
+                        define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/allcategories.php");
+                    }              
+                    $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                    extract($array_HeaderContent);
+                    $banner_section = "promotion";
+                    $headertag_title = $headertagtitle;
+                    $headertag_description = $headertagdescription;
+                    $headertag_keywords = $headertagkeywords;
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
+            }
+            elseif(string_strpos($aux_array_url[$searchPos_2], "results.php") == false)
+            {
+                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+                $sitecontentSection = "Deal Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);            
+                $banner_section = "promotion";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new ListingCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            } 
+            else
+            {
+                front_errorPage();
+            }
+        }
+        elseif ($module_key == BLOG_FEATURE_FOLDER) 
+        {
+            if (string_strpos($aux_array_url[$searchPos_2], "results.php") !== false) 
+            {
+                if (BLOG_FEATURE != "on" || CUSTOM_BLOG_FEATURE != "on") { exit; }
+                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                $blogHome = false;
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/rewrite.php");
+                include(EDIRECTORY_ROOT."/includes/code/validate_querystring.php");
+                include(EDIRECTORY_ROOT."/includes/code/validate_frontrequest.php");
+                setting_get("review_approve", $post_comment_approve);
+                if ($category_id) {
+                    $catObj = new BlogCategory($category_id);
+                    if (!$catObj->getString("title")) {
+                        header("Location: ".BLOG_DEFAULT_URL."/index.php");
+                        exit;
+                    }
+                }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/prepare_results.php");            
+                $sitecontentSection = "Blog Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);            
+                $banner_section = "blog";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if ($browsebycategory || $category_id) {
+                    if ($category_id) {
+                        $categoryObjHeaderTag = new BlogCategory($category_id);
+                        if ($categoryObjHeaderTag->getString("seo_description")) $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                        if ($categoryObjHeaderTag->getString("seo_keywords")) $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                        unset($categoryObjHeaderTag);
+                    }
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            } 
+            elseif ((string_strpos($aux_array_url[$searchPos_2], ALIAS_SHARE_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_3], ".html") !== false) 
+            {
+                $_GET["from"] = string_replace_once(EDIRECTORY_FOLDER."/".$alias_names[$module_key]."/", "", $_SERVER["REQUEST_URI"]);
+                $_GET["friendly_url"] = string_substr($aux_array_url[$searchPos_3], 0,  string_strpos($aux_array_url[$searchPos_3], ".html"));
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/share.php");
+            }
+            elseif ((string_strpos($aux_array_url[$searchPos_2], ".html") !== false)) 
+            {
+                if (BLOG_FEATURE != "on" || CUSTOM_BLOG_FEATURE != "on") { exit; }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/detail.php");
+                $banner_section = "blog";
+                $headertag_title = (($post->getString("seo_title")) ? ($post->getString("seo_title")) : ($post->getString("title")));
+                $headertag_description = (($post->getString("seo_abstract")) ? ($post->getString("seo_abstract")) : (strip_tags($post->getString("content", false, 252))));
+                $headertag_keywords = (($post->getString("seo_keywords")) ? ($post->getString("seo_keywords")) : (str_replace(" || ", ", ", $post->getString("keywords"))));
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/detail.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/detail.php");
+            }
+            elseif ((string_strpos($aux_array_url[$searchPos_2], "rss") !== false)) 
+            {
+                if (string_strpos($aux_array_url[$searchPos_3], ".xml") !== false) {
+                    $_GET["qs"] = str_replace(ALIAS_BLOG_MODULE."_", "", $aux_array_url[$searchPos_3]);
+                    $_GET["qs"] = str_replace(".xml", "", $_GET["qs"]);
+                }
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/rss.php");
+                exit;          
+            }
+            elseif (((string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR) !== false) && string_strpos($aux_array_url[$searchPos_2], ALIAS_ALLCATEGORIES_URL_DIVISOR.".php") !== false)) 
+            {
+                if (BLOG_FEATURE != "on" || CUSTOM_BLOG_FEATURE != "on") { exit; }
+                $sitecontentSection = "Blog View All Categories";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);
+                $banner_section = "blog";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
                 define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/allcategories.php");
             }
-
-            $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/general.php";
-        } else {
-            front_errorPage();
+            elseif(string_strpos($aux_array_url[$searchPos_2], "results.php") == false)
+            {
+                $_GET["url_full"] = DEFAULT_URL.str_replace(EDIRECTORY_FOLDER, "", $_SERVER["REQUEST_URI"]);
+                include(EDIR_CONTROLER_FOLDER."/".$module_key."/results.php");
+                $sitecontentSection = "Blog Results";
+                $array_HeaderContent = front_getSiteContent($sitecontentSection);
+                extract($array_HeaderContent);            
+                $banner_section = "blog";
+                $headertag_title = $headertagtitle;
+                $headertag_description = $headertagdescription;
+                $headertag_keywords = $headertagkeywords;
+                if($_GET['category_id']){
+                    $categoryObjHeaderTag = new BlogCategory($_GET['category_id']);
+                    if ($categoryObjHeaderTag->getString("seo_description")) {
+                        $headertag_description = $categoryObjHeaderTag->getString("seo_description");
+                    }
+                    if ($categoryObjHeaderTag->getString("seo_keywords")) {
+                        $headertag_keywords = $categoryObjHeaderTag->getString("seo_keywords");
+                    }
+                    unset($categoryObjHeaderTag);
+                }
+                if($_GET['location_3']){
+                    $locationObjHeaderTag = new Location3($_GET['location_3']);
+                    if ($locationObjHeaderTag) {
+                        if ($locationObjHeaderTag->getString("seo_description")){
+                            if(!empty($headertag_description))
+                                $headertag_description .= $locationObjHeaderTag->getString("seo_description");
+                            else
+                                $headertag_description = $locationObjHeaderTag->getString("seo_description");
+                        }
+                        if ($locationObjHeaderTag->getString("seo_keywords")){
+                            if(!empty($headertag_keywords))
+                                $headertag_keywords .= ','.$locationObjHeaderTag->getString("seo_keywords");
+                            else
+                                $headertag_keywords = $locationObjHeaderTag->getString("seo_keywords");
+                        }
+                    }
+                    unset($locationObjHeaderTag);
+                }
+                $theme_file = THEMEFILE_DIR."/".EDIR_THEME."/body/".$module_key."/results.php";
+                define("ACTUAL_PAGE_NAME", EDIRECTORY_FOLDER."/$module_key/results.php");
+            } 
+            else
+            {
+                front_errorPage();
+            }
         }
-
-    //Promotion
-    }
     }
     
     if ($theme_file && file_exists($theme_file)) 

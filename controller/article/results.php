@@ -85,7 +85,14 @@
 		if ($browsebycategory) {
 			$paging_url = ARTICLE_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR;
 			$aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_ARTICLE_MODULE."/".ALIAS_CATEGORY_URL_DIVISOR."/", "", $_GET["url_full"]);
-		}
+		}else if($friendlyurl){
+                    if(EDIRECTORY_FOLDER){
+                        $paging_url = str_replace(EDIRECTORY_FOLDER,'',DEFAULT_URL);
+                    }else{
+                        $paging_url = DEFAULT_URL;
+                    }
+                    $aux = $_GET["url_full"];
+                }
 
 		$parts = explode("/", $aux);
 
@@ -153,7 +160,7 @@
 		$orderBy =  array(LANG_PAGING_ORDERBYPAGE_CHARACTERS,LANG_PAGING_ORDERBYPAGE_LASTUPDATE,LANG_PAGING_ORDERBYPAGE_DATECREATED,LANG_PAGING_ORDERBYPAGE_POPULAR);	
 	}
 	 if(SELECTED_DOMAIN_ID > 0)
-	   	$orderbyDropDown = search_getSortingLinks($_GET, $paging_url,$parts);
+	   	$orderbyDropDown = search_getSortingLinks($_GET, $paging_url,$parts,$friendlyurl);
 	 else 
 	 	$orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
 	

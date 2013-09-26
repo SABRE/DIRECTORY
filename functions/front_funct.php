@@ -39,19 +39,41 @@
             if ($category_id) {
                 if (ACTUAL_MODULE_FOLDER == ARTICLE_FEATURE_FOLDER) {
                     $headertag_categoryObj = new ArticleCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new ArticleCategory($headertag_categoryObj->category_id);
+                    }
                 } elseif (ACTUAL_MODULE_FOLDER == CLASSIFIED_FEATURE_FOLDER) {
                     $headertag_categoryObj = new ClassifiedCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new ClassifiedCategory($headertag_categoryObj->category_id);
+                    }
                 } elseif (ACTUAL_MODULE_FOLDER == EVENT_FEATURE_FOLDER) {
                     $headertag_categoryObj = new EventCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new EventCategory($headertag_categoryObj->category_id);
+                    }
                 } elseif (ACTUAL_MODULE_FOLDER == LISTING_FEATURE_FOLDER) {
                     $headertag_categoryObj = new ListingCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new ListingCategory($headertag_categoryObj->category_id);
+                    }
                 } elseif (ACTUAL_MODULE_FOLDER == PROMOTION_FEATURE_FOLDER) {
                     $headertag_categoryObj = new ListingCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new ListingCategory($headertag_categoryObj->category_id);
+                    }
                 } elseif (ACTUAL_MODULE_FOLDER == BLOG_FEATURE_FOLDER) {
                     $headertag_categoryObj = new BlogCategory($category_id);
+                    if($headertag_categoryObj && $headertag_categoryObj->category_id > 0){
+                        $mainCategoryObj = new BlogCategory($headertag_categoryObj->category_id);
+                    }
                 }
                 if ($headertag_categoryObj && $headertag_categoryObj->getString("page_title")) {
                     $extra_headertag_title_category = $headertag_categoryObj->getString("page_title");
+                    if($mainCategoryObj && $mainCategoryObj->getString("page_title")){
+                         $extra_headertag_title_category .= ' in '.$mainCategoryObj->getString("page_title");
+                    }
+                    
                 }
             }
 

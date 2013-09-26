@@ -102,10 +102,13 @@
 			$paging_url = PROMOTION_DEFAULT_URL."/".ALIAS_LOCATION_URL_DIVISOR;
 			$aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_PROMOTION_MODULE."/".ALIAS_LOCATION_URL_DIVISOR."/", "", $_GET["url_full"]);
 		}else if($friendlyurl){
-                    /*This else case is write on the 20-09-2013 for friendly url*/
-                   $paging_url = DEFAULT_URL;
-                   $aux = str_replace(EDIRECTORY_FOLDER . "/", "", $_GET["url_full"]);
-               }
+                    if(EDIRECTORY_FOLDER){
+                        $paging_url = str_replace(EDIRECTORY_FOLDER,'',DEFAULT_URL);
+                    }else{
+                        $paging_url = DEFAULT_URL;
+                    }
+                    $aux = $_GET["url_full"];
+                }
 
 		$parts = explode("/", $aux);
 

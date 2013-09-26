@@ -111,7 +111,14 @@
                 if ($_GET["url_full"]) {
                     $aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_BLOG_MODULE."/".ALIAS_ARCHIVE_URL_DIVISOR."/", "", $_GET["url_full"]);
                 }
-            } else {
+            } else if($friendlyurl){
+                if(EDIRECTORY_FOLDER){
+                    $paging_url = str_replace(EDIRECTORY_FOLDER,'',DEFAULT_URL);
+                }else{
+                    $paging_url = DEFAULT_URL;
+                }
+                $aux = $_GET["url_full"];
+            }else {
                 if($blogHome){
                     $paging_url = BLOG_DEFAULT_URL;
                 }else{

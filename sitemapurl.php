@@ -37,6 +37,7 @@
 	$_GET = format_magicQuotes($_GET);
 	$_POST = format_magicQuotes($_POST);
 	$file = $_GET["file"] ? $_GET["file"] : $_POST["file"];
+        print_r($file);die;
 	$file = urldecode($file);
 	if ($file) {
 		$file = system_denyInjections($file);
@@ -49,7 +50,7 @@
 	if ($file) {
 		if (file_exists(EDIRECTORY_ROOT."/custom/domain_".SELECTED_DOMAIN_ID."/sitemap/".$file)) {
 			$handle = fopen(EDIRECTORY_ROOT."/custom/domain_".SELECTED_DOMAIN_ID."/sitemap/".$file, "r");
-			if ($handle) {
+                        if ($handle) {
 				while (!feof($handle)) {
 					$buffer = fgets($handle);
 					echo $buffer;

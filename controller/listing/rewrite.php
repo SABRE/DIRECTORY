@@ -78,8 +78,6 @@
     }   
     else if($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php')== FALSE)
     {
-            
-       /*This else case is write on the 20-09-2013 for friendly url*/
         $friendlyurl = true;
         $url = string_replace_once(EDIRECTORY_FOLDER."/".ALIAS_LISTING_MODULE."/", "", $_GET["url_full"]);
         $parts = explode("/", $url);
