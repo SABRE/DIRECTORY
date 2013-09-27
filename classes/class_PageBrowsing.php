@@ -1084,7 +1084,7 @@
 			return $return;
 		}
 		
-		/*Function is created by Ashish to create pagination*/
+		/*Function is created by Naresh to create pagination*/
 		function getPaginationForListing($page_num, $limit, $aux_page_url = false, $force_total = false){
 			$pagesObj = new Pagination();
 

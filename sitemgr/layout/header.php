@@ -69,26 +69,23 @@
         <link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/jcrop/css/jquery.Jcrop.css" type="text/css" />
         <? /* GENERAL STYLE */?>
         <link href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/layout/general_sitemgr.css" rel="stylesheet" type="text/css" />
-		<? /* LOGIN & FORGOT STYLE*/?>
-		<? if ((string_strpos($_SERVER["PHP_SELF"], "/login.php") !== false) || (string_strpos($_SERVER["PHP_SELF"], "/".SITEMGR_ALIAS."/forgot.php") !== false)) { ?>
-			<link href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/layout/login.css" rel="stylesheet" type="text/css" />
-		<? } ?>
+        <? /* LOGIN & FORGOT STYLE*/?>
+        <? if ((string_strpos($_SERVER["PHP_SELF"], "/login.php") !== false) || (string_strpos($_SERVER["PHP_SELF"], "/".SITEMGR_ALIAS."/forgot.php") !== false)) { ?>
+            <link href="<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/layout/login.css" rel="stylesheet" type="text/css" />
+        <? } ?>
         <? /* JQUERY UI SMOOTHNESS STYLE */?>
         <link type="text/css" href="<?=DEFAULT_URL?>/scripts/jquery/jquery_ui/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
-		<? /* JQUERY AUTO COMPLETE STYLE  */?>
-		<link type="text/css" href="<?=DEFAULT_URL?>/scripts/jquery/jquery.autocomplete.css" rel="stylesheet" media="all" />
-
+        <? /* JQUERY AUTO COMPLETE STYLE  */?>
+        <link type="text/css" href="<?=DEFAULT_URL?>/scripts/jquery/jquery.autocomplete.css" rel="stylesheet" media="all" />
         <script type="text/javascript">
-		<!--
-		DEFAULT_URL = "<?=DEFAULT_URL?>";
-        SITEMGR_ALIAS = "<?=SITEMGR_ALIAS?>";
-		-->
-		</script>
-
+            <!--
+                DEFAULT_URL = "<?=DEFAULT_URL?>";
+                SITEMGR_ALIAS = "<?=SITEMGR_ALIAS?>";
+            -->
+        </script>
         <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/common.js"></script>
-		<script type="text/javascript" src="<?=language_getFilePath($sitemgr_language, true);?>"></script>
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/location.js"></script>
-        
+        <script type="text/javascript" src="<?=language_getFilePath($sitemgr_language, true);?>"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/location.js"></script>
         <? if (!$loadNewJquery) { ?>
             <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery.js"></script>
         <? } else { ?>
@@ -97,27 +94,22 @@
             <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.1.5.2/jquery.js"></script>
             <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.1.5.2/jquery.ui.js"></script>
         <? } ?>
-            
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/ajax-search.js"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/ajax-search.js"></script>
         <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jcrop/js/jquery.Jcrop.js"></script>
         <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/fancybox/jquery.fancybox-1.3.4.js"></script>
-        
         <? if (!$loadNewJquery) { ?>
             <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery_ui/js/jquery-ui-1.7.2.custom.min.js"></script>
         <? } ?>
-        
         <? if (EDIR_LANGUAGE != "en_us") { ?>
             <? /* DATA PICKER TRANSLATION */?>
             <script type="text/javascript" src="<?=language_getDatePickPath($sitemgr_language);?>"></script>
         <? } ?>
-            
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.maskedinput-1.3.min.js"></script>
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.textareaCounter.plugin.js"></script>
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.hoverIntent.js"></script>
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.cookie.min.js"></script>
-        
-		<? if (is_ie(true)) { ?>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.textareaCounter.plugin.js"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/jquery.cookie.min.js"></script>
+        <? if (is_ie(true)) { ?>
             <!--fix ie6 z-index bug -->
             <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/bgiframe/jquery.bgiframe.js"></script>
             <script type="text/javascript" charset="utf-8">
@@ -127,67 +119,54 @@
             </script>
             <!-- endfix ie6 z-index bug-->
         <? } ?>
-            
-		<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/bulkupdate.js"></script>
+        <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/bulkupdate.js"></script>
         <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/domain.js"></script>
-		
-		<? if (string_strpos($_SERVER["PHP_SELF"], "colorscheme") !== false){ ?>
-		
-			<link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/css/colorpicker.css" type="text/css" />
-			<link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/css/layout.css" type="text/css" />
-
-			<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/colorpicker.js"></script>
-			<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/eye.js"></script>
-			<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/utils.js"></script>
-			<script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/layout.js?ver=1.0.2"></script>
-
-		<? } ?>
-        
-                
-        <? if (string_strpos($_SERVER["PHP_SELF"], "htmleditor") !== false){ ?>
-            
-            <script language="javascript" type="text/javascript" src="<?=DEFAULT_URL?>/scripts/editarea/edit_area/edit_area_full.js"></script>
-        
+	<? if (string_strpos($_SERVER["PHP_SELF"], "colorscheme") !== false){ ?>
+            <link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/css/colorpicker.css" type="text/css" />
+            <link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/css/layout.css" type="text/css" />
+            <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/colorpicker.js"></script>
+            <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/eye.js"></script>
+            <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/utils.js"></script>
+            <script type="text/javascript" src="<?=DEFAULT_URL?>/scripts/jquery/colorpicker/layout.js?ver=1.0.2"></script>
         <? } ?>
-            
+        <? if (string_strpos($_SERVER["PHP_SELF"], "htmleditor") !== false){ ?>
+            <script language="javascript" type="text/javascript" src="<?=DEFAULT_URL?>/scripts/editarea/edit_area/edit_area_full.js"></script>
+        <? } ?>
         <? if (string_strpos($_SERVER["PHP_SELF"], "import/index.php") !== false) { ?>
             <script type="text/javascript" src="<?=DEFAULT_URL;?>/scripts/jquery/jquery.csv2table.js"></script>
         <? } ?>
-            
         <? if (string_strpos($_SERVER["PHP_SELF"], "getstarted.php") !== false) { ?>
             <link rel="stylesheet" href="<?=DEFAULT_URL?>/scripts/jquery/progressbar/jquery.progressbar.css" type="text/css" />
             <script type="text/javascript" src="<?=DEFAULT_URL;?>/scripts/jquery/progressbar/jquery.progressbar.js"></script>
         <? } ?>
-			
-		
-		<? //Clear Searchs ?>
-		<script type="text/javascript">
-			var show = false;
-			<?if(strpos($_SERVER["PHP_SELF"],BANNER_FEATURE_FOLDER)===false){?>
-				var in_banner = false;
-			<?}?>
-			function searchResetSitemgr(form) {
-				tot = form.elements.length;
-				for (i=0;i<tot;i++) {
-					if (form.elements[i].type == 'text') {
-						form.elements[i].value = "";
-					} else if (form.elements[i].type == 'checkbox' || form.elements[i].type == 'radio') {
-						form.elements[i].checked = false;
-					} else if (form.elements[i].type == 'select-one') {
-						form.elements[i].selectedIndex = 0;
-					}
-				}
-			}
+        <? //Clear Searchs ?>
+        <script type="text/javascript">
+            var show = false;
+            <?if(strpos($_SERVER["PHP_SELF"],BANNER_FEATURE_FOLDER)===false){?>
+                var in_banner = false;
+            <?}?>
+            function searchResetSitemgr(form) {
+                tot = form.elements.length;
+                for (i=0;i<tot;i++) {
+                    if (form.elements[i].type == 'text') {
+                        form.elements[i].value = "";
+                    } else if (form.elements[i].type == 'checkbox' || form.elements[i].type == 'radio') {
+                        form.elements[i].checked = false;
+                    } else if (form.elements[i].type == 'select-one') {
+                        form.elements[i].selectedIndex = 0;
+                    }
+                }
+            }
 
-			function validateQuickSearch() {
-				if ($('#QS_searchFor').val() == 'All') {
-					if (($('#QS_keywords').val() == '')||($('#QS_keywords').val() == "<?=string_ucwords(system_showText(LANG_SITEMGR_SEARCH))?>")) {
+            function validateQuickSearch() {
+                if ($('#QS_searchFor').val() == 'All') {
+                    if (($('#QS_keywords').val() == '')||($('#QS_keywords').val() == "<?=string_ucwords(system_showText(LANG_SITEMGR_SEARCH))?>")) {
                         fancy_alert('<?=system_showText(LANG_SITEMGR_SEARCH_FIELDS_EMPTY);?>', 'errorMessage', false, 450, 100, false);
                         return false;
-					}
-				}
-				return true;
-			}
+                    }
+                }
+                return true;
+            }
             
             function searchSubmit () {
                 if (validateQuickSearch()) {
@@ -198,136 +177,132 @@
                 }
             }
 			
-			function mainmenu(){
-				$(" #topMainNav ul:first ").css({display: "none"});
-				$(" #topMainNav .topMenu").hoverIntent(function(){
-					if($(this).hasClass('accounts')){
-						$(this).find('ul:first').css("right", "0px");
-					} else if($(this).hasClass('domains')){
-						$(this).find('ul:first').css("right", "0px");
-					} else if($(this).hasClass('support')){
-						$(this).find('ul:first').css("right", "0px");
-					}
-
-					$(this).find('a').addClass("header-topMainNavbar-Active");
-					$(this).find('ul:first').css({visibility: "visible", display: "none"}).fadeIn(200);
-					//fix ie6 z-index bug
-					if ($.browser.msie && $.browser.version == 6){
-						$(this).find('ul:first').bgiframe();
-					}
-				},function(){
-					$(this).find('ul:first').css({visibility: "hidden"});
-					$(this).find('a').removeClass("header-topMainNavbar-Active");
-				});
-			}
+            function mainmenu(){
+                $(" #topMainNav ul:first ").css({display: "none"});
+                $(" #topMainNav .topMenu").hoverIntent(function(){
+                    if($(this).hasClass('accounts')){
+                        $(this).find('ul:first').css("right", "0px");
+                    } else if($(this).hasClass('domains')){
+                        $(this).find('ul:first').css("right", "0px");
+                    } else if($(this).hasClass('support')){
+                        $(this).find('ul:first').css("right", "0px");
+                    }
+                    $(this).find('a').addClass("header-topMainNavbar-Active");
+                    $(this).find('ul:first').css({visibility: "visible", display: "none"}).fadeIn(200);
+                    //fix ie6 z-index bug
+                    if ($.browser.msie && $.browser.version == 6){
+                        $(this).find('ul:first').bgiframe();
+                    }
+                },function(){
+                    $(this).find('ul:first').css({visibility: "hidden"});
+                    $(this).find('a').removeClass("header-topMainNavbar-Active");
+                });
+            }
 		
-			function addClass(item) {
-				$("#privateMenu_"+item).addClass('submenu_active');
-			}
+            function addClass(item) {
+                $("#privateMenu_"+item).addClass('submenu_active');
+            }
 
-			function addClassMainHorizontalMenu(item) {
-				$("#"+item).addClass('header-topMainNavbarActive');
-			}
+            function addClassMainHorizontalMenu(item) {
+                $("#"+item).addClass('header-topMainNavbarActive');
+            }
 
-			$(document).ready(function(){
-                
+            $(document).ready(function(){
                 mainmenu();
-                
                 $("#all-languages-button").hover(function() {
                     $('.all-languages').slideDown('slow');
                 }, function() {
                     $('.all-languages').slideUp('slow');
                 });
                 
-				$("#QS_keywords").focus(function() {
-					$("#QS_keywords").attr('value', '');
-				});
+                $("#QS_keywords").focus(function() {
+                    $("#QS_keywords").attr('value', '');
+                });
 
-				$("#QS_keywords").blur(function() {
-					if (!$("#QS_keywords").val())
-						$("#QS_keywords").attr('value', '<?=string_ucwords(system_showText(LANG_SITEMGR_SEARCH))?>');
-				});
+                $("#QS_keywords").blur(function() {
+                    if (!$("#QS_keywords").val())
+                        $("#QS_keywords").attr('value', '<?=string_ucwords(system_showText(LANG_SITEMGR_SEARCH))?>');
+                });
 
-				$("#searchLink").click(function () {
-					if (show == false) {
-						$("#searchAll").fadeIn('slow');
-						show = true;
-					} else {
-						$("#searchAll").fadeOut('slow');
-						show = false;
-					}
-				});
+                $("#searchLink").click(function () {
+                    if (show == false) {
+                        $("#searchAll").fadeIn('slow');
+                        show = true;
+                    } else {
+                        $("#searchAll").fadeOut('slow');
+                        show = false;
+                    }
+                });
                 
                 $("a.fancy_window_feedback").fancybox({
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'autoDimensions'        : false,
-                    'width'                 : 400,
-                    'height'                : 470
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'autoDimensions': false,
+                    'width': 400,
+                    'height': 470
                 });
               
                 $("a.fancy_window").fancybox({
-                    'hideOnContentClick'	: false,
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'frameWidth'			: 560,
-                    'frameHeight'			: 550
+                    'hideOnContentClick': false,
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'frameWidth': 560,
+                    'frameHeight': 550
                 });
                 
                 $("a.fancy_window_about").fancybox({
-                    'hideOnContentClick'	: false,
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : 595,
-                    'height'                : 570,
+                    'hideOnContentClick': false,
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'width': 595,
+                    'height': 570,
                     'autoDimensions': false,
                     'autoScale': false
                 });
                 
                 $("a.fancy_window_small").fancybox({
-                    'hideOnContentClick'	: false,
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : 550,
-                    'height'                : 150
+                    'hideOnContentClick': false,
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'width': 550,
+                    'height': 150
                 });
                 
                 $("a.fancy_window_categPath").fancybox({
-                    'hideOnContentClick'	: false,
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : 300,
-                    'height'                : 100
+                    'hideOnContentClick': false,
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'width': 300,
+                    'height': 100
                 });
                                               
                 $("a.fancy_window_preview").fancybox({
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : <?=FANCYBOX_ITEM_PREVIEW_WIDTH?>,
-                    'height'                : <?=FANCYBOX_ITEM_PREVIEW_HEIGHT?>
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'width': <?=FANCYBOX_ITEM_PREVIEW_WIDTH?>,
+                    'height': <?=FANCYBOX_ITEM_PREVIEW_HEIGHT?>
                 });
                 
-                $("a.fancy_window_preview_small").fancybox({
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : 800,
-                    'height'                : 400
-                    <? if(strpos($_SERVER["REQUEST_URI"],"banner_to_approve")!==false) {?>
-	                    ,
-	                    'showCloseButton': false
-			          		 }).hover(function() {
-			               $(this).click();
-			               $(".fancybox-overlay").mouseout(function() {
-			                   $.fancybox.close();
-			               });
-		            <?}?>
-                });
-                
+//                $("a.fancy_window_preview_small").fancybox({
+//                    'overlayShow': true,
+//                    'overlayOpacity': 0.75,
+//                    'width': 800,
+//                    'height': 400
+//                    <? if(strpos($_SERVER["REQUEST_URI"],"banner_to_approve")!==false) {?>
+//	               ,
+//	                    'showCloseButton': false
+//			          		 }).hover(function() {
+//			               $(this).click();
+//			               $(".fancybox-overlay").mouseout(function() {
+//			                   $.fancybox.close();
+//			               });
+//                    <?}?>
+//                });
                 $("a.fancy_window_preview_banner").fancybox({
-                    'overlayShow'			: true,
-                    'overlayOpacity'		: 0.75,
-                    'width'                 : 800,
-                    'height'                : 210
+                    'overlayShow': true,
+                    'overlayOpacity': 0.75,
+                    'width': 800,
+                    'height': 210
                 });
                 
                 $("a.fancy_window_custom").fancybox({
@@ -385,26 +360,24 @@
                     'width'                 : 500,
                     'height'                : 330
                 });
-                
-                <? if ($phpMailer_error && !DEMO_LIVE_MODE && string_strpos($_SERVER["PHP_SELF"], "/prefs/emailconfig.php") === false && string_strpos($_SERVER["PHP_SELF"], "/support/") === false && string_strpos($_SERVER["PHP_SELF"], "/registration.php") === false) { ?>
-                    $("#phpMailer_window").attr("href", '<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/configMail.php');
-                    $("#phpMailer_window").trigger("click");
-                <? } ?>
-               
-			});
+				
+                <? /* if ($phpMailer_error && !DEMO_LIVE_MODE && string_strpos($_SERVER["PHP_SELF"], "/prefs/emailconfig.php") === false && string_strpos($_SERVER["PHP_SELF"], "/support/") === false && string_strpos($_SERVER["PHP_SELF"], "/registration.php") === false) { */ ?>
+                    //$("#phpMailer_window").attr("href", '<?=DEFAULT_URL?>/<?=SITEMGR_ALIAS?>/configMail.php');
+                    //$("#phpMailer_window").trigger("click");
+                <? /* } */ ?>
+                });
 		</script>
         
         <? include(EDIRECTORY_ROOT."/includes/code/ie6pngfix.php"); ?>
 	</head>
 
 	<body>
-	
+
 	<?
 	/** Float Layer *******************************************************************/
 	$lang_layer = 1;
 	$sitemgr = true;
 	include(INCLUDES_DIR."/views/view_float_layer.php");
-	
 	/**********************************************************************************/
 
 	/*

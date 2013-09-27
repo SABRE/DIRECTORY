@@ -5572,44 +5572,44 @@
     }
     
     
-    /*Function is created by AShsihs*/
-    function system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, $screen, $aux_items_per_page, $adv_search = false){
-		if ($adv_search){
-			$aux_page_url = $paging_url."?".$url_search_params;
-		} else {
-			$aux_page_url = $paging_url.$url_search_params;
-		}
+    /*Function is created by Naresh change on the 27-09-2013*/
+    function system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, $screen, $aux_items_per_page, $adv_search = false)
+    {
+       if ($adv_search){
+            $aux_page_url = $paging_url."?".$url_search_params;
+        } else {
+            $aux_page_url = $paging_url.$url_search_params;
+        }
 		
-		if($letter){
-			if ($adv_search){
-				$aux_page_url .= "&amp;letter=".$letter;
-			} else {
-				if(substr($aux_page_url,strlen($aux_page_url)-1) != "/"){
-					$aux_page_url .= "/letter/".$letter;
-				}else{
-					$aux_page_url .= "letter/".$letter;
-				}
-			}
-		}
+        if($letter){
+            if ($adv_search){
+                $aux_page_url .= "&amp;letter=".$letter;
+            } else {
+                if(substr($aux_page_url,strlen($aux_page_url)-1) != "/"){
+                    $aux_page_url .= "/letter/".$letter;
+                }else{
+                    $aux_page_url .= "letter/".$letter;
+                }
+            }
+        }
 		
-		if ($adv_search){
+        if ($adv_search){
             if (substr($aux_page_url, -1) == "?") {
                $aux_page_url .= "screen="; 
             } else {
                 $aux_page_url .= "&amp;screen=";
             }
-		} else {
-			if(substr($aux_page_url,strlen($aux_page_url)-1) != "/"){
-				$aux_page_url .= "/page/";
-			}else{
-				$aux_page_url .= "page/";
-			}
-		}
-		
-		$array_pages_code = $pageObj->getPaginationForListing($screen, $aux_items_per_page, $aux_page_url);
-		
-		return $array_pages_code;
-	}
+        } else {
+            if(substr($aux_page_url,strlen($aux_page_url)-1) != "/"){
+                $aux_page_url .= "/page/";
+            }else{
+                $aux_page_url .= "page/";
+            }
+        }
+        
+        $array_pages_code = $pageObj->getPaginationForListing($screen, $aux_items_per_page, $aux_page_url);
+	return $array_pages_code;
+    }
 
 	
 	/*Function is created */
@@ -5713,7 +5713,7 @@
 		$letters_menu .= "<li>";
 		foreach ($letters as $each_letter) {
 			
-			if ($_GET["url_full"] || $blog_module) {
+			if (($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php') == false) || $blog_module) {
 				if($each_letter != "#"){
 					if ( (in_array(strtoupper($each_letter), $module_letters)) || (in_array($each_letter, $module_letters)) ){
 						$letters_menu .= "<a href=\"$paging_url".(($url_search_params) ? "$url_search_params" : "")."/letter/".$each_letter."\" ".(($each_letter == $letter) ? "class=\"active\"" : "" ).">".string_strtoupper($each_letter)."</a>";

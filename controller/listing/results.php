@@ -104,7 +104,7 @@
 
         $array_search_params = array();
     
-        if ($_GET["url_full"]) {
+        if ($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php') == false) {
             if ($browsebycategory) {
                 $paging_url = LISTING_DEFAULT_URL . "/" . ALIAS_CATEGORY_URL_DIVISOR;
                 $aux = str_replace(EDIRECTORY_FOLDER . "/" . ALIAS_LISTING_MODULE . "/" . ALIAS_CATEGORY_URL_DIVISOR . "/", "", $_GET["url_full"]);
@@ -136,15 +136,12 @@
             }
 
             $url_search_params = implode("/", $array_search_params);
-
             if (string_substr($url_search_params, -1) == "/") {
                 $url_search_params = string_substr($url_search_params, 0, -1);
             }
             $url_search_params = str_replace("//", "/", $url_search_params);
         } else {
-
             $paging_url = LISTING_DEFAULT_URL . "/results.php";
-
             foreach ($_GET as $name => $value) {
                 if ($name != "screen" && $name != "letter" && $name != "url_full") {
                     if ($name == "keyword" || $name == "where")
@@ -156,20 +153,15 @@
 
             $url_search_params = implode("&amp;", $array_search_params);
         }
-        /*
+        
+       /*
          * Preparing Pagination
          */
         unset($letters_menu);
 
-        if (SELECTED_DOMAIN_ID == 1) {
+        if (SELECTED_DOMAIN_ID > 0) {
             $letters_menu = system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, LISTING_SCALABILITY_OPTIMIZATION);
-            $array_pages_code = system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
-        } elseif (SELECTED_DOMAIN_ID == 2) {
-            $letters_menu = system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, LISTING_SCALABILITY_OPTIMIZATION);
-            $array_pages_code = system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
-        } elseif (SELECTED_DOMAIN_ID == 4) {
-            $letters_menu = system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, LISTING_SCALABILITY_OPTIMIZATION);
-            $array_pages_code = system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
+            $array_pages_code = system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, (string_strpos($_GET["url_full"],'results.php') ? $screen : $page), $aux_items_per_page, (string_strpos($_GET["url_full"],'results.php') ? true : false));
         } else {
             $letters_menu = system_prepareLetterToPagination($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "title", false, false, false, LISTING_SCALABILITY_OPTIMIZATION);
             $array_pages_code = system_preparePagination($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
@@ -195,9 +187,9 @@
         if (LISTING_ORDERBY_PRICE) {
             array_unshift($orderBy, LANG_PAGING_ORDERBYPAGE_PRICE);
         }
-
+        
         if (SELECTED_DOMAIN_ID > 0)
-            $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl);
+            $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl,$url_search_params);
         else
             $orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
     }

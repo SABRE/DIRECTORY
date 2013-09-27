@@ -1,6 +1,4 @@
 <?
-
-    
     $failure = false;
     $dbObj = db_getDBObject();
     

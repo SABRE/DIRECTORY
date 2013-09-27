@@ -94,7 +94,7 @@
 
 	$array_search_params = array();
 
-	if ($_GET["url_full"]){
+	if ($_GET["url_full"] && string_strpos($_GET["url_full"],'results.php') == false){
 		if ($browsebycategory){
 			$paging_url = PROMOTION_DEFAULT_URL."/".ALIAS_CATEGORY_URL_DIVISOR;
 			$aux = str_replace(EDIRECTORY_FOLDER."/".ALIAS_PROMOTION_MODULE."/".ALIAS_CATEGORY_URL_DIVISOR."/", "", $_GET["url_full"]);
@@ -152,7 +152,7 @@
 	
 	
 	if(SELECTED_DOMAIN_ID > 0){
-		$array_pages_code	= system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page  : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
+		$array_pages_code	= system_preparePaginationForListing($paging_url, $url_search_params, $pageObj, $letter, (string_strpos($_GET["url_full"],'results.php') ? $screen : $page), $aux_items_per_page, (string_strpos($_GET["url_full"],'results.php') ? true : false));
 		$letters_menu		= system_prepareLetterToPagination_Search($pageObj, $searchReturn, $paging_url, $url_search_params, $letter, "name", false, true, false, PROMOTION_SCALABILITY_OPTIMIZATION);
 	}else{ 
 		$array_pages_code	= system_preparePagination($paging_url, $url_search_params, $pageObj, $letter, ($_GET["url_full"] ? $page  : $screen), $aux_items_per_page, ($_GET["url_full"] ? false : true));
@@ -177,7 +177,7 @@
 	}
 	
 	 if(SELECTED_DOMAIN_ID > 0)
-        	 $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl);
+        	 $orderbyDropDown = search_getSortingLinks($_GET, $paging_url, $parts,$friendlyurl,$url_search_params);
         else 
         	$orderbyDropDown = search_getOrderbyDropDown($_GET, $paging_url, $orderBy, system_showText(LANG_PAGING_ORDERBYPAGE) . " ", "this.form.submit();", $parts, false, false);
 	
