@@ -37,8 +37,7 @@
 	$_GET = format_magicQuotes($_GET);
 	$_POST = format_magicQuotes($_POST);
 	$file = $_GET["file"] ? $_GET["file"] : $_POST["file"];
-        print_r($file);die;
-	$file = urldecode($file);
+        $file = urldecode($file);
 	if ($file) {
 		$file = system_denyInjections($file);
 		if (string_strpos($file, "://") !== false) {

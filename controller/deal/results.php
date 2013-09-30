@@ -62,7 +62,7 @@
     $_GET['status']='A';
     $searchReturn = search_frontPromotionSearch($_GET, "promotion_results");
     $aux_items_per_page = ($_COOKIE["promotion_results_per_page"] ? $_COOKIE["promotion_results_per_page"] : 10);
-    $pageObj = new pageBrowsing($searchReturn["from_tables"], ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, $searchReturn["order_by"], "Promotion.name", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Promotion", $searchReturn["group_by"], false, false, $searchReturn["having_clause"]);
+    $pageObj = new pageBrowsing($searchReturn["from_tables"], (string_strpos($_GET["url_full"],'results.php') ? $screen : $page), $aux_items_per_page, $searchReturn["order_by"], "Promotion.name", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Promotion", $searchReturn["group_by"], false, false, $searchReturn["having_clause"]);
 	if (!$search_lock) {
         $promotions = $pageObj->retrievePage();
 	} else {

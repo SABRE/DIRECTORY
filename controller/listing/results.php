@@ -74,12 +74,12 @@
 
     if (!$search_lock) 
     {
-
+		
         $searchReturn = search_frontListingSearch($_GET, "listing_results");
         $aux_items_per_page = ($_COOKIE["listing_results_per_page"] ? $_COOKIE["listing_results_per_page"] : 10);
-        $pageObj = new pageBrowsing($searchReturn["from_tables"], ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, $searchReturn["order_by"], "Listing_Summary.title", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Listing_Summary", $searchReturn["group_by"]);
+        $pageObj = new pageBrowsing($searchReturn["from_tables"], (string_strpos($_GET["url_full"],'results.php') ? $screen : $page), $aux_items_per_page, $searchReturn["order_by"], "Listing_Summary.title", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Listing_Summary", $searchReturn["group_by"]);
         $listings = $pageObj->retrievePage("array");
-        $searchReturn['total_listings'] = $pageObj->record_amount;
+		$searchReturn['total_listings'] = $pageObj->record_amount;
         $paging_url = LISTING_DEFAULT_URL . "/results.php";
         /*
          * Will be used on:

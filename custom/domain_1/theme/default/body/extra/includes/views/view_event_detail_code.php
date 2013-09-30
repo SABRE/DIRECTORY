@@ -1,3 +1,17 @@
+<style>
+    span.eventurl
+    {
+        padding-left:10px !important;
+        padding-top:5px !important;
+    }
+    span.eventurl a
+    {
+        float: left !important;
+        padding-left: 30px !important;
+        font-size: 14px !important;
+    }
+    
+</style>
 <div class="list-title-link-block">
 	<div class="listing-title">
 		<?=$event_title;?>
@@ -28,6 +42,7 @@
 	<div style="clear:both;"></div>
 	<div class="location-address">
 		<img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/direction.png';?>" style="display:inline;" />
+                
 		<? if (($location) || ($event_address) || ($event_address2)) echo "<address>\n";  ?>
 			<? if($event_address) { ?>
 				<span><?=nl2br($event_address)?></span>
@@ -38,6 +53,10 @@
 			<? if($location) { ?>
 				<span><?=$location?></span>
 			<? } ?>
+                        <? if($event_location) { ?>
+				<br/><span style="font-size: 13px;"><?=$event_location?></span>
+			<? } ?>
+                                
 		<? if (($location) || ($event_address) || ($event_address2)) echo "</address>\n";  ?>
 		<? if ($location_map) { ?>
 			<? if ($user) { ?>
@@ -56,14 +75,19 @@
 			</span>
 		</div>
 	<?}?>
-	<?if($event_email){?>
+	<?if($event_email || $dispurl){?>
 		<div style="clear:both;"></div>
 		<div class="email">
-			<img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/sms.png';?>"  style="display:inline;"/>
-			<span id="email-link">
-				<?=$event_email?>
-			</span>
-		</div>
+			<?if($event_email){?>
+                            <img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/sms.png';?>"  style="display:inline;float:none;"/>
+                            <span id="email-link">
+                            	<a href="<?=$contact_email?>" class="<?=!$tPreview? "iframe fancy_window_tofriend": "";?>" style="<?=$contact_email_style?>"><?=system_showText(LANG_SEND_AN_EMAIL);?></a>
+                            </span>
+                        <?}?>
+                        <?if($dispurl){?>
+                            <span class="eventurl"><a href="<?=$event_url?>" target="_blank"><?=$dispurl?></a></span>
+                        <?}?>
+                </div>
 	<?}?>
 	<?if($event_facebook_buttons){?>
 		<div style="clear:both;"></div>
@@ -89,7 +113,7 @@
 </div>
 <div class="content">
 	<div class="content-main">
-		<?if($event_summarydesc || $str_time ){?>	
+		<?if($event_summarydesc || $str_time  || $event_start_date || $event_end_date){?>	
 		<div class="overview-hour-operation">
 			<div class="overview-box">
 					<? if ($event_summarydesc) { ?>
@@ -100,6 +124,15 @@
 					<? }?>
 			</div>
 			<div class="operation-hour-box">
+                            	<? if (!empty($event_start_date) || !empty($event_end_date)) { ?>
+					<span id="operation-hour-box-title">Date of Operation</span>
+                                        <?php if(!empty($event_start_date)): ?>
+                                            <div class="content-box">From: <?php echo $event_start_date; ?></div>
+                                        <?php endif; ?>
+                                        <?php if(!empty($event_end_date)): ?>
+                                            <div class="content-box">To: <?php echo $event_end_date; ?></div>
+                                        <?php endif; ?>    
+				<? } ?>
 				<? if ($str_time) { ?>
 					<span id="operation-hour-box-title">Hours of Operation</span>
 					<div class="content-box">			

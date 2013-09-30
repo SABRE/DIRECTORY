@@ -6,10 +6,11 @@
     }
     span.eventurl a
     {
-        float:left !important;
-        margin-top:10px !important;
-        padding-left:10px !important;
+        float: left !important;
+        padding-left: 30px !important;
+        font-size: 14px !important;
     }
+    
 </style>
 <div class="list-title-link-block">
 	<div class="listing-title">
@@ -74,14 +75,18 @@
 			</span>
 		</div>
 	<?}?>
-	<?if($event_email){?>
+	<?if($event_email || $dispurl){?>
 		<div style="clear:both;"></div>
 		<div class="email">
-			<img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/sms.png';?>"  style="display:inline;"/>
-			<span id="email-link">
-                            <?=$event_email?>
-                            <span class="eventurl"><a href="<?=$event_url?>" target="_blank"><?=$event_url?></a></span>
-                        </span>
+			<?if($event_email){?>
+                            <img src="<?=DEFAULT_URL.'/custom/domain_2/theme/default/schemes/default/images/newImages/sms.png';?>"  style="display:inline;float:none;"/>
+                            <span id="email-link">
+                            	<a href="<?=$contact_email?>" class="<?=!$tPreview? "iframe fancy_window_tofriend": "";?>" style="<?=$contact_email_style?>"><?=system_showText(LANG_SEND_AN_EMAIL);?></a>
+                            </span>
+                        <?}?>
+                        <?if($dispurl){?>
+                            <span class="eventurl"><a href="<?=$event_url?>" target="_blank"><?=$dispurl?></a></span>
+                        <?}?>
                 </div>
 	<?}?>
 	<?if($event_facebook_buttons){?>
@@ -108,7 +113,7 @@
 </div>
 <div class="content">
 	<div class="content-main">
-		<?if($event_summarydesc || $str_time ){?>	
+		<?if($event_summarydesc || $str_time  || $event_start_date || $event_end_date){?>	
 		<div class="overview-hour-operation">
 			<div class="overview-box">
 					<? if ($event_summarydesc) { ?>

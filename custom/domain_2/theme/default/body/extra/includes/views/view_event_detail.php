@@ -25,6 +25,7 @@ $array_fields = system_getFormFields("Event", $event->getNumber("level"));
 $event_icon_navbar = "";
 //include(EDIRECTORY_ROOT."/includes/views/icon_event.php");
 include($includeUrl . "/includes/views/icon_event.php");
+
 $event_icon_navbar = $icon_navbar;
 $icon_navbar = "";
 

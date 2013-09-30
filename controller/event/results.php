@@ -63,7 +63,7 @@
 	$searchReturn = search_frontEventSearch($_GET, "event");
     
 	$aux_items_per_page = ($_COOKIE["event_results_per_page"] ? $_COOKIE["event_results_per_page"] : 10);
-	$pageObj = new pageBrowsing($searchReturn["from_tables"], ($_GET["url_full"] ? $page : $screen), $aux_items_per_page, $searchReturn["order_by"], "Event.title", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Event", $searchReturn["group_by"]);
+	$pageObj = new pageBrowsing($searchReturn["from_tables"], (string_strpos($_GET["url_full"],'results.php') ? $screen : $page), $aux_items_per_page, $searchReturn["order_by"], "Event.title", $letter, $searchReturn["where_clause"], $searchReturn["select_columns"], "Event", $searchReturn["group_by"]);
         
         
       
